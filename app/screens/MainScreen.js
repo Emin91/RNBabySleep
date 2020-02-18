@@ -7,7 +7,6 @@ import * as COLOR from '../constants/ColorConstans';
 const MainScreen = () => {
     return (
         <View>
-            <Text>{STRINGS.HEADER_TEXT_MAIN_SCREEN}</Text>
         </View>
     )
 }
