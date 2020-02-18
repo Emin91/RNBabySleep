@@ -1,7 +1,10 @@
 import React from 'react'
 import { TouchableOpacity } from 'react-native'
 import PlusIcon from 'react-native-vector-icons/dist/Feather'; //Icons
-import IconStar from 'react-native-vector-icons/MaterialIcons';
+import IconNote from 'react-native-vector-icons/Ionicons';
+import IconGraph from 'react-native-vector-icons/SimpleLineIcons';
+import IconHome from 'react-native-vector-icons/Entypo';
+import IconSetting from 'react-native-vector-icons/MaterialIcons';
 import * as COLOR from '../constants/ColorConstans'; //Color constants
 import * as STRINGS from '../constants/StringConstants'; //String constants
 //Navigation
@@ -23,28 +26,28 @@ const TabBar = createMaterialTopTabNavigator({
         navigationOptions: {
             //tabBarOnPress: () => alert('Tab1'),
             tabBarLabel: () => { return null },
-            tabBarIcon: <IconStar name="star" color='#fff' size={25} />,
+            tabBarIcon: <IconNote name="md-musical-note" color='#fff' size={25} />,
         },
     },
     $Tab2: {
         screen: Tab2,
         navigationOptions: {
             tabBarLabel: () => { return null },
-            tabBarIcon: <IconStar name="star" color='#fff' size={25} />,
+            tabBarIcon: <IconGraph name="graph" color='#fff' size={25} />,
         }
     },
     $Tab3: {
         screen: Tab3,
         navigationOptions: {
             tabBarLabel: () => { return null },
-            tabBarIcon: <IconStar name="star" color='#fff' size={25} />,
+            tabBarIcon: <IconHome name="home" color='#fff' size={25} />,
         }
     },
     $Tab4: {
         screen: Tab4,
         navigationOptions: {
             tabBarLabel: () => { return null },
-            tabBarIcon: <IconStar name="star" color='#fff' size={25} />,
+            tabBarIcon: <IconSetting name="settings" color='#fff' size={25} />,
         }
     },
 },
@@ -54,7 +57,7 @@ const TabBar = createMaterialTopTabNavigator({
         tabBarOptions: {
             showIcon: true,
             indicatorStyle: {
-                backgroundColor: 'red',
+                backgroundColor: COLOR.LOCHMARA,
             },
             style: {
                 backgroundColor: COLOR.GREY,
@@ -77,7 +80,7 @@ const AppContainer = createStackNavigator(
                 headerRight: (() =>
                     <TouchableOpacity
                         style={[{ paddingHorizontal: 15 }]}
-                        onPress={() => props.navigation.navigate('Splash')}>
+                        onPress={() => props.navigation.navigate('Main')}>
                         <PlusIcon
                             name="plus"
                             color={'white'}
