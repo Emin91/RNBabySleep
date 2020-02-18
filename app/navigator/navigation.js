@@ -1,6 +1,7 @@
 import React from 'react'
 import { TouchableOpacity } from 'react-native'
-import PlusIcon from 'react-native-vector-icons/dist/Feather'; //Icons
+//Icons
+import PlusIcon from 'react-native-vector-icons/dist/Feather';
 import IconNote from 'react-native-vector-icons/Ionicons';
 import IconGraph from 'react-native-vector-icons/SimpleLineIcons';
 import IconHome from 'react-native-vector-icons/Entypo';
@@ -11,13 +12,14 @@ import * as STRINGS from '../constants/StringConstants'; //String constants
 import { createAppContainer } from 'react-navigation'
 import { createStackNavigator } from 'react-navigation-stack'
 import { createMaterialTopTabNavigator } from 'react-navigation-tabs'
-
 import SplashScreen from '../screens/SplashScreen'
 //Screens (Tabs)
 import Tab1 from '../screens/Tab_1'
 import Tab2 from '../screens/Tab_2'
 import Tab3 from '../screens/Tab_3'
 import Tab4 from '../screens/Tab_4'
+import DetailsScreen from '../screens/DetailsScreen';
+
 
 //Top tab navigation
 const TabBar = createMaterialTopTabNavigator({
@@ -26,28 +28,28 @@ const TabBar = createMaterialTopTabNavigator({
         navigationOptions: {
             //tabBarOnPress: () => alert('Tab1'),
             tabBarLabel: () => { return null },
-            tabBarIcon: <IconNote name="md-musical-note" color='#fff' size={25} />,
+            tabBarIcon: <IconNote name="md-musical-note" color='#fff' size={22} />,
         },
     },
     $Tab2: {
         screen: Tab2,
         navigationOptions: {
             tabBarLabel: () => { return null },
-            tabBarIcon: <IconGraph name="graph" color='#fff' size={25} />,
+            tabBarIcon: <IconGraph name="graph" color='#fff' size={22} />,
         }
     },
     $Tab3: {
         screen: Tab3,
         navigationOptions: {
             tabBarLabel: () => { return null },
-            tabBarIcon: <IconHome name="home" color='#fff' size={25} />,
+            tabBarIcon: <IconHome name="home" color='#fff' size={22} />,
         }
     },
     $Tab4: {
         screen: Tab4,
         navigationOptions: {
             tabBarLabel: () => { return null },
-            tabBarIcon: <IconSetting name="settings" color='#fff' size={25} />,
+            tabBarIcon: <IconSetting name="settings" color='#fff' size={22} />,
         }
     },
 },
@@ -71,6 +73,9 @@ const AppContainer = createStackNavigator(
     {
         Main: {
             screen: SplashScreen
+        },
+        Details: {
+            screen: DetailsScreen
         },
         $HomeScreen:
         {
