@@ -30,6 +30,11 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         borderRadius: 100,
         backgroundColor: COLOR.LOCHMARA,
+    },
+    sliderView: {
+        flex: 0.2,
+        justifyContent: 'flex-start',
+        //backgroundColor: 'green',
     }
 })
 

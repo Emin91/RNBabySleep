@@ -72,12 +72,12 @@ const AppContainer = createStackNavigator(
         },
         Details: {
             screen: NewSoundScreen,
-            navigationOptions: (props) => ({
+            navigationOptions: ({ navigation }) => ({
                 title: STRINGS.CREATE_NEW_SOUND,
-                headerRight: ((props) =>
+                headerRight: (() =>
                     (true ? <TouchableOpacity
                         style={[{ paddingHorizontal: 15 }]}
-                        onPress={() => props.navigation.navigate('Details')}>
+                        onPress={() => navigation.goBack()}>
                         <Icon.MaterialIcons
                             name="save"
                             color={'white'}
