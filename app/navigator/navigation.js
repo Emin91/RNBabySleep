@@ -94,18 +94,7 @@ const AppContainer = createStackNavigator(
         Details: {
             screen: DetailsScreen,
             navigationOptions: ({ navigation }) => ({
-                title: navigation.getParam('value'),
-                headerRight: (() =>
-                    (true ? <TouchableOpacity
-                        style={[{ paddingHorizontal: 15 }]}
-                        onPress={() => navigation.goBack()}>
-                        <Icon.MaterialIcons
-                            name="save"
-                            color={'white'}
-                            size={30} />
-                    </TouchableOpacity> : null)
-                ),
-
+                title: navigation.getParam('value', 'img'),
                 headerTintColor: '#fff',
                 headerStyle: {
                     backgroundColor: COLOR.GREY,

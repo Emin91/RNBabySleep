@@ -4,22 +4,28 @@ import * as STRINGS from '../constants/StringConstants';
 import * as COLOR from '../constants/ColorConstans';
 import TextElements from '../components/TextElements';
 import styles from '../styles/TextElementsStyle'
+import DetailsScreen from './DetailsScreen';
 
 const titleTwo = [
     {
         value: STRINGS.TITLE_TWO_TEXT_1,
+        img: '../assets/img/auto1.jpg'
     },
     {
         value: STRINGS.TITLE_TWO_TEXT_2,
+        img: '../assets/img/shekil.png'
     },
     {
         value: STRINGS.TITLE_TWO_TEXT_3,
+        img: '../assets/img/auto1.jpg'
     },
     {
         value: STRINGS.TITLE_TWO_TEXT_4,
+        img: '../assets/img/auto1.jpg'
     },
     {
         value: STRINGS.TITLE_TWO_TEXT_5,
+        img: '../assets/img/auto1.jpg'
     },
 ]
 
@@ -60,11 +66,11 @@ const Tab_1 = (props) => {
             <TextElements title={STRINGS.TAB_1_TITLE_ONE} />
             <TextElements title={STRINGS.TAB_1_TITLE_TWO} />
             {
-                titleTwo.slice().map(({ value }) => {
+                titleTwo.slice().map(({ value, img }) => {
                     return (
                         <TouchableOpacity
                             style={styles.textsView}
-                            onPress={() => props.navigation.navigate('Details', { value })}>
+                            onPress={() => props.navigation.navigate('Details', { value, img })}>
                             <Text style={styles.texts}>{value}</Text>
                         </TouchableOpacity>
                     )
