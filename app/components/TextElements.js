@@ -8,13 +8,4 @@ const TextElements = (props) => {
     )
 }
 
-export const TextArray = ({ textTitle, onPress }) => {
-    return (
-        <TouchableOpacity onPress={() => onPress()} >
-            <Text style={styles.title}>{textTitle}</Text>
-        </TouchableOpacity>
-    )
-}
-
-
 export default TextElements

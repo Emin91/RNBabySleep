@@ -1,5 +1,6 @@
 export const RED = '#A02020'
 export const GREY = '#424242'
+export const GREY_OPACITY = '#595959'
 export const WHITE = '#ffffff'
 export const BLACK = '#000000'
 export const CARROT = '#FE8E2C'

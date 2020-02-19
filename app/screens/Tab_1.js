@@ -1,79 +1,96 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { View, Text, TouchableOpacity, Button, ScrollView } from 'react-native'
 import * as STRINGS from '../constants/StringConstants';
 import * as COLOR from '../constants/ColorConstans';
-import TextElements, { TextArray } from '../components/TextElements';
+import TextElements from '../components/TextElements';
+import styles from '../styles/TextElementsStyle'
 
-const textTitle = [
+const titleTwo = [
     {
-        value: STRINGS.TAB_1_TEXT_1,
+        value: STRINGS.TITLE_TWO_TEXT_1,
     },
     {
-        value: STRINGS.TAB_1_TEXT_2,
+        value: STRINGS.TITLE_TWO_TEXT_2,
     },
     {
-        value: STRINGS.TAB_1_TEXT_3,
+        value: STRINGS.TITLE_TWO_TEXT_3,
     },
     {
-        value: STRINGS.TAB_1_TEXT_4,
+        value: STRINGS.TITLE_TWO_TEXT_4,
     },
     {
-        value: STRINGS.TAB_1_TEXT_5,
+        value: STRINGS.TITLE_TWO_TEXT_5,
     },
 ]
 
-const rowCount = 6;
+const titleThree = [
+    {
+        value: STRINGS.TITLE_THREE_TEXT_1,
+    },
+    {
+        value: STRINGS.TITLE_THREE_TEXT_2,
+    },
+    {
+        value: STRINGS.TITLE_THREE_TEXT_3,
+    },
+    {
+        value: STRINGS.TITLE_THREE_TEXT_4,
+    },
+]
 
-const columnsCount = textTitle.length / rowCount;
+const titleFour = [
+    {
+        value: STRINGS.TITLE_FOUR_TEXT_1,
+    },
+    {
+        value: STRINGS.TITLE_FOUR_TEXT_2,
+    },
+    {
+        value: STRINGS.TITLE_FOUR_TEXT_3,
+    },
+    {
+        value: STRINGS.TITLE_FOUR_TEXT_4,
+    },
+]
 
 const Tab_1 = (props) => {
+
     return (
-        <ScrollView style={{ backgroundColor: COLOR.GREY, paddingTop: 20, paddingHorizontal: 10 }}>
+        <ScrollView style={styles.scrollView}>
             <TextElements title={STRINGS.TAB_1_TITLE_ONE} />
             <TextElements title={STRINGS.TAB_1_TITLE_TWO} />
             {
-                Array(rowCount).fill(null).map((val, index) => {
-                    const startIndex = index * columnsCount;
+                titleTwo.slice().map(({ value }) => {
                     return (
-                        textTitle.slice(startIndex, startIndex + columnsCount).map(({ value, component = value }) => {
-                            return (
-                                <View key={index}>
-                                    {
-                                        textTitle.slice(startIndex, startIndex + columnsCount).map(({ value, component = value }) => {
-                                            return (
-                                                <View key={value}>
-                                                    <TextArray
-                                                        onPress={() => props.navigation.navigate('Details')}
-                                                        textTitle={component} />
-                                                </View>
-                                            )
-                                        })
-                                    }
-                                </View>
-                            )
-                        })
-
+                        <TouchableOpacity
+                            style={styles.textsView}
+                            onPress={() => props.navigation.navigate('Details')}>
+                            <Text style={styles.texts}>{value}</Text>
+                        </TouchableOpacity>
                     )
                 })
             }
             <TextElements title={STRINGS.TAB_1_TITLE_THREE} />
             {
-                Array(rowCount).fill(null).map((val, index) => {
-                    const startIndex = index * columnsCount;
+                titleTwo.slice().map(({ value }) => {
                     return (
-                        <View key={index} style={{ backgroundColor: 'blue' }}>
-                            {
-                                textTitle.slice(startIndex, startIndex + columnsCount).map(({ value, component = value }) => {
-                                    return (
-                                        <View key={value} style={{ backgroundColor: 'orange' }}>
-                                            <TextArray
-                                                onPress={() => props.navigation.navigate('Details')}
-                                                textTitle={component} />
-                                        </View>
-                                    )
-                                })
-                            }
-                        </View>
+                        <TouchableOpacity
+                            style={styles.textsView}
+                            onPress={() => props.navigation.navigate('Details')}>
+                            <Text style={styles.texts}>{value}</Text>
+                        </TouchableOpacity>
+                    )
+                })
+            }
+            <TextElements title={STRINGS.TAB_1_TITLE_FOUR} />
+            {
+                titleTwo.slice().map(({ value }) => {
+                    return (
+                        <TouchableOpacity
+                            style={styles.textsView}
+                            onPress={() => props.navigation.navigate('Details')}>
+                            <Text style={styles.texts}>{value}</Text>
+                        </TouchableOpacity>
                     )
                 })
             }
