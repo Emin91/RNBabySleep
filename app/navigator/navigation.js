@@ -1,11 +1,7 @@
 import React from 'react'
-import { TouchableOpacity } from 'react-native'
+import { TouchableOpacity, Text } from 'react-native'
 //Icons
-import PlusIcon from 'react-native-vector-icons/dist/Feather';
-import IconNote from 'react-native-vector-icons/Ionicons';
-import IconGraph from 'react-native-vector-icons/SimpleLineIcons';
-import IconHome from 'react-native-vector-icons/Entypo';
-import IconSetting from 'react-native-vector-icons/MaterialIcons';
+import Icon from '../components/Icons';
 import * as COLOR from '../constants/ColorConstans'; //Color constants
 import * as STRINGS from '../constants/StringConstants'; //String constants
 //Navigation
@@ -13,12 +9,13 @@ import { createAppContainer } from 'react-navigation'
 import { createStackNavigator } from 'react-navigation-stack'
 import { createMaterialTopTabNavigator } from 'react-navigation-tabs'
 import SplashScreen from '../screens/SplashScreen'
+
 //Screens (Tabs)
 import Tab1 from '../screens/Tab_1'
 import Tab2 from '../screens/Tab_2'
 import Tab3 from '../screens/Tab_3'
 import Tab4 from '../screens/Tab_4'
-import DetailsScreen from '../screens/DetailsScreen';
+import NewSoundScreen from '../screens/NewSoundScreen';
 
 
 //Top tab navigation
@@ -28,34 +25,33 @@ const TabBar = createMaterialTopTabNavigator({
         navigationOptions: {
             //tabBarOnPress: () => alert('Tab1'),
             tabBarLabel: () => { return null },
-            tabBarIcon: <IconNote name="md-musical-note" color='#fff' size={22} />,
+            tabBarIcon: <Icon.Entypo name="note" color='#fff' size={22} />,
         },
     },
     $Tab2: {
         screen: Tab2,
         navigationOptions: {
             tabBarLabel: () => { return null },
-            tabBarIcon: <IconGraph name="graph" color='#fff' size={22} />,
+            tabBarIcon: <Icon.SimpleLineIcons name="graph" color='#fff' size={22} />,
         }
     },
     $Tab3: {
         screen: Tab3,
         navigationOptions: {
             tabBarLabel: () => { return null },
-            tabBarIcon: <IconHome name="home" color='#fff' size={22} />,
+            tabBarIcon: <Icon.Entypo name="home" color='#fff' size={22} />,
         }
     },
     $Tab4: {
         screen: Tab4,
         navigationOptions: {
             tabBarLabel: () => { return null },
-            tabBarIcon: <IconSetting name="settings" color='#fff' size={22} />,
+            tabBarIcon: <Icon.Ionicons name="md-settings" color='#fff' size={22} />,
         }
     },
 },
     {
         initialRouteName: '$Tab1',
-        lazy: true,
         tabBarOptions: {
             showIcon: true,
             indicatorStyle: {
@@ -72,12 +68,32 @@ const TabBar = createMaterialTopTabNavigator({
 const AppContainer = createStackNavigator(
     {
         Main: {
-            screen: SplashScreen
+            screen: SplashScreen,
         },
         Details: {
-            screen: DetailsScreen
+            screen: NewSoundScreen,
+            navigationOptions: (props) => ({
+                title: STRINGS.CREATE_NEW_SOUND,
+                headerRight: ((props) =>
+                    (true ? <TouchableOpacity
+                        style={[{ paddingHorizontal: 15 }]}
+                        onPress={() => props.navigation.navigate('Details')}>
+                        <Icon.MaterialIcons
+                            name="save"
+                            color={'white'}
+                            size={30} />
+                    </TouchableOpacity> : null)
+                ),
+
+                headerTintColor: '#fff',
+                headerStyle: {
+                    backgroundColor: COLOR.GREY,
+                    elevation: 0,
+                    shadowOpacity: 0,
+                },
+            })
         },
-        $HomeScreen:
+        HomeScreen:
         {
             screen: TabBar,
             navigationOptions: (props) => ({
@@ -85,8 +101,8 @@ const AppContainer = createStackNavigator(
                 headerRight: (() =>
                     <TouchableOpacity
                         style={[{ paddingHorizontal: 15 }]}
-                        onPress={() => props.navigation.navigate('Main')}>
-                        <PlusIcon
+                        onPress={() => props.navigation.navigate('Details')}>
+                        <Icon.AntDesign
                             name="plus"
                             color={'white'}
                             size={30} />
@@ -103,7 +119,8 @@ const AppContainer = createStackNavigator(
     },
 
     {
-        initialRouteName: '$HomeScreen'
+        //headerMode: 'none',
+        initialRouteName: 'HomeScreen',
     }
 )
 

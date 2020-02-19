@@ -84,15 +84,19 @@ const Tab_1 = (props) => {
             }
             <TextElements title={STRINGS.TAB_1_TITLE_FOUR} />
             {
-                titleTwo.slice().map(({ value }) => {
-                    return (
-                        <TouchableOpacity
-                            style={styles.textsView}
-                            onPress={() => props.navigation.navigate('Details')}>
-                            <Text style={styles.texts}>{value}</Text>
-                        </TouchableOpacity>
-                    )
-                })
+                <View style={styles.itemViews}>
+                    {
+                        titleTwo.slice().map(({ value }) => {
+                            return (
+                                <TouchableOpacity
+                                    style={styles.textsView}
+                                    onPress={() => props.navigation.navigate('Details')}>
+                                    <Text style={styles.texts}>{value}</Text>
+                                </TouchableOpacity>
+                            )
+                        })
+                    }
+                </View>
             }
         </ScrollView>
     )

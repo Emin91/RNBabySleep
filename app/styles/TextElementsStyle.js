@@ -5,13 +5,16 @@ const styles = StyleSheet.create({
     scrollView: {
         backgroundColor: COLOR.GREY,
         paddingTop: 20,
-        paddingHorizontal: 15
+        paddingHorizontal: 15,
     },
     title: {
         fontSize: 20,
-        color: COLOR.PELOROUS,
+        color: COLOR.CERULEAN,
         marginVertical: 5,
-
+    },
+    itemViews: {
+        // backgroundColor: 'red',
+        marginBottom: 20,
     },
     textsView: {
         borderBottomWidth: 0.2,

@@ -1,5 +1,6 @@
 //Main Screen
-export const HEADER_TEXT_MAIN_SCREEN = 'ДОМАШНЕЕ'
+export const HEADER_TEXT_MAIN_SCREEN = 'Sound Slepper'
+export const CREATE_NEW_SOUND = 'Создание звука'
 
 //Tab 1 titles
 export const TAB_1_TITLE_ONE = 'ДОМАШНЕЕ'
@@ -23,3 +24,5 @@ export const TITLE_FOUR_TEXT_2 = 'Журчащий Ручей'
 export const TITLE_FOUR_TEXT_3 = 'Звуки Побережья'
 export const TITLE_FOUR_TEXT_4 = 'Треск Камина'
 
+//New sound create screen
+export const TEXT_INPUT = 'Имя звука'
