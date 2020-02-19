@@ -16,6 +16,7 @@ import Tab2 from '../screens/Tab_2'
 import Tab3 from '../screens/Tab_3'
 import Tab4 from '../screens/Tab_4'
 import NewSoundScreen from '../screens/NewSoundScreen';
+import DetailsScreen from '../screens/DetailsScreen';
 
 
 //Top tab navigation
@@ -67,13 +68,33 @@ const TabBar = createMaterialTopTabNavigator({
 //Main navigation container
 const AppContainer = createStackNavigator(
     {
-        Main: {
-            screen: SplashScreen,
+        HomeScreen:
+        {
+            screen: TabBar,
+            navigationOptions: (props) => ({
+                title: STRINGS.HEADER_TEXT_MAIN_SCREEN,
+                headerRight: (() =>
+                    <TouchableOpacity
+                        style={[{ paddingHorizontal: 15 }]}
+                        onPress={() => props.navigation.navigate('screenRecorder')}>
+                        <Icon.AntDesign
+                            name="plus"
+                            color={'white'}
+                            size={30} />
+                    </TouchableOpacity>
+                ),
+                headerTintColor: '#fff',
+                headerStyle: {
+                    backgroundColor: COLOR.GREY,
+                    elevation: 0,
+                    shadowOpacity: 0,
+                },
+            })
         },
         Details: {
-            screen: NewSoundScreen,
+            screen: DetailsScreen,
             navigationOptions: ({ navigation }) => ({
-                title: STRINGS.CREATE_NEW_SOUND,
+                title: navigation.getParam('value'),
                 headerRight: (() =>
                     (true ? <TouchableOpacity
                         style={[{ paddingHorizontal: 15 }]}
@@ -93,21 +114,21 @@ const AppContainer = createStackNavigator(
                 },
             })
         },
-        HomeScreen:
-        {
-            screen: TabBar,
-            navigationOptions: (props) => ({
-                title: STRINGS.HEADER_TEXT_MAIN_SCREEN,
+        screenRecorder: {
+            screen: NewSoundScreen,
+            navigationOptions: ({ navigation }) => ({
+                title: STRINGS.HEADER_CREATE_NEW_SOUND,
                 headerRight: (() =>
-                    <TouchableOpacity
+                    (true ? <TouchableOpacity
                         style={[{ paddingHorizontal: 15 }]}
-                        onPress={() => props.navigation.navigate('Details')}>
-                        <Icon.AntDesign
-                            name="plus"
+                        onPress={() => navigation.goBack()}>
+                        <Icon.MaterialIcons
+                            name="save"
                             color={'white'}
                             size={30} />
-                    </TouchableOpacity>
+                    </TouchableOpacity> : null)
                 ),
+
                 headerTintColor: '#fff',
                 headerStyle: {
                     backgroundColor: COLOR.GREY,
@@ -115,7 +136,7 @@ const AppContainer = createStackNavigator(
                     shadowOpacity: 0,
                 },
             })
-        },
+        }
     },
 
     {

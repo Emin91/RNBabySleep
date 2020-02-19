@@ -1,10 +1,13 @@
-import React from 'react'
-import { View, Text } from 'react-native'
+import React, { useState } from 'react'
+import { View, Text, Button, TextInput, TouchableNativeFeedback } from 'react-native'
+import * as COLOR from '../constants/ColorConstans'; //Color constants
+import * as STRINGS from '../constants/StringConstants'; //String constants
+import Icon from '../components/Icons';
 
 const DetailsScreen = () => {
+
     return (
-        <View>
-            <Text>dfgsdfg</Text>
+        <View style={{ flex: 1, backgroundColor: 'blue', }}>
         </View>
     )
 }

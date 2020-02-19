@@ -64,7 +64,7 @@ const Tab_1 = (props) => {
                     return (
                         <TouchableOpacity
                             style={styles.textsView}
-                            onPress={() => props.navigation.navigate('Details')}>
+                            onPress={() => props.navigation.navigate('Details', { value })}>
                             <Text style={styles.texts}>{value}</Text>
                         </TouchableOpacity>
                     )
@@ -72,11 +72,11 @@ const Tab_1 = (props) => {
             }
             <TextElements title={STRINGS.TAB_1_TITLE_THREE} />
             {
-                titleTwo.slice().map(({ value }) => {
+                titleThree.slice().map(({ value }) => {
                     return (
                         <TouchableOpacity
                             style={styles.textsView}
-                            onPress={() => props.navigation.navigate('Details')}>
+                            onPress={() => props.navigation.navigate('Details', { value })}>
                             <Text style={styles.texts}>{value}</Text>
                         </TouchableOpacity>
                     )
@@ -86,11 +86,11 @@ const Tab_1 = (props) => {
             {
                 <View style={styles.itemViews}>
                     {
-                        titleTwo.slice().map(({ value }) => {
+                        titleFour.slice().map(({ value }) => {
                             return (
                                 <TouchableOpacity
                                     style={styles.textsView}
-                                    onPress={() => props.navigation.navigate('Details')}>
+                                    onPress={() => props.navigation.navigate('Details', { value })}>
                                     <Text style={styles.texts}>{value}</Text>
                                 </TouchableOpacity>
                             )
