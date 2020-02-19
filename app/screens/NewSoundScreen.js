@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 import { View, Text, Button, TextInput, TouchableNativeFeedback } from 'react-native'
+import * as COLOR from '../constants/ColorConstans'; //Color constants
+import * as STRINGS from '../constants/StringConstants'; //String constants
 import Icon from '../components/Icons';
 import styles from '../styles/NewSoundScreenStyle'
-import * as STRINGS from '../constants/StringConstants'; //String constants
-import * as COLOR from '../constants/ColorConstans'; //Color constants
 import Slider from '@react-native-community/slider';
 
 const NewSoundScreen = () => {
     const [inputValue, setInputValue] = useState('')
-    const [sliderValue, setSliderValue] = useState('')
+
     return (
         <View style={styles.mainView}>
             <View style={styles.textInputView}>
@@ -22,12 +22,13 @@ const NewSoundScreen = () => {
                 />
             </View>
             <View style={styles.recorderView}>
+                <Text style={styles.timer}>00:00</Text>
                 <TouchableNativeFeedback
                     background={TouchableNativeFeedback.Ripple(COLOR.PELOROUS, true)}>
                     <View
                         style={styles.recorderBtn}>
-                        <Icon.Ionicons
-                            name='md-recording'
+                        <Icon.Feather
+                            name='mic'
                             color={COLOR.WHITE}
                             size={70}
                         />

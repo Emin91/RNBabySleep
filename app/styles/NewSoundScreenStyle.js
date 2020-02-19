@@ -22,6 +22,12 @@ const styles = StyleSheet.create({
         flex: 0.6,
         justifyContent: 'center',
         alignItems: 'center',
+        paddingBottom: 50,
+    },
+    timer: {
+        fontSize: 40,
+        paddingBottom: 20,
+        color: COLOR.WHITE,
     },
     recorderBtn: {
         width: 150,
