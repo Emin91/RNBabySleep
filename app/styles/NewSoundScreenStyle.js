@@ -1,10 +1,10 @@
 import { StyleSheet } from 'react-native';
-import * as COLOR from '../constants/ColorConstans'; //Color constants
+import { colors } from '../constants/ColorConstans';
 
 const styles = StyleSheet.create({
     mainView: {
         flex: 1,
-        backgroundColor: COLOR.GREY_OPACITY,
+        backgroundColor: colors.GREY_OPACITY,
     },
     textInputView: {
         flex: 0.2,
@@ -14,9 +14,9 @@ const styles = StyleSheet.create({
     textInput: {
         fontSize: 20,
         textAlign: 'center',
-        color: COLOR.CERULEAN,
+        color: colors.CERULEAN,
         borderBottomWidth: 2,
-        borderBottomColor: COLOR.CERULEAN,
+        borderBottomColor: colors.CERULEAN,
     },
     recorderView: {
         flex: 0.6,
@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     timer: {
         fontSize: 40,
         paddingBottom: 20,
-        color: COLOR.WHITE,
+        color: colors.WHITE,
     },
     recorderBtn: {
         width: 150,
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 100,
-        backgroundColor: COLOR.LOCHMARA,
+        backgroundColor: colors.LOCHMARA,
     },
     sliderView: {
         flex: 0.2,

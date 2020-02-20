@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import { View, Text, Button, TextInput, TouchableNativeFeedback } from 'react-native'
-import * as COLOR from '../constants/ColorConstans'; //Color constants
-import * as STRINGS from '../constants/StringConstants'; //String constants
 import Icon from '../components/Icons';
-import styles from '../styles/NewSoundScreenStyle'
+import styles from '../styles/newSoundScreenStyle'
 import Slider from '@react-native-community/slider';
+import { titles } from '../constants/StringConstants';
+import { colors } from '../constants/ColorConstans';
 
 const NewSoundScreen = () => {
     const [inputValue, setInputValue] = useState('')
@@ -17,19 +17,19 @@ const NewSoundScreen = () => {
                     maxLength={30}
                     autoCorrect={false}
                     style={styles.textInput}
-                    placeholder={STRINGS.TEXT_INPUT}
+                    placeholder={titles.TEXT_INPUT}
                     onChangeText={(newValue) => setInputValue(newValue)}
                 />
             </View>
             <View style={styles.recorderView}>
                 <Text style={styles.timer}>00:00</Text>
                 <TouchableNativeFeedback
-                    background={TouchableNativeFeedback.Ripple(COLOR.PELOROUS, true)}>
+                    background={TouchableNativeFeedback.Ripple(colors.PELOROUS, true)}>
                     <View
                         style={styles.recorderBtn}>
                         <Icon.Feather
                             name='mic'
-                            color={COLOR.WHITE}
+                            color={colors.WHITE}
                             size={70}
                         />
                     </View>
@@ -38,11 +38,11 @@ const NewSoundScreen = () => {
             <View style={styles.sliderView}>
                 <Slider
                     style={{ width: '100%', height: 60, }}
-                    thumbTintColor={COLOR.LOCHMARA}
+                    thumbTintColor={colors.LOCHMARA}
                     minimumValue={0}
                     maximumValue={1}
-                    minimumTrackTintColor={COLOR.PELOROUS}
-                    maximumTrackTintColor={COLOR.BLACK}
+                    minimumTrackTintColor={colors.PELOROUS}
+                    maximumTrackTintColor={colors.BLACK}
                 />
             </View>
 

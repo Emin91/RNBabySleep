@@ -1,69 +1,18 @@
 import React from 'react'
 import { TouchableOpacity, Text } from 'react-native'
+
 //Icons
 import Icon from '../components/Icons';
 import * as COLOR from '../constants/ColorConstans'; //Color constants
-import * as STRINGS from '../constants/StringConstants'; //String constants
+
 //Navigation
 import { createAppContainer } from 'react-navigation'
 import { createStackNavigator } from 'react-navigation-stack'
-import { createMaterialTopTabNavigator } from 'react-navigation-tabs'
-import SplashScreen from '../screens/SplashScreen'
 
-//Screens (Tabs)
-import Tab1 from '../screens/Tab_1'
-import Tab2 from '../screens/Tab_2'
-import Tab3 from '../screens/Tab_3'
-import Tab4 from '../screens/Tab_4'
-import NewSoundScreen from '../screens/NewSoundScreen';
-import DetailsScreen from '../screens/DetailsScreen';
-
-
-//Top tab navigation
-const TabBar = createMaterialTopTabNavigator({
-    $Tab1: {
-        screen: Tab1,
-        navigationOptions: {
-            //tabBarOnPress: () => alert('Tab1'),
-            tabBarLabel: () => { return null },
-            tabBarIcon: <Icon.Entypo name="note" color='#fff' size={22} />,
-        },
-    },
-    $Tab2: {
-        screen: Tab2,
-        navigationOptions: {
-            tabBarLabel: () => { return null },
-            tabBarIcon: <Icon.SimpleLineIcons name="graph" color='#fff' size={22} />,
-        }
-    },
-    $Tab3: {
-        screen: Tab3,
-        navigationOptions: {
-            tabBarLabel: () => { return null },
-            tabBarIcon: <Icon.Entypo name="home" color='#fff' size={22} />,
-        }
-    },
-    $Tab4: {
-        screen: Tab4,
-        navigationOptions: {
-            tabBarLabel: () => { return null },
-            tabBarIcon: <Icon.Ionicons name="md-settings" color='#fff' size={22} />,
-        }
-    },
-},
-    {
-        initialRouteName: '$Tab1',
-        tabBarOptions: {
-            showIcon: true,
-            indicatorStyle: {
-                backgroundColor: COLOR.LOCHMARA,
-            },
-            style: {
-                backgroundColor: COLOR.GREY,
-            },
-        },
-    }
-)
+import NewSoundScreen from '../screens/newSoundScreen';
+import DetailsScreen from '../screens/detailsScreen';
+import { TabBar } from './tabNavigation/tabNavigator';
+import { titles } from '../constants/StringConstants';
 
 //Main navigation container
 const AppContainer = createStackNavigator(
@@ -72,7 +21,7 @@ const AppContainer = createStackNavigator(
         {
             screen: TabBar,
             navigationOptions: (props) => ({
-                title: STRINGS.HEADER_TEXT_MAIN_SCREEN,
+                title: titles.HEADER_TEXT_MAIN_SCREEN,
                 headerRight: (() =>
                     <TouchableOpacity
                         style={[{ paddingHorizontal: 15 }]}
@@ -85,7 +34,7 @@ const AppContainer = createStackNavigator(
                 ),
                 headerTintColor: '#fff',
                 headerStyle: {
-                    backgroundColor: COLOR.GREY,
+                    backgroundColor: COLOR.colors.GREY,
                     elevation: 0,
                     shadowOpacity: 0,
                 },
@@ -97,7 +46,7 @@ const AppContainer = createStackNavigator(
                 title: navigation.getParam('value', 'img'),
                 headerTintColor: '#fff',
                 headerStyle: {
-                    backgroundColor: COLOR.GREY,
+                    backgroundColor: COLOR.colors.GREY,
                     elevation: 0,
                     shadowOpacity: 0,
                 },
@@ -106,7 +55,7 @@ const AppContainer = createStackNavigator(
         screenRecorder: {
             screen: NewSoundScreen,
             navigationOptions: ({ navigation }) => ({
-                title: STRINGS.HEADER_CREATE_NEW_SOUND,
+                title: titles.HEADER_CREATE_NEW_SOUND,
                 headerRight: (() =>
                     (true ? <TouchableOpacity
                         style={[{ paddingHorizontal: 15 }]}
@@ -120,14 +69,13 @@ const AppContainer = createStackNavigator(
 
                 headerTintColor: '#fff',
                 headerStyle: {
-                    backgroundColor: COLOR.GREY,
+                    backgroundColor: COLOR.colors.GREY,
                     elevation: 0,
                     shadowOpacity: 0,
                 },
             })
-        }
+        },
     },
-
     {
         //headerMode: 'none',
         initialRouteName: 'HomeScreen',

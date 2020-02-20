@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, Text, TouchableOpacity } from 'react-native'
-import styles from '../styles/TextElementsStyle'
+import styles from '../../styles/TextElementsStyle'
 
 const TextElements = (props) => {
     return (
@@ -8,4 +8,4 @@ const TextElements = (props) => {
     )
 }
 
-export default TextElements
+export default TextElements;

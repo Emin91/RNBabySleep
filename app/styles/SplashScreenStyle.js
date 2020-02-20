@@ -1,12 +1,12 @@
 import { StyleSheet } from 'react-native'
-import * as COLOR from '../constants/ColorConstans'
+import { colors } from '../constants/ColorConstans'
 
 const styles = StyleSheet.create({
     mainView: {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: COLOR.GREY,
+        backgroundColor: colors.GREY,
     },
     logo: {
         width: '60%',
@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     },
     text: {
         fontSize: 50,
-        color: COLOR.WHITE,
+        color: colors.WHITE,
     }
 })
 

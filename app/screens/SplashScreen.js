@@ -1,8 +1,8 @@
 import React from 'react'
 import { StyleSheet, View, Text, Image, StatusBar, Button } from 'react-native'
-import styles from '../styles/SplashScreenStyle'
+import styles from '../styles/splashScreenStyle'
 
-const SplashScreen = (props) => {
+const SplashScreen = () => {
     return (
         <View style={styles.mainView}>
             <StatusBar hidden />
@@ -12,7 +12,6 @@ const SplashScreen = (props) => {
                 source={require('../assets/icons/logo.png')}
             />
             <Text style={styles.text}>Баю-Бай</Text>
-            <Button title="bhhgk" onPress={() => props.navigation.navigate('$HomeScreen')} />
         </View>
     )
 }
