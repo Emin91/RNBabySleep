@@ -1,10 +1,10 @@
 import { StyleSheet } from 'react-native'
-import * as COLOR from '../constants/ColorConstans'
+import { colors } from '../constants/ColorConstans'
 
 const styles = StyleSheet.create({
     mainView: {
         flex: 1,
-        backgroundColor: COLOR.colors.GREY_OPACITY,
+        backgroundColor: colors.GREY_OPACITY,
     },
     imgView: {
         flex: 0.4,
@@ -19,14 +19,13 @@ const styles = StyleSheet.create({
         flex: 0.1,
         height: 50,
         width: '100%',
-        justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: 'rgba(67,124,254,0.5)',
         position: 'absolute',
     },
     titleText: {
         fontSize: 30,
-        color: COLOR.colors.WHITE,
+        color: colors.WHITE,
         //position: 'absolute',
     },
     slidersView: {
@@ -37,12 +36,27 @@ const styles = StyleSheet.create({
     },
     soundButtonsView: {
         flex: 0.2,
-        //backgroundColor: 'orange',
+        flexDirection: 'row',
+        justifyContent: 'center',
+    },
+    btnRows: {
+        flex: 1,
+        backgroundColor: colors.LOCHMARA,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 10,
+        marginBottom: 8,
+        marginLeft: 5,
+        marginRight: 5,
+    },
+    btnsText: {
+        fontSize: 20,
+        color: colors.WHITE,
     },
     text: {
-        fontSize: 14,
+        fontSize: 18,
         paddingLeft: 10,
-        color: COLOR.colors.WHITE,
+        color: colors.WHITE,
     }
 })
 

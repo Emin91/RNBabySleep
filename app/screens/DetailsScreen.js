@@ -5,7 +5,13 @@ import styles from '../styles/detailsScreenStyle'
 import Slider from '@react-native-community/slider';
 import { titles } from '../constants/StringConstants';
 import { colors } from '../constants/ColorConstans';
+import TextTicker from 'react-native-text-ticker'
 
+const btns = [
+    'Play',
+    'Pause',
+    'Resume'
+]
 const DetailsScreen = ({ navigation }) => {
     const [volume, setVolume] = useState(0)
     const [check, setCheck] = useState(true)
@@ -14,7 +20,9 @@ const DetailsScreen = ({ navigation }) => {
             <View style={styles.imgView}>
                 <Image style={styles.img} source={navigation.getParam('img')}></Image>
                 <View style={styles.titleTextView}>
-                    <Text style={styles.titleText}>{navigation.getParam('value')}</Text>
+                    <Text
+                        style={styles.titleText}>{navigation.getParam('value')}
+                    </Text>
                 </View>
             </View>
             <View style={styles.slidersView}>
@@ -50,7 +58,17 @@ const DetailsScreen = ({ navigation }) => {
                     value={check}
                     onValueChange={(newCheck) => { setCheck(newCheck), console.log('check', check) }}
                 /> */}
-
+                {
+                    btns.slice().map((value) => {
+                        return (
+                            <TouchableOpacity
+                                activeOpacity={0.5}
+                                style={styles.btnRows}>
+                                <Text style={styles.btnsText}>{value}</Text>
+                            </TouchableOpacity>
+                        )
+                    })
+                }
             </View>
         </View >
     )
