@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { View, Text, Switch, Image } from 'react-native'
+import { View, Text, Switch } from 'react-native'
 import styles from '../styles/tabTwoSleepTrackerStyle'
 import { titles } from '../constants/StringConstants'
 
@@ -9,7 +9,7 @@ const Tab_2 = () => {
         <View style={styles.mainView}>
             <View style={styles.firstView}>
                 <View style={styles.viewRows}>
-                    <Text style={(check === false ? styles.headerText : styles.headerTextTwo)}>
+                    <Text style={styles.headerText}>
                         {titles.SLEPPER_TRACKER}
                         <Text>
                             {(check === true ? <Text>{titles.TURN_ON}</Text> : <Text>{titles.TURN_OFF}</Text>)}
@@ -24,14 +24,12 @@ const Tab_2 = () => {
                 </View>
             </View>
             <View style={styles.secondView}>
-                <Text style={styles.bigText}>{titles.LONG_TEXT}</Text>
                 <View style={styles.infoView}>
-                    <Image
-                        style={styles.img}
-                        source={require('../assets/img/info.png')}
-                    />
+                    <Text style={styles.bigText}>{titles.LONG_TEXT}</Text>
                 </View>
+                <View style={{}}></View>
             </View>
+
         </View>
     )
 }

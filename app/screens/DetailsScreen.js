@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
-import { View, Text, Button, TextInput, TouchableNativeFeedback, Image, TouchableOpacity, Switch } from 'react-native'
+import { View, Text, Button, TextInput, TouchableNativeFeedback, Image, TouchableOpacity } from 'react-native'
 import Icon from '../components/Icons';
 import styles from '../styles/detailsScreenStyle'
 import Slider from '@react-native-community/slider';
 import { titles } from '../constants/StringConstants';
 import { colors } from '../constants/ColorConstans';
-import TextTicker from 'react-native-text-ticker'
 
 const btns = [
     'Play',
@@ -54,10 +53,6 @@ const DetailsScreen = ({ navigation }) => {
                 /> : null}
             </View>
             <View style={styles.soundButtonsView}>
-                {/* <Switch
-                    value={check}
-                    onValueChange={(newCheck) => { setCheck(newCheck), console.log('check', check) }}
-                /> */}
                 {
                     btns.slice().map((value) => {
                         return (
