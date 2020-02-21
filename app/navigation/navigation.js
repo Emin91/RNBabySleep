@@ -3,7 +3,7 @@ import { TouchableOpacity, Text } from 'react-native'
 
 //Icons
 import Icon from '../components/Icons';
-import * as COLOR from '../constants/ColorConstans'; //Color constants
+import * as COLOR from '../constants/colorConstans'; //Color constants
 
 //Navigation
 import { createAppContainer } from 'react-navigation'
@@ -11,8 +11,9 @@ import { createStackNavigator } from 'react-navigation-stack'
 
 import NewSoundScreen from '../screens/newSoundScreen';
 import DetailsScreen from '../screens/detailsScreen';
+import registrationScreen from '../screens/registration';
 import { TabBar } from './tabNavigation/tabNavigator';
-import { titles } from '../constants/StringConstants';
+import { titles } from '../constants/stringConstants';
 
 //Main navigation container
 const AppContainer = createStackNavigator(
@@ -73,6 +74,12 @@ const AppContainer = createStackNavigator(
                     elevation: 0,
                     shadowOpacity: 0,
                 },
+            })
+        },
+        regScreen: {
+            screen: registrationScreen,
+            navigationOptions: ({ }) => ({
+                headerShown: false,
             })
         },
     },

@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import { View, Text, Button, TextInput, TouchableNativeFeedback } from 'react-native'
-import Icon from '../components/Icons';
-import styles from '../styles/newSoundScreenStyle'
 import Slider from '@react-native-community/slider';
-import { titles } from '../constants/StringConstants';
-import { colors } from '../constants/ColorConstans';
+import { View, Text, Button, TextInput, TouchableNativeFeedback } from 'react-native'
+import Icon from '../../components/Icons';
+import styles from './style'
+import { titles } from '../../constants/stringConstants';
+import { colors } from '../../constants/colorConstans';
 
 const NewSoundScreen = () => {
     const [inputValue, setInputValue] = useState('')

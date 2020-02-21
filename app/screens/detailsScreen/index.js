@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
 import { View, Text, Button, TextInput, TouchableNativeFeedback, Image, TouchableOpacity } from 'react-native'
-import Icon from '../components/Icons';
-import styles from '../styles/detailsScreenStyle'
 import Slider from '@react-native-community/slider';
-import { titles } from '../constants/StringConstants';
-import { colors } from '../constants/ColorConstans';
+import styles from './style'
+import { titles } from '../../constants/stringConstants';
+import { colors } from '../../constants/colorConstans';
 
 const btns = [
     'Play',

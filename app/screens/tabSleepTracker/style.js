@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { colors } from '../constants/ColorConstans'
+import { colors } from '../../constants/colorConstans'
 
 const styles = StyleSheet.create({
     mainView: {
@@ -40,7 +40,6 @@ const styles = StyleSheet.create({
     },
     infoView: {
         flex: 1,
-        backgroundColor: 'orange',
     },
     img: {
         width: '100%',

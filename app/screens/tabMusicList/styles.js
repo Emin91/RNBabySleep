@@ -1,15 +1,15 @@
 import { StyleSheet } from 'react-native'
-import * as COLOR from '../constants/ColorConstans';
+import { colors } from '../../constants/colorConstans'
 
 const styles = StyleSheet.create({
     scrollView: {
-        backgroundColor: COLOR.colors.GREY,
+        backgroundColor: colors.GREY,
         paddingTop: 20,
         paddingHorizontal: 15,
     },
     title: {
         fontSize: 20,
-        color: COLOR.colors.CERULEAN,
+        color: colors.CERULEAN,
         marginVertical: 5,
     },
     itemViews: {
@@ -18,13 +18,13 @@ const styles = StyleSheet.create({
     },
     textsView: {
         borderBottomWidth: 0.2,
-        borderBottomColor: COLOR.colors.GREY_OPACITY,
+        borderBottomColor: colors.GREY_OPACITY,
         height: 60,
         justifyContent: 'center',
     },
     texts: {
         fontSize: 20,
-        color: COLOR.colors.WHITE,
+        color: colors.WHITE,
     },
 })
 

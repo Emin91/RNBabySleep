@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { View, Text, Switch, Image } from 'react-native'
-import styles from '../styles/tabTwoSleepTrackerStyle'
-import { titles } from '../constants/StringConstants'
+import styles from './style'
+import { titles } from '../../constants/stringConstants'
 
-const Tab_2 = () => {
+const TabSleepTracker = () => {
     const [check, setCheck] = useState(false)
     return (
         <View style={styles.mainView}>
@@ -28,7 +28,7 @@ const Tab_2 = () => {
                 <View style={styles.infoView}>
                     <Image
                         style={styles.img}
-                        source={require('../assets/img/info.png')}
+                        source={require('../../assets/img/graph.png')}
                     />
                 </View>
             </View>
@@ -36,4 +36,4 @@ const Tab_2 = () => {
     )
 }
 
-export default Tab_2
+export default TabSleepTracker

@@ -1,67 +1,67 @@
 import React, { useState } from 'react'
 import { View, Text, TouchableOpacity, Button, ScrollView } from 'react-native'
-import TextElements from '../components/textElements/textElement';
-import styles from '../styles/tabOneMusicListStyle'
-import { titles } from '../constants/StringConstants';
+import TextElements from '../../components/textElements/textElement';
+import styles from './styles'
+import { titles } from '../../constants/stringConstants';
 
 const titleTwo = [
     {
         value: titles.TITLE_TWO_TEXT_1,
-        img: require('../assets/img/img1.jpg'),
+        img: require('../../assets/img/img1.jpg'),
     },
     {
         value: titles.TITLE_TWO_TEXT_2,
-        img: require('../assets/img/img2.jpg'),
+        img: require('../../assets/img/img2.jpg'),
     },
     {
         value: titles.TITLE_TWO_TEXT_3,
-        img: require('../assets/img/img3.jpg'),
+        img: require('../../assets/img/img3.jpg'),
     },
     {
         value: titles.TITLE_TWO_TEXT_4,
-        img: require('../assets/img/img4.jpg'),
+        img: require('../../assets/img/img4.jpg'),
     },
     {
         value: titles.TITLE_TWO_TEXT_5,
-        img: require('../assets/img/img5.jpg'),
+        img: require('../../assets/img/img5.jpg'),
     },
 ]
 
 const titleThree = [
     {
         value: titles.TITLE_THREE_TEXT_1,
-        img: require('../assets/img/img1.jpg'),
+        img: require('../../assets/img/img1.jpg'),
     },
     {
         value: titles.TITLE_THREE_TEXT_2,
-        img: require('../assets/img/img2.jpg'),
+        img: require('../../assets/img/img2.jpg'),
     },
     {
         value: titles.TITLE_THREE_TEXT_3,
-        img: require('../assets/img/img3.jpg'),
+        img: require('../../assets/img/img3.jpg'),
     },
     {
         value: titles.TITLE_THREE_TEXT_4,
-        img: require('../assets/img/img4.jpg'),
+        img: require('../../assets/img/img4.jpg'),
     },
 ]
 
 const titleFour = [
     {
         value: titles.TITLE_FOUR_TEXT_1,
-        img: require('../assets/img/img1.jpg'),
+        img: require('../../assets/img/img1.jpg'),
     },
     {
         value: titles.TITLE_FOUR_TEXT_2,
-        img: require('../assets/img/img2.jpg'),
+        img: require('../../assets/img/img2.jpg'),
     },
     {
         value: titles.TITLE_FOUR_TEXT_3,
-        img: require('../assets/img/img3.jpg'),
+        img: require('../../assets/img/img3.jpg'),
     },
     {
         value: titles.TITLE_FOUR_TEXT_4,
-        img: require('../assets/img/img4.jpg'),
+        img: require('../../assets/img/img4.jpg'),
     },
 ]
 

@@ -1,13 +1,13 @@
 //Screens (Tabs)
 import React from 'react'
 import Icon from '../../components/Icons';
-import { colors } from '../../constants/ColorConstans'; //Color constants
+import { colors } from '../../constants/colorConstans'; //Color constants
 import { createMaterialTopTabNavigator } from 'react-navigation-tabs'
 
-import tabSleepTracker from '../../screens/tabTwoSleepTracker';
-import tabInformation from '../../screens/tabThreeInformation';
-import tabSettings from '../../screens/tabFourSettings';
-import tabMusicList from '../../screens/tabOneMusicList';
+import tabSleepTracker from '../../screens/tabSleepTracker';
+import tabInformation from '../../screens/tabInformation';
+import tabSettings from '../../screens/tabSettings';
+import tabMusicList from '../../screens/tabMusicList';
 
 //Top tab navigation
 export const TabBar = createMaterialTopTabNavigator({

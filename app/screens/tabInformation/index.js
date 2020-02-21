@@ -3,8 +3,8 @@ import { View, Text } from 'react-native'
 
 const Tab_3 = () => {
     return (
-        <View style={{ flex: 1, backgroundColor: 'blue' }}>
-            <Text>Tab_3</Text>
+        <View style={{ flex: 1, backgroundColor: 'orange' }}>
+            <Text>Tab_ 3</Text>
         </View>
     )
 }
