@@ -32,6 +32,7 @@ export const titles = {
     REGISTRATION_TYPE_LOGIN: 'Введите логин',
     REGISTRATION_PASSWORD: 'Пароль',
     REGISTRATION_TYPE_PASSWORD: 'Введите пароль',
+    LOGIN_BTN: 'Войти',
 
 }
 

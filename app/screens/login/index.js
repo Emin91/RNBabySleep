@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Button, TextInput, Image, ImageBackground } from 'react-native';
+import { View, Text, Button, TouchableOpacity, Image, ImageBackground } from 'react-native';
 import styles from './styles'
 import { titles } from '../../constants/stringConstants';
 import OwnTextInput from '../../components/inputText/inputText';
@@ -19,15 +19,24 @@ const LoginScreen = () => {
             <View style={styles.regView}>
                 <View style={styles.regContainer}>
                     <OwnTextInput
+                        id={'userName'}
                         iconName={'user'}
                         title={titles.REGISTRATION_LOGIN}
                         plcHolder={titles.REGISTRATION_TYPE_LOGIN}
                     />
                     <OwnTextInput
+                        id={'password'}
                         iconName={'textbox-password'}
                         title={titles.REGISTRATION_PASSWORD}
                         plcHolder={titles.REGISTRATION_TYPE_PASSWORD}
                     />
+                    <TouchableOpacity
+                        activeOpacity={0.6}
+                    >
+                        <View style={styles.loginBtnView}>
+                            <Text style={styles.loginBtn}>{titles.LOGIN_BTN}</Text>
+                        </View>
+                    </TouchableOpacity>
                 </View>
             </View>
         </ImageBackground>

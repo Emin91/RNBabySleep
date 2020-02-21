@@ -35,6 +35,14 @@ const styles = StyleSheet.create({
         backgroundColor: colors.WHITE,
         borderRadius: 20,
         marginBottom: 10,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        elevation: 2,
     },
     iconView: {
         flex: 0.2,
@@ -46,7 +54,9 @@ const styles = StyleSheet.create({
     },
     userNameBox: {
         flex: 1,
-        justifyContent: 'center',
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
     },
     inputView: {
         flex: 1,

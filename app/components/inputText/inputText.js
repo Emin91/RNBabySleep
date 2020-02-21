@@ -1,10 +1,33 @@
-import React from 'react'
-import { View, Text, Button, TextInput } from 'react-native';
+import React, { useState } from 'react'
+import { View, Text, Button, TextInput, TouchableOpacity } from 'react-native';
 import { titles } from '../../constants/stringConstants';
 import styles from './style'
 import Icon from '../Icons';
 
-const OwnTextInput = ({ title, plcHolder, iconName }) => {
+
+
+const OwnTextInput = ({ title, plcHolder, iconName, id }) => {
+    const [inputValue, setInputValue] = useState('')
+
+    const showAlert = (id) => {
+        console.log('id', id)
+        if (id === 'password') {
+            if (inputValue.length > 0) {
+                return <TouchableOpacity>
+                    <Icon.Entypo
+                        style={{ paddingRight: 10, }}
+                        name={'eye'}
+                        size={25}
+                    />
+                </TouchableOpacity>
+            } else {
+                return null
+            }
+        } else {
+            return null
+        }
+    }
+
     return (
         <View style={styles.userNameView}>
             <View style={styles.iconView}>
@@ -22,11 +45,22 @@ const OwnTextInput = ({ title, plcHolder, iconName }) => {
                     <Text style={styles.userNameText}>
                         {title}
                     </Text>
+                    {showAlert(id)}
                 </View>
                 <View style={styles.inputView}>
-                    <TextInput
-                        placeholder={plcHolder}
-                    />
+                    {(id === 'userName' ?
+                        <TextInput
+                            secureTextEntry={false}
+                            placeholder={plcHolder}
+                            value={inputValue}
+                            onChangeText={(newValue) => setInputValue(newValue)}
+                        /> : <TextInput
+                            secureTextEntry={true}
+                            placeholder={plcHolder}
+                            value={inputValue}
+                            onChangeText={(newValue) => setInputValue(newValue)}
+                        />)}
+
                 </View>
             </View>
         </View>

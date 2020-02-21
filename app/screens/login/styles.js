@@ -12,8 +12,8 @@ const styles = StyleSheet.create({
     },
     logo: {
         marginTop: 50,
-        width: 100,
-        height: 100,
+        width: 150,
+        height: 150,
     },
     regView: {
         flex: 0.5,
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
         paddingTop: 10,
         paddingLeft: 10,
         paddingRight: 10,
-        backgroundColor: 'rgba(255, 255, 255, 0.5)'
+        backgroundColor: 'rgba(255, 255, 255, 0.5)',
     },
     userNameView: {
         width: '100%',
@@ -56,7 +56,27 @@ const styles = StyleSheet.create({
     userNameText: {
         fontSize: 15,
         color: colors.GREY_OPACITY,
-    }
+    },
+    loginBtnView: {
+        width: '100%',
+        height: 50,
+        borderRadius: 12,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: colors.LOCHMARA,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        elevation: 2,
+    },
+    loginBtn: {
+        fontSize: 20,
+        color: colors.WHITE,
+    },
 })
 
 export default styles
