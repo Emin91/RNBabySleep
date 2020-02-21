@@ -1,19 +1,19 @@
 import { StyleSheet } from 'react-native'
-import { colors } from '../../constants/ColorConstans'
+import { colors } from '../../constants/colorConstans'
 
 const styles = StyleSheet.create({
     mainView: {
-        width: '100%',
-        height: '100%',
+        flex: 1,
+        backgroundColor: colors.GREY
     },
     titleView: {
         flex: 0.5,
         alignItems: 'center',
+        backgroundColor: colors.GREY
     },
-    logo: {
-        marginTop: 50,
-        width: 100,
-        height: 100,
+    mainTitle: {
+        fontSize: 30,
+        color: colors.WHITE
     },
     regView: {
         flex: 0.5,

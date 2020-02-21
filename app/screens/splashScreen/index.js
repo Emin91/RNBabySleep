@@ -1,25 +1,25 @@
 import React, { useEffect } from 'react';
-import { View, Text, Image, StatusBar } from 'react-native';
+import { Image, StatusBar, ImageBackground } from 'react-native';
 import styles from './style';
-import { titles } from '../../constants/StringConstants';
 
 const SplashScreen = ({ navigation }) => {
     useEffect(() => {
         const timer = setTimeout(() => {
-            navigation.navigate('MainAppSceen');
-        }, 1000);
+            navigation.navigate('LoginScreen');
+        }, 1500);
         return () => clearTimeout(timer);
     });
     return (
-        <View style={styles.mainView}>
+        <ImageBackground
+            source={require('../../assets/img/bg1.jpg')}
+            style={styles.mainView}
+        >
             <StatusBar hidden />
             <Image
-                style={styles.logo}
                 resizeMode={'center'}
                 source={require('../../assets/icons/logo.png')}
-            />
-            <Text style={styles.text}>{titles.HEADER_MAIN_TITLE}</Text>
-        </View>
+                style={styles.logo} />
+        </ImageBackground>
     )
 }
 
