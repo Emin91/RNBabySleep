@@ -1,19 +1,18 @@
 import React, { useState } from 'react'
-import { View, Text, Button, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text, Button, TextInput, TouchableOpacity, } from 'react-native';
 import { titles } from '../../constants/stringConstants';
 import styles from './style'
 import Icon from '../Icons';
 
-
-
 const OwnTextInput = ({ title, plcHolder, iconName, id }) => {
     const [inputValue, setInputValue] = useState('')
 
-    const showAlert = (id) => {
-        console.log('id', id)
+    const showIcon = (id) => {
         if (id === 'password') {
             if (inputValue.length > 0) {
-                return <TouchableOpacity>
+                return <TouchableOpacity
+                    onPress={() => alert(inputValue)}
+                >
                     <Icon.Entypo
                         style={{ paddingRight: 10, }}
                         name={'eye'}
@@ -45,7 +44,7 @@ const OwnTextInput = ({ title, plcHolder, iconName, id }) => {
                     <Text style={styles.userNameText}>
                         {title}
                     </Text>
-                    {showAlert(id)}
+                    {showIcon(id)}
                 </View>
                 <View style={styles.inputView}>
                     {(id === 'userName' ?
@@ -60,7 +59,6 @@ const OwnTextInput = ({ title, plcHolder, iconName, id }) => {
                             value={inputValue}
                             onChangeText={(newValue) => setInputValue(newValue)}
                         />)}
-
                 </View>
             </View>
         </View>

@@ -1,17 +1,18 @@
 import React from 'react';
-import { View, Text, Button, TouchableOpacity, Image, ImageBackground } from 'react-native';
+import { View, Text, Button, TouchableOpacity, Image, ImageBackground, KeyboardAvoidingView } from 'react-native';
 import styles from './styles'
 import { titles } from '../../constants/stringConstants';
 import OwnTextInput from '../../components/inputText/inputText';
 
 const LoginScreen = () => {
     return (
+
         <ImageBackground
             // source={require('../../assets/img/background.jpeg')}
             source={require('../../assets/img/bg1.jpg')}
             style={styles.mainView}
         >
-            <View style={styles.titleView}>
+            <View style={styles.logoView}>
                 <Image
                     source={require('../../assets/icons/logo.png')}
                     style={styles.logo} />
