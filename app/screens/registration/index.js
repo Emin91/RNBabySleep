@@ -1,27 +1,61 @@
 import React from 'react';
-import { View, Text, Button, TextInput } from 'react-native';
+import { View, Text, Button, TouchableOpacity, Image, ImageBackground, KeyboardAvoidingView } from 'react-native';
 import styles from './style'
-import Icon from '../../components/Icons';
+import { titles } from '../../constants/stringConstants';
+import OwnTextInput from '../../components/inputText/inputText';
 
 const RegisrationScreen = ({ navigation }) => {
     return (
-        <View style={styles.mainView}>
-            <View style={styles.titleView}>
-                <Text style={styles.mainTitle}>Login</Text>
+        <ImageBackground
+            // source={require('../../assets/img/background.jpeg')}
+            source={require('../../assets/img/bg2.jpg')}
+            style={styles.mainView}
+        >
+            <View style={styles.logoView}>
+                <Image
+                    source={require('../../assets/icons/logo.png')}
+                    style={styles.logo} />
             </View>
             <View style={styles.regView}>
-                <Icon.AntDesign
-                    name="plus"
-                    color={'white'}
-                    size={30} />
-                <TextInput
-                    placeholder={'User name'}
-                />
-                <Button title={"Got to registration"} onPress={() => navigation.navigate('LoginScreen')} />
+                <View style={styles.regContainer}>
+                    <OwnTextInput
+                        id={'userName'}
+                        iconName={'user'}
+                        title={titles.REGISTRATION_LOGIN}
+                        plcHolder={titles.REGISTRATION_TYPE_LOGIN}
+                    />
+                    <OwnTextInput
+                        id={'password'}
+                        iconName={'textbox-password'}
+                        title={titles.REGISTRATION_PASSWORD}
+                        plcHolder={titles.REGISTRATION_TYPE_PASSWORD}
+                    />
+                    <TouchableOpacity
+                        activeOpacity={0.6}
+                        onPress={() => alert('Registration')}
+                    >
+                        <View style={(styles.loginBtnView)}>
+                            <Text style={styles.loginText}>{titles.REGISTRATION_TITLE}</Text>
+                        </View>
+                    </TouchableOpacity>
+                    <TouchableOpacity
+                        activeOpacity={0.6}
+                        onPress={() => navigation.navigate('LoginScreen')}
+                    >
+                        <View style={(styles.regBtnView)}>
+                            <Text style={styles.registrationText}>{titles.LOGIN_BTN}</Text>
+                        </View>
+                    </TouchableOpacity>
+                </View>
+
             </View>
-            <View style={{ flex: 0.2, backgroundColor: 'cyan', }}></View>
-        </View>
+        </ImageBackground>
     )
 }
+
+RegisrationScreen.navigationOptions = () => ({
+
+    headerShown: false, //Hide Header
+});
 
 export default RegisrationScreen

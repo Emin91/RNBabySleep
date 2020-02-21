@@ -4,7 +4,7 @@ import styles from './styles'
 import { titles } from '../../constants/stringConstants';
 import OwnTextInput from '../../components/inputText/inputText';
 
-const LoginScreen = () => {
+const LoginScreen = ({ navigation }) => {
     return (
 
         <ImageBackground
@@ -33,12 +33,22 @@ const LoginScreen = () => {
                     />
                     <TouchableOpacity
                         activeOpacity={0.6}
+                        onPress={() => alert('Вы вошли')}
                     >
-                        <View style={styles.loginBtnView}>
-                            <Text style={styles.loginBtn}>{titles.LOGIN_BTN}</Text>
+                        <View style={(styles.loginBtnView)}>
+                            <Text style={styles.loginText}>{titles.LOGIN_BTN}</Text>
+                        </View>
+                    </TouchableOpacity>
+                    <TouchableOpacity
+                        activeOpacity={0.6}
+                        onPress={() => navigation.navigate('RegistrationScreen')}
+                    >
+                        <View style={(styles.regBtnView)}>
+                            <Text style={styles.registrationText}>{titles.REGISTRATION_TITLE}</Text>
                         </View>
                     </TouchableOpacity>
                 </View>
+
             </View>
         </ImageBackground>
     )

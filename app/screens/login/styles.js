@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
         height: '100%',
     },
     logoView: {
-        flex: 0.5,
+        flex: 0.4,
         alignItems: 'center',
     },
     logo: {
@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
         height: 150,
     },
     regView: {
-        flex: 0.5,
+        flex: 0.6,
         padding: 15,
         //backgroundColor: colors.PELOROUS
     },
@@ -61,6 +61,7 @@ const styles = StyleSheet.create({
         width: '100%',
         height: 50,
         borderRadius: 12,
+        marginBottom: 15,
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: colors.LOCHMARA,
@@ -73,9 +74,22 @@ const styles = StyleSheet.create({
         shadowRadius: 3.84,
         elevation: 2,
     },
-    loginBtn: {
+    regBtnView: {
+        width: '100%',
+        height: 50,
+        // borderRadius: 12,
+        justifyContent: 'center',
+        alignItems: 'center',
+        // backgroundColor: colors.RED,
+
+    },
+    loginText: {
         fontSize: 20,
         color: colors.WHITE,
+    },
+    registrationText: {
+        fontSize: 20,
+        color: colors.LOCHMARA,
     },
 })
 
