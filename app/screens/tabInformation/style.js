@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
         borderTopLeftRadius: 20,
         borderTopRightRadius: 20,
         alignSelf: 'center',
-        backgroundColor: 'rgba(0, 0, 0, 0.6)',
+        backgroundColor: 'rgba(255, 255, 255, 0.6)',
     },
     touchableBtn: {
         flex: 1,
@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
     },
     dropMenuText: {
         fontSize: 10,
-        color: colors.WHITE
+        color: colors.BLACK
     },
 })
 

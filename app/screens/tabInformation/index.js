@@ -41,7 +41,7 @@ const sendMail = () => {
     }).catch(console.error)
 }
 
-const Tab_3 = ({ navigation }) => {
+const TabInformation = ({ navigation }) => {
     return (
         <View style={styles.mainView}>
             <View style={styles.headerImgView}>
@@ -103,4 +103,4 @@ const Tab_3 = ({ navigation }) => {
     )
 }
 
-export default Tab_3
+export default TabInformation
