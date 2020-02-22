@@ -1,10 +1,13 @@
-import React from 'react';
-import { View, Text, Button, TouchableOpacity, Image, ImageBackground, KeyboardAvoidingView } from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, Button, TouchableOpacity, Image, ImageBackground, KeyboardAvoidingView, } from 'react-native';
 import styles from './styles'
 import { titles } from '../../constants/stringConstants';
 import OwnTextInput from '../../components/inputText/inputText';
 
 const LoginScreen = ({ navigation }) => {
+    const [username, setUsername] = useState('')
+    const [password, setPassword] = useState('')
+
     return (
 
         <ImageBackground
@@ -20,23 +23,27 @@ const LoginScreen = ({ navigation }) => {
             <View style={styles.regView}>
                 <View style={styles.regContainer}>
                     <OwnTextInput
-                        id={'userName'}
-                        iconName={'user'}
+                        id="userName"
+                        iconName="user"
                         title={titles.REGISTRATION_LOGIN}
                         plcHolder={titles.REGISTRATION_TYPE_LOGIN}
+                        value={username}
+                        onChange={setUsername}
                     />
                     <OwnTextInput
-                        id={'password'}
-                        iconName={'textbox-password'}
+                        id="password"
+                        iconName="textbox-password"
                         title={titles.REGISTRATION_PASSWORD}
                         plcHolder={titles.REGISTRATION_TYPE_PASSWORD}
+                        value={password}
+                        onChange={setPassword}
                     />
                     <TouchableOpacity
                         activeOpacity={0.6}
                         onPress={() => navigation.navigate('HomeScreen')}
                     >
                         <View style={(styles.loginBtnView)}>
-                            <Text style={styles.loginText}>{titles.LOGIN_BTN}</Text>
+                            <Text style={styles.loginText}>{titles.LOGIN_BTN} {username} {password}</Text>
                         </View>
                     </TouchableOpacity>
                     <TouchableOpacity

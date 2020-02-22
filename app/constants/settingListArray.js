@@ -14,21 +14,31 @@ export const settingListArray = [
         itemName: 'Вам понравилось?',
         itemSubtitle: 'Оцените в Play Store',
         color: colors.GREEN,
+        link: "market://details?id=by.si.soundsleeper.free",
+        url: 'https://www.google.ru',
     },
     {
         itemName: 'Вам не понравилось?',
         itemSubtitle: 'Скажите, как нам стать лучше',
         color: colors.CARROT,
+        link: "market://details?id=com.adobe.reader",
+        onClick: (navigation) => {
+
+        }
     },
     {
         itemName: 'Посетите наш веб-сайт',
         itemSubtitle: 'Чтобы сказать привет...',
         color: colors.WHITE,
+        link: "market://details?id=com.lingodeer",
+        url: 'https://www.google.ru',
     },
     {
         itemName: 'Мы в Facebook, присоединяйтесь',
         itemSubtitle: 'Советы, истории, привет...',
         color: colors.WHITE,
+        link: "market://details?id=net.relaxio.sleepo",
+        url: 'https://www.google.ru',
 
     },
 ]

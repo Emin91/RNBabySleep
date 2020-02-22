@@ -1,40 +1,56 @@
 import React from 'react'
-import { View, Text } from 'react-native'
-import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler'
+import { View, Text, ScrollView, TouchableOpacity, Linking } from 'react-native'
 import { colors } from '../../constants/colorConstans'
 import { settingListArray, settingListArrayTwo, settingListArrayThree, settingListArrayFour, headers } from '../../constants/settingListArray'
 import styles from './style'
 import Icon from '../../components/Icons'
 
 
+const Item = ({
+    color,
+    itemName,
+    itemSubtitle,
+    onClick,
+    switchOn,
+}) => (
+        <TouchableOpacity
+            onPress={onClick}
+            activeOpacity={0.6}>
+            <View style={styles.itemViewRows}>
+                <View style={styles.titleView}>
+                    <Text style={[styles.title, { color }]}>{itemName}</Text>
+                    <Text style={styles.titleSub}>{itemSubtitle}</Text>
+                </View>
+                <View style={styles.iconView}>
+                    <Icon.Entypo
+                        color={colors.WHITE}
+                        name="chevron-small-right"
+                        size={35}
+                    />
+                </View>
+            </View>
+        </TouchableOpacity>
+    )
 
-const TabSettings = () => {
+const TabSettings = ({ navigation }) => {
+    const [isTurnedOn, setIsTurnedOn] = useState(false);
 
     return (
         <View style={styles.mainView}>
             <ScrollView>
-                {
-                    settingListArray.slice().map(({ itemName, itemSubtitle, color }) => {
-                        return (
-                            <TouchableOpacity
-                                activeOpacity={0.6}>
-                                <View style={styles.itemViewRows}>
-                                    <View style={styles.titleView}>
-                                        <Text style={[styles.title, { color }]}>{itemName}</Text>
-                                        <Text style={styles.titleSub}>{itemSubtitle}</Text>
-                                    </View>
-                                    <View style={styles.iconView}>
-                                        <Icon.Entypo
-                                            color={colors.WHITE}
-                                            name="chevron-small-right"
-                                            size={35}
-                                        />
-                                    </View>
-                                </View>
-                            </TouchableOpacity>
-                        )
-                    })
-                }
+                <Item
+                    switchOn={setIsTurnedOn}
+                    onClick={() => navigation.navigate('$Tab2')}
+                    itemName="Вам понравилось?"
+                    itemSubtitle="Оцените в Play Store"
+                    color={colors.GREEN}
+                />
+                <Item
+                    onClick={() => navigation.navigate('$Tab1')}
+                    itemName="Вам понравилось?"
+                    itemSubtitle="Оцените в Play Store"
+                    color={colors.GREEN}
+                />
                 <View style={styles.headerView}>
                     <Text style={styles.headers}>{headers.UPGRADES}</Text>
                 </View>

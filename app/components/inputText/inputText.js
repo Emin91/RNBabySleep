@@ -4,14 +4,12 @@ import { titles } from '../../constants/stringConstants';
 import styles from './style'
 import Icon from '../Icons';
 
-const OwnTextInput = ({ title, plcHolder, iconName, id }) => {
-    const [inputValue, setInputValue] = useState('')
-
+const OwnTextInput = ({ title, plcHolder, iconName, id, value, onChange }) => {
     const showIcon = (id) => {
         if (id === 'password') {
-            if (inputValue.length > 0) {
+            if (value.length > 0) {
                 return <TouchableOpacity
-                    onPress={() => alert(inputValue)}
+                    onPress={() => alert(value)}
                 >
                     <Icon.Entypo
                         style={{ paddingRight: 10, }}
@@ -47,18 +45,12 @@ const OwnTextInput = ({ title, plcHolder, iconName, id }) => {
                     {showIcon(id)}
                 </View>
                 <View style={styles.inputView}>
-                    {(id === 'userName' ?
-                        <TextInput
-                            secureTextEntry={false}
-                            placeholder={plcHolder}
-                            value={inputValue}
-                            onChangeText={(newValue) => setInputValue(newValue)}
-                        /> : <TextInput
-                            secureTextEntry={true}
-                            placeholder={plcHolder}
-                            value={inputValue}
-                            onChangeText={(newValue) => setInputValue(newValue)}
-                        />)}
+                    <TextInput
+                        secureTextEntry={id === 'password'}
+                        placeholder={plcHolder}
+                        value={value}
+                        onChangeText={onChange}
+                    />
                 </View>
             </View>
         </View>
