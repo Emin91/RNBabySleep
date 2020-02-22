@@ -33,6 +33,18 @@ export const titles = {
     REGISTRATION_PASSWORD: 'Пароль',
     REGISTRATION_TYPE_PASSWORD: 'Введите пароль',
     LOGIN_BTN: 'Войти',
+    HAVE_NOT_ACCOUNT: 'Еще нет аккаунта?',
+    HAVE_ACCOUNT: 'Уже зарегистрированы?',
+    INFO_HEADER_TEXT_TITLE: 'NEWBORNS & BABIES',
+    INFO_HEADER_TEXT_TITLE_TWO: 'Parenting',
+    INFO_TITLE_ONE: 'Baby Care 101',
+    INFO_SUBTITLE_ONE: 'Dr. Harver Karp, Dr. Delaney Gracy, Corky Harvey IBCLC and more',
+    INFO_TITLE_TWO: 'Caring For Your Newborn',
+    INFO_SUBTITLE_TWO: 'Dr. Sema Hart and Prof. Jim Coffey',
+    INFO_TITLE_THREE: 'Caring For Your Newborn',
+    INFO_SUBTITLE_THREE: 'Dr, Glenn I.Latham, Utah State University',
+    INFO_HEADER_FREE: 'FREE',
+
 
 }
 

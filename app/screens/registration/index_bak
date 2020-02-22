@@ -11,7 +11,11 @@ const RegisrationScreen = ({ navigation }) => {
             source={require('../../assets/img/bg2.jpg')}
             style={styles.mainView}
         >
-
+            <View style={styles.logoView}>
+                <Image
+                    source={require('../../assets/icons/logo.png')}
+                    style={styles.logo} />
+            </View>
             <View style={styles.regView}>
                 <View style={styles.regContainer}>
                     <OwnTextInput
@@ -19,12 +23,6 @@ const RegisrationScreen = ({ navigation }) => {
                         iconName={'user'}
                         title={titles.REGISTRATION_LOGIN}
                         plcHolder={titles.REGISTRATION_TYPE_LOGIN}
-                    />
-                    <OwnTextInput
-                        id={'password'}
-                        iconName={'textbox-password'}
-                        title={titles.REGISTRATION_PASSWORD}
-                        plcHolder={titles.REGISTRATION_TYPE_PASSWORD}
                     />
                     <OwnTextInput
                         id={'password'}

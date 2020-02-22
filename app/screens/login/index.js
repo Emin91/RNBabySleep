@@ -33,7 +33,7 @@ const LoginScreen = ({ navigation }) => {
                     />
                     <TouchableOpacity
                         activeOpacity={0.6}
-                        onPress={() => alert('Вы вошли')}
+                        onPress={() => navigation.navigate('HomeScreen')}
                     >
                         <View style={(styles.loginBtnView)}>
                             <Text style={styles.loginText}>{titles.LOGIN_BTN}</Text>
@@ -44,7 +44,7 @@ const LoginScreen = ({ navigation }) => {
                         onPress={() => navigation.navigate('RegistrationScreen')}
                     >
                         <View style={(styles.regBtnView)}>
-                            <Text style={styles.registrationText}>{titles.REGISTRATION_TITLE}</Text>
+                            <Text style={styles.registrationText}>{titles.HAVE_NOT_ACCOUNT} {titles.REGISTRATION_TITLE}</Text>
                         </View>
                     </TouchableOpacity>
                 </View>
@@ -53,7 +53,6 @@ const LoginScreen = ({ navigation }) => {
         </ImageBackground>
     )
 }
-
 LoginScreen.navigationOptions = () => ({
     headerShown: false, //Hide Header
 });

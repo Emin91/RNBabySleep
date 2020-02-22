@@ -5,9 +5,10 @@ const styles = StyleSheet.create({
     mainView: {
         width: '100%',
         height: '100%',
+        justifyContent: 'center',
     },
     logoView: {
-        flex: 0.4,
+        flex: 0.2,
         alignItems: 'center',
     },
     logo: {
@@ -16,7 +17,7 @@ const styles = StyleSheet.create({
         height: 150,
     },
     regView: {
-        flex: 0.6,
+        flex: 0.8,
         padding: 15,
         //backgroundColor: colors.PELOROUS
     },

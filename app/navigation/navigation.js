@@ -3,7 +3,6 @@ import { TouchableOpacity, Text } from 'react-native'
 
 //Icons
 import Icon from '../components/Icons';
-import * as COLOR from '../constants/colorConstans'; //Color constants
 
 //Navigation
 import { createAppContainer } from 'react-navigation'
@@ -14,6 +13,7 @@ import DetailsScreen from '../screens/detailsScreen';
 import registrationScreen from '../screens/registration';
 import { TabBar } from './tabNavigation/tabNavigator';
 import { titles } from '../constants/stringConstants';
+import { colors } from '../constants/colorConstans';
 
 //Main navigation container
 const AppContainer = createStackNavigator(
@@ -35,7 +35,7 @@ const AppContainer = createStackNavigator(
                 ),
                 headerTintColor: '#fff',
                 headerStyle: {
-                    backgroundColor: COLOR.colors.GREY,
+                    backgroundColor: colors.GREY,
                     elevation: 0,
                     shadowOpacity: 0,
                 },
@@ -47,7 +47,7 @@ const AppContainer = createStackNavigator(
                 title: navigation.getParam('value', 'img'),
                 headerTintColor: '#fff',
                 headerStyle: {
-                    backgroundColor: COLOR.colors.GREY,
+                    backgroundColor: colors.GREY,
                     elevation: 0,
                     shadowOpacity: 0,
                 },
@@ -70,7 +70,7 @@ const AppContainer = createStackNavigator(
 
                 headerTintColor: '#fff',
                 headerStyle: {
-                    backgroundColor: COLOR.colors.GREY,
+                    backgroundColor: colors.GREY,
                     elevation: 0,
                     shadowOpacity: 0,
                 },
