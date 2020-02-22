@@ -5,6 +5,7 @@ import styles from './style'
 import { titles } from '../../constants/stringConstants';
 import { colors } from '../../constants/colorConstans';
 import ItemDetails from '../../components/itemDetails';
+import email from 'react-native-email'
 
 const img = require('../../assets/img/img1.jpg')
 
@@ -31,6 +32,14 @@ const arrayListTwo = [
         freeText: titles.INFO_HEADER_FREE,
     },
 ]
+
+const sendMail = () => {
+    const to = ["emin.proger@gmail.com"]
+    email(to, {
+        subject: titles.MAIL_SUBJECT,
+        body: titles.MAIL_BODY,
+    }).catch(console.error)
+}
 
 const Tab_3 = ({ navigation }) => {
     return (
@@ -81,6 +90,7 @@ const Tab_3 = ({ navigation }) => {
                 </ScrollView>
                 <View style={styles.dropMenuView}>
                     <TouchableOpacity
+                        onPress={() => sendMail()}
                         activeOpacity={0.6}
                         style={styles.touchableBtn}>
                         <Text style={styles.dropMenuText}>{titles.DOWN_PAN_MENU}</Text>
