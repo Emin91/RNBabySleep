@@ -44,6 +44,7 @@ export const titles = {
     INFO_TITLE_THREE: 'Caring For Your Newborn',
     INFO_SUBTITLE_THREE: 'Dr, Glenn I.Latham, Utah State University',
     INFO_HEADER_FREE: 'FREE',
+    DOWN_PAN_MENU: '\t \t \t DROP US A LINE AND TELL US\n  WHAT YOU\'D LIKE TO LEARN ABOUT',
 
 
 }

@@ -38,7 +38,7 @@ const Tab_3 = ({ navigation }) => {
             <View style={styles.headerImgView}>
                 <Image style={styles.headerImg} source={img}></Image>
             </View>
-            <View style={{ flex: 0.6 }}>
+            <View style={{ flex: 0.6, justifyContent: 'flex-end' }}>
                 <ScrollView >
                     <View style={styles.mainTitleView}>
                         <Text style={styles.mainTitle}>{titles.INFO_HEADER_TEXT_TITLE}</Text>
@@ -79,9 +79,14 @@ const Tab_3 = ({ navigation }) => {
                         }
                     </View>
                 </ScrollView>
-                {/* <View style={{ width: '100%', height: 50, backgroundColor: 'rgba(0, 0, 0, 0.1)', }}>
-                    <Text>jhjkhkjh</Text>
-                </View> */}
+                <View style={styles.dropMenuView}>
+                    <TouchableOpacity
+                        activeOpacity={0.6}
+                        style={styles.touchableBtn}>
+                        <Text style={styles.dropMenuText}>{titles.DOWN_PAN_MENU}</Text>
+                    </TouchableOpacity>
+
+                </View>
             </View>
 
         </View >

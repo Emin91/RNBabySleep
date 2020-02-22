@@ -29,6 +29,24 @@ const styles = StyleSheet.create({
     itemView: {
         flex: 0.5,
     },
+    dropMenuView: {
+        position: 'absolute',
+        width: '80%',
+        height: 40,
+        borderTopLeftRadius: 20,
+        borderTopRightRadius: 20,
+        alignSelf: 'center',
+        backgroundColor: 'rgba(0, 0, 0, 0.6)',
+    },
+    touchableBtn: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    dropMenuText: {
+        fontSize: 10,
+        color: colors.WHITE
+    },
 })
 
 export default styles
