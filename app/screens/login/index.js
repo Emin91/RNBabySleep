@@ -10,6 +10,7 @@ import {
 import styles from './styles';
 import {titles} from '../../constants/stringConstants';
 import OwnTextInput from '../../components/inputText/inputText';
+import {colors} from '../../constants/colorConstans';
 
 const LoginScreen = ({navigation}) => {
   const [login, setLogin] = useState('');
@@ -17,8 +18,8 @@ const LoginScreen = ({navigation}) => {
 
   const onLoginClick = async () => {
     if (login === '' || password === '') {
-      console.log('Empty');
-      alert('Need to full!');
+      console.log(titles.NEED_TO_FILL);
+      alert(titles.NEED_TO_FILL);
     } else {
       if (
         login === (await AsyncStorage.getItem('login')) &&
@@ -27,6 +28,7 @@ const LoginScreen = ({navigation}) => {
         navigation.navigate('HomeScreen');
       } else {
         console.log('exit');
+        alert(titles.NOT_MUTCH);
       }
     }
   };
@@ -63,8 +65,13 @@ const LoginScreen = ({navigation}) => {
             title={titles.REGISTRATION_PASSWORD}
             placeHolder={titles.REGISTRATION_TYPE_PASSWORD}
           />
-          <TouchableOpacity activeOpacity={0.6} onPress={() => onLoginClick()}>
-            <View style={styles.loginBtnView}>
+          <TouchableOpacity activeOpacity={0.8} onPress={() => onLoginClick()}>
+            <View
+              style={
+                login !== '' || password !== ''
+                  ? styles.loginBtnView
+                  : [styles.loginBtnView, {backgroundColor: colors.GREY}]
+              }>
               <Text style={styles.loginText}>{titles.LOGIN_BTN}</Text>
             </View>
           </TouchableOpacity>

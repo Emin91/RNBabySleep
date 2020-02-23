@@ -51,4 +51,6 @@ export const titles = {
   MAIL_SUBJECT: 'Message from React Native App',
   MAIL_BODY:
     'Lorem Ipsum is simply dummy text of the printing and typesetting industry.Author: Emin Zeynalov',
+  NEED_TO_FILL: 'Нужно заполнить поля!',
+  NOT_MUTCH: 'Логин или пароль не верны!',
 };

@@ -13,13 +13,13 @@ import OwnTextInput from '../../components/inputText/inputText';
 const RegisrationScreen = ({navigation}) => {
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
+  const [passwordConfim, setPasswordConfirm] = useState('');
 
   const onRegistrationClick = async () => {
-    console.log('Log:', login);
-    console.log('Pass:', password);
-    await AsyncStorage.setItem('login', login);
-    await AsyncStorage.setItem('password', password);
-    navigation.navigate('HomeScreen');
+    if (login === '' || password === '' || passwordConfim === '') {
+      alert(titles.NEED_TO_FILL);
+    } else {
+    }
   };
   return (
     <ImageBackground
@@ -40,7 +40,8 @@ const RegisrationScreen = ({navigation}) => {
             id="password"
             iconName="textbox-password"
             returnKey="next"
-            onChange={newValue2 => setPassword(newValue2)}
+            userValue={password}
+            onChange={newValue => setPassword(newValue)}
             title={titles.REGISTRATION_PASSWORD}
             placeHolder={titles.REGISTRATION_TYPE_PASSWORD}
           />
@@ -48,6 +49,8 @@ const RegisrationScreen = ({navigation}) => {
             id="password"
             iconName="textbox-password"
             returnKey="go"
+            userValue={passwordConfim}
+            onChange={newValue => setPasswordConfirm(newValue)}
             title={titles.REGISTRATION_PASSWORD}
             placeHolder={titles.REGISTRATION_TYPE_PASSWORD}
           />
@@ -73,6 +76,13 @@ const RegisrationScreen = ({navigation}) => {
   );
 };
 
+// const onRegistrationClick = async () => {
+//   console.log('Log:', login);
+//   console.log('Pass:', password);
+//   await AsyncStorage.setItem('login', login);
+//   await AsyncStorage.setItem('password', password);
+//   navigation.navigate('HomeScreen');
+// };
 RegisrationScreen.navigationOptions = () => ({
   headerShown: false, //Hide Header
 });

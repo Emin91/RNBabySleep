@@ -1,11 +1,18 @@
 import React, {useEffect} from 'react';
-import {Image, StatusBar, ImageBackground} from 'react-native';
+import {Image, StatusBar, ImageBackground, AsyncStorage} from 'react-native';
 import styles from './style';
 
 const SplashScreen = ({navigation}) => {
   useEffect(() => {
-    const timer = setTimeout(() => {
-      navigation.navigate('LoginScreen');
+    const timer = setTimeout(async () => {
+      if (
+        (await AsyncStorage.getItem('login')) === 'Emin' &&
+        (await AsyncStorage.getItem('password')) === '12345'
+      ) {
+        navigation.navigate('HomeScreen');
+      } else {
+        navigation.navigate('LoginScreen');
+      }
     }, 1500);
     return () => clearTimeout(timer);
   });
@@ -29,3 +36,14 @@ SplashScreen.navigationOptions = () => ({
 });
 
 export default SplashScreen;
+
+// const SplashScreen = ({navigation}) => {
+//   useEffect(() => {
+//     const timer = setTimeout(async () => {
+//       (await AsyncStorage.getItem('login')) === 'Emin' &&
+//       (await AsyncStorage.getItem('password')) === '12345'
+//         ? navigation.navigate('HomeScreen')
+//         : navigation.navigate('LoginScreen');
+//     }, 1500);
+//     return () => clearTimeout(timer);
+//   });
