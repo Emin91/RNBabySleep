@@ -1,9 +1,6 @@
-import React from 'react'
+import React from 'react';
 import SwitchNavigator from './app/navigation/swichNavigator';
 
 export default function App() {
-
-  return (
-    <SwitchNavigator />
-  )
+  return <SwitchNavigator />;
 }
