@@ -18,7 +18,7 @@ const LoginScreen = ({navigation}) => {
   const onLoginClick = async () => {
     if (login === '' || password === '') {
       console.log('Empty');
-      alert('Поля должны быть заполнены!');
+      alert('Need to full!');
     } else {
       if (
         login === (await AsyncStorage.getItem('login')) &&
