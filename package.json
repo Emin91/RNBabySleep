@@ -43,6 +43,53 @@
     "react-test-renderer": "16.9.0"
   },
   "jest": {
-    "preset": "react-native"
+    "preset": "react-native",
+    "testRegex": "__tests__/.*\\.(js|jsx|ts|tsx)$",
+    "collectCoverage": true,
+    "coverageReporters": [
+      "lcov"
+    ],
+    "collectCoverageFrom": [
+      "app/**/*.jsx",
+      "app/**/*.js",
+      "app/**/*.tsx",
+      "app/**/*.ts"
+    ],
+    "coverageDirectory": "<rootDir>/src/coverageReport",
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/node_modules",
+      "<rootDir>/app/modules",
+      "<rootDir>/app/assets",
+      "<rootDir>/app/services/utils",
+      "<rootDir>/app/i18n",
+      "<rootDir>/app/App.js"
+    ],
+    "testPathIgnorePatterns": [
+      "__snapshots__"
+    ],
+    "transformIgnorePatterns": [
+      "node_modules/(?!(jest-)?react-native|react-navigation|@react-navigation/.*|react-navigation-redux-helpers)",
+      "node_modules/@react-native-community/async-storage/(?!(lib))",
+      "node_modules/(?!react-native|@react-native-community/async-storage|native-base-shoutem-theme|@shoutem/animation|@shoutem/ui|tcomb-form-native)"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ],
+    "globals": {
+      "ts-jest": {
+        "useBabelrc": true
+      }
+    },
+    "setupFiles": [
+      "./__mocks__/jestSetup.js"
+    ],
+    "transform": {
+      ".+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js"
+    }
   }
 }

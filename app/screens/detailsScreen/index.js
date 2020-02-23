@@ -14,6 +14,7 @@ import {titles} from '../../constants/stringConstants';
 import {colors} from '../../constants/colorConstans';
 
 const btns = ['Play', 'Pause', 'Resume'];
+
 const DetailsScreen = ({navigation}) => {
   const [volume, setVolume] = useState(0);
   const [check, setCheck] = useState(true);
