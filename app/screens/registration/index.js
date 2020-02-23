@@ -18,7 +18,12 @@ const RegisrationScreen = ({navigation}) => {
   const onRegistrationClick = async () => {
     if (login === '' || password === '' || passwordConfim === '') {
       alert(titles.NEED_TO_FILL);
+    } else if (password !== passwordConfim) {
+      alert('pass no match');
     } else {
+      await AsyncStorage.setItem('login', login);
+      await AsyncStorage.setItem('password', password);
+      navigation.navigate('HomeScreen');
     }
   };
   return (
