@@ -5,7 +5,7 @@ export const headers = {
   SETTING: 'Настройки',
   OPTIONS: 'Изменить опции',
   ABOUT: 'О Приложении',
-  DEVELOP: 'Разрабочик Emin Zeynalov',
+  DEVELOP: 'Разработчик Emin Zeynalov',
   VERSION: 'Версия: 1.12.10',
 };
 

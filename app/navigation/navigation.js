@@ -14,7 +14,6 @@ import registrationScreen from '../screens/registration';
 import {TabBar} from './tabNavigation/tabNavigator';
 import {titles} from '../constants/stringConstants';
 import {colors} from '../constants/colorConstans';
-import MovieScreen from '../screens/movieScreen';
 import {TabBarTwo} from './tabNavigation/tabNavigatorTwo';
 
 //Main navigation container
@@ -68,9 +67,6 @@ const AppContainer = createStackNavigator(
           backgroundColor: colors.GREY,
           elevation: 0,
           shadowOpacity: 0,
-        },
-        tabDetails: {
-          screen: tabDetails,
         },
       }),
     },

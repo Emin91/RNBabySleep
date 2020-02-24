@@ -1,14 +1,9 @@
 import React, {useState} from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ImageBackground,
-  AsyncStorage,
-} from 'react-native';
+import {View, Text, TouchableOpacity, ImageBackground} from 'react-native';
 import styles from './style';
 import {titles} from '../../constants/stringConstants';
 import OwnTextInput from '../../components/inputText/inputText';
+import AsyncStorage from '@react-native-community/async-storage';
 
 const RegisrationScreen = ({navigation}) => {
   const [login, setLogin] = useState('');

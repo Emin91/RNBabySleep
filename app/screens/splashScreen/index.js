@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
-import {Image, StatusBar, ImageBackground, AsyncStorage} from 'react-native';
+import {Image, StatusBar, ImageBackground} from 'react-native';
 import styles from './style';
+import AsyncStorage from '@react-native-community/async-storage';
 
 const SplashScreen = ({navigation}) => {
   useEffect(() => {
@@ -11,8 +12,8 @@ const SplashScreen = ({navigation}) => {
       ) {
         navigation.navigate('HomeScreen');
       } else {
-        // navigation.navigate('LoginScreen');
-        navigation.navigate('MovieScreen');
+        navigation.navigate('LoginScreen');
+        // navigation.navigate('MovieScreen');
       }
     }, 1500);
     return () => clearTimeout(timer);

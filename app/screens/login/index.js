@@ -5,12 +5,12 @@ import {
   TouchableOpacity,
   Image,
   ImageBackground,
-  AsyncStorage,
 } from 'react-native';
 import styles from './styles';
 import {titles} from '../../constants/stringConstants';
 import OwnTextInput from '../../components/inputText/inputText';
 import {colors} from '../../constants/colorConstans';
+import AsyncStorage from '@react-native-community/async-storage';
 
 const LoginScreen = ({navigation}) => {
   const [login, setLogin] = useState('');
