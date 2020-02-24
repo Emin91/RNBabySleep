@@ -14,18 +14,20 @@ import registrationScreen from '../screens/registration';
 import {TabBar} from './tabNavigation/tabNavigator';
 import {titles} from '../constants/stringConstants';
 import {colors} from '../constants/colorConstans';
+import MovieScreen from '../screens/movieScreen';
+import {TabBarTwo} from './tabNavigation/tabNavigatorTwo';
 
 //Main navigation container
 const AppContainer = createStackNavigator(
   {
     HomeScreen: {
       screen: TabBar,
-      navigationOptions: props => ({
+      navigationOptions: ({navigation}) => ({
         title: titles.HEADER_TEXT_MAIN_SCREEN,
         headerRight: () => (
           <TouchableOpacity
             style={[{paddingHorizontal: 15}]}
-            onPress={() => props.navigation.navigate('screenRecorder')}>
+            onPress={() => navigation.navigate('screenRecorder')}>
             <Icon.AntDesign name="plus" color={'white'} size={30} />
           </TouchableOpacity>
         ),
@@ -61,12 +63,14 @@ const AppContainer = createStackNavigator(
               <Icon.MaterialIcons name="save" color={'white'} size={30} />
             </TouchableOpacity>
           ) : null,
-
         headerTintColor: '#fff',
         headerStyle: {
           backgroundColor: colors.GREY,
           elevation: 0,
           shadowOpacity: 0,
+        },
+        tabDetails: {
+          screen: tabDetails,
         },
       }),
     },
@@ -74,6 +78,17 @@ const AppContainer = createStackNavigator(
       screen: registrationScreen,
       navigationOptions: ({}) => ({
         headerShown: false,
+      }),
+    },
+    MovieScreen: {
+      screen: TabBarTwo,
+      navigationOptions: ({}) => ({
+        headerTintColor: '#fff',
+        headerStyle: {
+          backgroundColor: colors.GREY,
+          elevation: 0,
+          shadowOpacity: 0,
+        },
       }),
     },
   },

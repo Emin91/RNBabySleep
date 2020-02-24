@@ -5,12 +5,12 @@ import {colors} from '../../constants/colorConstans'; //Color constants
 import {createMaterialTopTabNavigator} from 'react-navigation-tabs';
 
 import tabSleepTracker from '../../screens/tabSleepTracker';
-import tabInformation from '../../screens/tabInformation';
 import tabSettings from '../../screens/tabSettings';
 import tabMusicList from '../../screens/tabMusicList';
+import MovieScreen from '../../screens/movieScreen';
 
 //Top tab navigation
-export const TabBar = createMaterialTopTabNavigator(
+export const TabBarTwo = createMaterialTopTabNavigator(
   {
     $Tab1: {
       screen: tabMusicList,
@@ -34,7 +34,7 @@ export const TabBar = createMaterialTopTabNavigator(
       },
     },
     $Tab3: {
-      screen: tabInformation,
+      screen: MovieScreen,
       navigationOptions: ({}) => ({
         tabBarLabel: () => {
           return null;
@@ -53,7 +53,7 @@ export const TabBar = createMaterialTopTabNavigator(
     },
   },
   {
-    initialRouteName: '$Tab1',
+    initialRouteName: '$Tab3',
     tabBarOptions: {
       showIcon: true,
       indicatorStyle: {

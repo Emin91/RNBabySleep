@@ -284,7 +284,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React,<span class="cstat-no" title="statement not covered" > {useState} from 'react';<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ></span></span></span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React,<span class="cstat-no" title="statement not covered" > { useState } from 'react';<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ></span></span></span>
 import {<span class="cstat-no" title="statement not covered" ></span>
   View,
   Text,
@@ -298,8 +298,8 @@ import {<span class="cstat-no" title="statement not covered" ></span>
 } from 'react-native';
 import Slider <span class="cstat-no" title="statement not covered" >from '@react-native-community/slider';</span>
 import styles<span class="cstat-no" title="statement not covered" > from './style';</span>
-import {titles} from '.<span class="cstat-no" title="statement not covered" >./../constants/stringConstants';</span>
-import {colors} from <span class="cstat-no" title="statement not covered" >'../../constants/colorConstans';</span>
+import { titles } from <span class="cstat-no" title="statement not covered" >'../../constants/stringConstants';</span>
+import { colors } fro<span class="cstat-no" title="statement not covered" >m '../../constants/colorConstans';</span>
 import ItemDetails <span class="cstat-no" title="statement not covered" >from '../../components/itemDetails';</span>
 import email from 'react<span class="cstat-no" title="statement not covered" >-native-email';<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>
 &nbsp;
@@ -337,13 +337,13 @@ const sendMail <span class="cstat-no" title="statement not covered" >= () =&gt; 
   }).catch(console.error);
 };
 &nbsp;
-const TabInformation <span class="cstat-no" title="statement not covered" >= ({navig<span class="fstat-no" title="function not covered" >ation}) =&gt; {<span class="cstat-no" title="statement not covered" ></span></span></span>
+const TabInformation <span class="cstat-no" title="statement not covered" >= ({ navi<span class="fstat-no" title="function not covered" >gation }) =&gt; {<span class="cstat-no" title="statement not covered" ></span></span></span>
 <span class="cstat-no" title="statement not covered" >  return (</span>
     &lt;View style={styles.mainView}&gt;
       &lt;View style={styles.headerImgView}&gt;
         &lt;Image style={styles.headerImg} source={img}&gt;&lt;/Image&gt;
       &lt;/View&gt;
-      &lt;View style={{flex: 0.6, justifyContent: 'flex-end'}}&gt;
+      &lt;View style={{ flex: 0.6, justifyContent: 'flex-end' }}&gt;
         &lt;ScrollView&gt;
           &lt;View style={styles.mainTitleView}&gt;
             &lt;Text style={styles.mainTitle}&gt;
@@ -351,9 +351,9 @@ const TabInformation <span class="cstat-no" title="statement not covered" >= ({n
             &lt;/Text&gt;
           &lt;/View&gt;
           &lt;View style={styles.itemView}&gt;
-            {arrayList.sli<span class="fstat-no" title="function not covered" >ce</span>().map(({title, img, subTitl<span class="cstat-no" title="statement not covered" >e, freeText}</span>) =&gt; {<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ></span></span></span>
+            {arrayList.sli<span class="fstat-no" title="function not covered" >ce</span>().map(({ title, img, subTit<span class="cstat-no" title="statement not covered" >le, freeText</span> }) =&gt;<span class="cstat-no" title="statement not covered" > {<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ></span></span></span>
 <span class="cstat-no" title="statement not covered" >              return (</span>
-                &lt;TouchableOpacity style={{flex: 1}}&gt;
+                &lt;TouchableOpacity style={{ flex: 1 }}&gt;
                   &lt;ItemDetails
                     title={title}
                     img={img}
@@ -370,9 +370,9 @@ const TabInformation <span class="cstat-no" title="statement not covered" >= ({n
             &lt;/Text&gt;
           &lt;/View&gt;
           &lt;View style={styles.itemView}&gt;
-            {arrayListTwo.sli<span class="fstat-no" title="function not covered" >ce</span>().map(({title, img, subTitl<span class="cstat-no" title="statement not covered" >e, freeText}</span>) =&gt; {<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ></span></span></span>
+            {arrayListTwo.sli<span class="fstat-no" title="function not covered" >ce</span>().map(({ title, img, subTit<span class="cstat-no" title="statement not covered" >le, freeText</span> }) =&gt;<span class="cstat-no" title="statement not covered" > {<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ></span></span></span>
 <span class="cstat-no" title="statement not covered" >              return (</span>
-                &lt;TouchableOpacity style={{flex: 1}}&gt;
+                &lt;TouchableOpacity style={{ flex: 1 }}&gt;
                   &lt;ItemDetails
                     title={title}
                     img={img}
@@ -405,7 +405,7 @@ const TabInformation <span class="cstat-no" title="statement not covered" >= ({n
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Mon Feb 24 2020 01:07:26 GMT+0400 (GMT+04:00)
+                at Mon Feb 24 2020 10:40:35 GMT+0400 (Azerbaijan Standard Time)
             </div>
         </div>
         <script src="..\..\prettify.js"></script>

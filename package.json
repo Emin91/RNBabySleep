@@ -10,6 +10,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@react-native-community/async-storage": "^1.8.0",
     "@react-native-community/masked-view": "^0.1.6",
     "@react-native-community/slider": "^2.0.8",
     "react": "16.9.0",
@@ -89,7 +90,8 @@
       "./__mocks__/jestSetup.js"
     ],
     "transform": {
-      ".+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js"
+      ".+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js",
+      "^.+\\.jsx?$": "babel-jest"
     }
   }
 }

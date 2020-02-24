@@ -1,5 +1,5 @@
-import React from 'react';
 import 'react-native';
+import React from 'react';
 import ShallowRenderer from 'react-test-renderer/shallow';
 import SplashScreen from '..';
 

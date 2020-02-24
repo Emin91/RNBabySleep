@@ -67,7 +67,9 @@ const TabInformation = ({navigation}) => {
           <View style={styles.itemView}>
             {arrayList.slice().map(({title, img, subTitle, freeText}) => {
               return (
-                <TouchableOpacity style={{flex: 1}}>
+                <TouchableOpacity
+                  style={{flex: 1}}
+                  onPress={() => navigation.navigate('MovieScreen')}>
                   <ItemDetails
                     title={title}
                     img={img}

@@ -11,7 +11,8 @@ const SplashScreen = ({navigation}) => {
       ) {
         navigation.navigate('HomeScreen');
       } else {
-        navigation.navigate('LoginScreen');
+        // navigation.navigate('LoginScreen');
+        navigation.navigate('MovieScreen');
       }
     }, 1500);
     return () => clearTimeout(timer);
@@ -36,14 +37,3 @@ SplashScreen.navigationOptions = () => ({
 });
 
 export default SplashScreen;
-
-// const SplashScreen = ({navigation}) => {
-//   useEffect(() => {
-//     const timer = setTimeout(async () => {
-//       (await AsyncStorage.getItem('login')) === 'Emin' &&
-//       (await AsyncStorage.getItem('password')) === '12345'
-//         ? navigation.navigate('HomeScreen')
-//         : navigation.navigate('LoginScreen');
-//     }, 1500);
-//     return () => clearTimeout(timer);
-//   });
