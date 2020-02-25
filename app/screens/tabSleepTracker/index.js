@@ -12,8 +12,8 @@ const TabSleepTracker = () => {
         <View style={styles.viewRows}>
           <Text style={check ? styles.headerTextTwo : styles.headerText}>
             {titles.SLEPPER_TRACKER}
+            {<Text>{check ? titles.TURN_ON : titles.TURN_OFF}</Text>}
           </Text>
-          {<Text>{check ? titles.TURN_ON : titles.TURN_OFF}</Text>}
         </View>
         <View style={styles.viewRowsTwo}>
           <Switch
