@@ -4,6 +4,7 @@ import styles from './style';
 import {titles} from '../../constants/stringConstants';
 import OwnTextInput from '../../components/inputText/inputText';
 import AsyncStorage from '@react-native-community/async-storage';
+import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 
 const RegisrationScreen = ({navigation}) => {
   const [login, setLogin] = useState('');
@@ -25,53 +26,57 @@ const RegisrationScreen = ({navigation}) => {
     <ImageBackground
       source={require('../../assets/img/bg2.jpg')}
       style={styles.mainView}>
-      <View style={styles.regView}>
-        <View style={styles.regContainer}>
-          <OwnTextInput
-            id="userName"
-            iconName="user"
-            returnKey="next"
-            userValue={login}
-            onChange={newValue => setLogin(newValue)}
-            title={titles.REGISTRATION_LOGIN}
-            placeHolder={titles.REGISTRATION_TYPE_LOGIN}
-          />
-          <OwnTextInput
-            id="password"
-            iconName="textbox-password"
-            returnKey="next"
-            userValue={password}
-            onChange={newValue => setPassword(newValue)}
-            title={titles.REGISTRATION_PASSWORD}
-            placeHolder={titles.REGISTRATION_TYPE_PASSWORD}
-          />
-          <OwnTextInput
-            id="password"
-            iconName="textbox-password"
-            returnKey="go"
-            userValue={passwordConfim}
-            onChange={newValue => setPasswordConfirm(newValue)}
-            title={titles.REGISTRATION_PASSWORD}
-            placeHolder={titles.REGISTRATION_TYPE_PASSWORD}
-          />
-          <TouchableOpacity
-            activeOpacity={0.6}
-            onPress={() => onRegistrationClick()}>
-            <View style={styles.loginBtnView}>
-              <Text style={styles.loginText}>{titles.REGISTRATION_TITLE}</Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity
-            activeOpacity={0.6}
-            onPress={() => navigation.navigate('LoginScreen')}>
-            <View style={styles.regBtnView}>
-              <Text style={styles.registrationText}>
-                {titles.HAVE_ACCOUNT} {titles.LOGIN_BTN}
-              </Text>
-            </View>
-          </TouchableOpacity>
+      <KeyboardAwareScrollView style={{flex: 1, paddingTop: 20}}>
+        <View style={styles.regView}>
+          <View style={styles.regContainer}>
+            <OwnTextInput
+              id="userName"
+              iconName="user"
+              returnKey="next"
+              userValue={login}
+              onChange={newValue => setLogin(newValue)}
+              title={titles.REGISTRATION_LOGIN}
+              placeHolder={titles.REGISTRATION_TYPE_LOGIN}
+            />
+            <OwnTextInput
+              id="password"
+              iconName="textbox-password"
+              returnKey="next"
+              userValue={password}
+              onChange={newValue => setPassword(newValue)}
+              title={titles.REGISTRATION_PASSWORD}
+              placeHolder={titles.REGISTRATION_TYPE_PASSWORD}
+            />
+            <OwnTextInput
+              id="password"
+              iconName="textbox-password"
+              returnKey="go"
+              userValue={passwordConfim}
+              onChange={newValue => setPasswordConfirm(newValue)}
+              title={titles.REGISTRATION_PASSWORD}
+              placeHolder={titles.REGISTRATION_TYPE_PASSWORD}
+            />
+            <TouchableOpacity
+              activeOpacity={0.6}
+              onPress={() => onRegistrationClick()}>
+              <View style={styles.loginBtnView}>
+                <Text style={styles.loginText}>
+                  {titles.REGISTRATION_TITLE}
+                </Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity
+              activeOpacity={0.6}
+              onPress={() => navigation.navigate('LoginScreen')}>
+              <View style={styles.regBtnView}>
+                <Text style={styles.registrationText}>
+                  {titles.HAVE_ACCOUNT} {titles.LOGIN_BTN}
+                </Text>
+              </View>
+            </TouchableOpacity>
+          </View>
         </View>
-      </View>
+      </KeyboardAwareScrollView>
     </ImageBackground>
   );
 };

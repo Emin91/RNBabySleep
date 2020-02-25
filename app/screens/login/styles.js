@@ -8,10 +8,11 @@ const styles = StyleSheet.create({
   },
   logoView: {
     flex: 0.4,
+    paddingTop: 30,
     alignItems: 'center',
   },
   logo: {
-    marginTop: 50,
+    // marginTop: 50,
     width: 150,
     height: 150,
   },
@@ -21,7 +22,7 @@ const styles = StyleSheet.create({
     //backgroundColor: colors.PELOROUS
   },
   regContainer: {
-    flex: 1,
+    // flex: 1,
     borderRadius: 20,
     paddingTop: 10,
     paddingLeft: 10,
