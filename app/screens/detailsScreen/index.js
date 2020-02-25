@@ -47,7 +47,7 @@ const DetailsScreen = ({navigation}) => {
           {titles.DURATION_TEXT}
           <Text>{check}</Text>
         </Text>
-        {check === true ? (
+        {check ? (
           <Slider
             style={{width: '100%', height: 50}}
             thumbTintColor={colors.LOCHMARA}
@@ -59,7 +59,7 @@ const DetailsScreen = ({navigation}) => {
         ) : null}
       </View>
       <View style={styles.soundButtonsView}>
-        {btns.slice().map(value => {
+        {btns.map(value => {
           return (
             <TouchableOpacity activeOpacity={0.5} style={styles.btnRows}>
               <Text style={styles.btnsText}>{value}</Text>

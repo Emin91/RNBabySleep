@@ -56,9 +56,22 @@ const styles = StyleSheet.create({
   },
   devider: {
     width: '90%',
-    height: 10,
+    height: 3,
     marginTop: 8,
     backgroundColor: colors.GREY_OPACITY,
+  },
+  curiculum: {
+    fontSize: 18,
+    color: colors.PELOROUS,
+  },
+  hours: {
+    fontSize: 14,
+    color: colors.WHITE,
+  },
+  sectionTitle: {
+    fontSize: 18,
+    paddingLeft: 15,
+    color: colors.PELOROUS,
   },
 });
 

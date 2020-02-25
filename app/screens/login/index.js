@@ -5,19 +5,21 @@ import {
   TouchableOpacity,
   Image,
   ImageBackground,
+  KeyboardAvoidingView,
 } from 'react-native';
 import styles from './styles';
 import {titles} from '../../constants/stringConstants';
 import OwnTextInput from '../../components/inputText/inputText';
 import {colors} from '../../constants/colorConstans';
 import AsyncStorage from '@react-native-community/async-storage';
+// import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 
 const LoginScreen = ({navigation}) => {
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
 
   const onLoginClick = async () => {
-    if (login === '' || password === '') {
+    if (login || password) {
       console.log(titles.NEED_TO_FILL);
       alert(titles.NEED_TO_FILL);
     } else {

@@ -57,4 +57,13 @@ export const titles = {
     'Dr. Harvey Karp, Dr. Delaney Gracy, Corky Harvey IBCLC and more',
   MOVIE_SCREEN_IMG_TITLE_TWO: 'Dr. Sema Hart and Prof. Jim Coffey',
   COURSE_DESCRIPTION: 'Course description',
+  CURRICULUM: 'Curiculum',
+  LECTURES: '23 lectures, 1.6 hours of content',
+  SECTIONS_ONE: 'SECTION 1: NEWBORN BASICS',
+  SECTIONS_TWO: 'SECTION 2: HOW TO CALM A BABY',
+  SECTIONS_THREE: 'SECTION 3: BREASTFEEDING',
+  SECTIONS_FOUR: 'SLEEP SAFETY',
+  SECTIONS_FIVE: 'HOME SAFETY',
+  SECTIONS_SIX: 'CAR SAFETY',
+  SECTIONS_SEVEN: 'MEDICAL ISSUES',
 };

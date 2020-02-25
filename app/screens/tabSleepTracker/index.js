@@ -5,21 +5,15 @@ import {titles} from '../../constants/stringConstants';
 
 const TabSleepTracker = () => {
   const [check, setCheck] = useState(false);
+
   return (
     <View style={styles.mainView}>
       <View style={styles.firstView}>
         <View style={styles.viewRows}>
-          <Text
-            style={check === false ? styles.headerText : styles.headerTextTwo}>
+          <Text style={check ? styles.headerTextTwo : styles.headerText}>
             {titles.SLEPPER_TRACKER}
-            <Text>
-              {check === true ? (
-                <Text>{titles.TURN_ON}</Text>
-              ) : (
-                <Text>{titles.TURN_OFF}</Text>
-              )}
-            </Text>
           </Text>
+          {<Text>{check ? titles.TURN_ON : titles.TURN_OFF}</Text>}
         </View>
         <View style={styles.viewRowsTwo}>
           <Switch

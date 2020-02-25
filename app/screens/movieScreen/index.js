@@ -2,6 +2,7 @@ import React from 'react';
 import {View, Text, Image, TouchableOpacity, ScrollView} from 'react-native';
 import styles from './style';
 import {titles} from '../../constants/stringConstants';
+import CurriculumItems from '../../components/curriculumItems';
 
 const MovieScreen = () => {
   return (
@@ -27,6 +28,20 @@ const MovieScreen = () => {
           </TouchableOpacity>
           <View style={styles.devider}></View>
         </View>
+        <View
+          style={{
+            width: '100%',
+            height: 60,
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}>
+          <Text style={styles.curiculum}>{titles.CURRICULUM}</Text>
+          <Text style={styles.hours}>{titles.LECTURES}</Text>
+        </View>
+        <View>
+          <Text style={styles.sectionTitle}>{titles.CURRICULUM}</Text>
+        </View>
+        <CurriculumItems />
       </ScrollView>
     </View>
   );
