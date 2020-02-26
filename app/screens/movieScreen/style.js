@@ -75,6 +75,10 @@ const styles = StyleSheet.create({
     paddingBottom: 10,
     color: colors.PELOROUS,
   },
+  bigText: {
+    fontSize: 14,
+    color: colors.WHITE,
+  },
 });
 
 export default styles;

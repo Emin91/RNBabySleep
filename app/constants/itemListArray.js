@@ -66,21 +66,25 @@ export const itemArraysOne = [
     title: titles.SEC_ONE_TITLE_ONE,
     duration: 'Video 1:52',
     num: 1,
+    youtubeId: 'ZmAyPJ8zf-w',
   },
   {
     title: titles.SEC_ONE_TITLE_TWO,
     duration: 'Video 1:21',
     num: 2,
+    youtubeId: 'PrjAbK7C1tQ',
   },
   {
     title: titles.SEC_ONE_TITLE_THREE,
     duration: 'Video 2:05',
     num: 3,
+    youtubeId: 'rf-_Agw2q4M',
   },
   {
     title: titles.SEC_ONE_TITLE_FOUR,
     duration: 'Video 3:22',
     num: 4,
+    youtubeId: 'tx7ERCdLNXA',
   },
 ];
 

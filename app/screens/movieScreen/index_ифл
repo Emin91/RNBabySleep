@@ -12,7 +12,6 @@ import {
 } from '../../constants/itemListArray';
 import styles from './style';
 import CurriculumItems from '../../components/curriculumItems';
-import ViewMoreText from 'react-native-view-more-text';
 
 const itemsHeader = title => {
   return (
@@ -26,11 +25,11 @@ const sectionOne = (header, navigation) => {
   return (
     <View>
       {itemsHeader(header)}
-      {itemArraysOne.map(({title, duration, num, youtubeId}) => {
+      {itemArraysOne.map(({title, duration, num}) => {
         return (
           <TouchableOpacity
             activeOpacity={0.5}
-            onPress={() => navigation.navigate('YoutubeScreen', youtubeId)}>
+            onPress={() => navigation.navigate('YoutubeScreen')}>
             <CurriculumItems title={title} time={duration} num={num} />
           </TouchableOpacity>
         );
@@ -185,17 +184,7 @@ const MovieScreen = ({navigation}) => {
             justifyContent: 'center',
           }}>
           <Text style={styles.curiculum}>{titles.CURRICULUM}</Text>
-        </View>
-        <View style={{flex: 1}}>
-          <ViewMoreText
-            numberOfLines={2}
-            textStyle={{
-              paddingLeft: 20,
-              paddingRight: 20,
-              textAlign: 'center',
-            }}>
-            <Text style={styles.bigText}>{titles.SHOW_MORE_TEXT}</Text>
-          </ViewMoreText>
+          <Text style={styles.hours}>{titles.LECTURES}</Text>
         </View>
         {sectionOne(titles.SECTIONS_ONE, navigation)}
         {sectionTwo(titles.SECTIONS_TWO, navigation)}
