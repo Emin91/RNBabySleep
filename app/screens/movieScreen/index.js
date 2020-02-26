@@ -21,31 +21,33 @@ const itemsHeader = title => {
   );
 };
 
-const sectionOne = header => {
+const sectionOne = (header, navigation) => {
   return (
     <View>
       {itemsHeader(header)}
-      <TouchableOpacity>
-        {itemArraysOne.map(({title, duration, num}) => {
-          return (
-            <TouchableOpacity activeOpacity={0.5}>
-              <CurriculumItems title={title} time={duration} num={num} />
-            </TouchableOpacity>
-          );
-        })}
-      </TouchableOpacity>
+      {itemArraysOne.map(({title, duration, num}) => {
+        return (
+          <TouchableOpacity
+            activeOpacity={0.5}
+            onPress={() => navigation.navigate('YoutubeScreen')}>
+            <CurriculumItems title={title} time={duration} num={num} />
+          </TouchableOpacity>
+        );
+      })}
     </View>
   );
 };
 
-const sectionTwo = header => {
+const sectionTwo = (header, navigation) => {
   return (
     <View>
       {itemsHeader(header)}
       <TouchableOpacity>
         {itemArraysTwo.map(({title, duration, num}) => {
           return (
-            <TouchableOpacity activeOpacity={0.5}>
+            <TouchableOpacity
+              activeOpacity={0.5}
+              onPress={() => navigation.navigate('YoutubeScreen')}>
               <CurriculumItems title={title} time={duration} num={num} />
             </TouchableOpacity>
           );
@@ -55,14 +57,16 @@ const sectionTwo = header => {
   );
 };
 
-const sectionThree = header => {
+const sectionThree = (header, navigation) => {
   return (
     <View>
       {itemsHeader(header)}
       <TouchableOpacity>
         {itemArraysThree.map(({title, duration, num}) => {
           return (
-            <TouchableOpacity activeOpacity={0.5}>
+            <TouchableOpacity
+              activeOpacity={0.5}
+              onPress={() => navigation.navigate('YoutubeScreen')}>
               <CurriculumItems title={title} time={duration} num={num} />
             </TouchableOpacity>
           );
@@ -72,14 +76,16 @@ const sectionThree = header => {
   );
 };
 
-const sectionFour = header => {
+const sectionFour = (header, navigation) => {
   return (
     <View>
       {itemsHeader(header)}
       <TouchableOpacity>
         {itemArraysFour.map(({title, duration, num}) => {
           return (
-            <TouchableOpacity activeOpacity={0.5}>
+            <TouchableOpacity
+              activeOpacity={0.5}
+              onPress={() => navigation.navigate('YoutubeScreen')}>
               <CurriculumItems title={title} time={duration} num={num} />
             </TouchableOpacity>
           );
@@ -89,14 +95,16 @@ const sectionFour = header => {
   );
 };
 
-const sectionFive = header => {
+const sectionFive = (header, navigation) => {
   return (
     <View>
       {itemsHeader(header)}
       <TouchableOpacity>
         {itemArraysFive.map(({title, duration, num}) => {
           return (
-            <TouchableOpacity activeOpacity={0.5}>
+            <TouchableOpacity
+              activeOpacity={0.5}
+              onPress={() => navigation.navigate('YoutubeScreen')}>
               <CurriculumItems title={title} time={duration} num={num} />
             </TouchableOpacity>
           );
@@ -106,14 +114,16 @@ const sectionFive = header => {
   );
 };
 
-const sectionSix = header => {
+const sectionSix = (header, navigation) => {
   return (
     <View>
       {itemsHeader(header)}
       <TouchableOpacity>
         {itemArraysSix.map(({title, duration, num}) => {
           return (
-            <TouchableOpacity activeOpacity={0.5}>
+            <TouchableOpacity
+              activeOpacity={0.5}
+              onPress={() => navigation.navigate('YoutubeScreen')}>
               <CurriculumItems title={title} time={duration} num={num} />
             </TouchableOpacity>
           );
@@ -123,14 +133,16 @@ const sectionSix = header => {
   );
 };
 
-const sectionSeven = header => {
+const sectionSeven = (header, navigation) => {
   return (
     <View>
       {itemsHeader(header)}
       <TouchableOpacity>
         {itemArraysSeven.map(({title, duration, num}) => {
           return (
-            <TouchableOpacity activeOpacity={0.5}>
+            <TouchableOpacity
+              activeOpacity={0.5}
+              onPress={() => navigation.navigate('YoutubeScreen')}>
               <CurriculumItems title={title} time={duration} num={num} />
             </TouchableOpacity>
           );
@@ -140,7 +152,7 @@ const sectionSeven = header => {
   );
 };
 
-const MovieScreen = () => {
+const MovieScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
       <ScrollView>
@@ -174,13 +186,13 @@ const MovieScreen = () => {
           <Text style={styles.curiculum}>{titles.CURRICULUM}</Text>
           <Text style={styles.hours}>{titles.LECTURES}</Text>
         </View>
-        {sectionOne(titles.SECTIONS_ONE)}
-        {sectionTwo(titles.SECTIONS_TWO)}
-        {sectionThree(titles.SECTIONS_THREE)}
-        {sectionFour(titles.SECTIONS_FOUR)}
-        {sectionFive(titles.SECTIONS_FIVE)}
-        {sectionSix(titles.SECTIONS_SIX)}
-        {sectionSeven(titles.SECTIONS_SEVEN)}
+        {sectionOne(titles.SECTIONS_ONE, navigation)}
+        {sectionTwo(titles.SECTIONS_TWO, navigation)}
+        {sectionThree(titles.SECTIONS_THREE, navigation)}
+        {sectionFour(titles.SECTIONS_FOUR, navigation)}
+        {sectionFive(titles.SECTIONS_FIVE, navigation)}
+        {sectionSix(titles.SECTIONS_SIX, navigation)}
+        {sectionSeven(titles.SECTIONS_SEVEN, navigation)}
       </ScrollView>
     </View>
   );

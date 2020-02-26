@@ -15,6 +15,7 @@ import {TabBar} from './tabNavigation/tabNavigator';
 import {titles} from '../constants/stringConstants';
 import {colors} from '../constants/colorConstans';
 import {TabBarTwo} from './tabNavigation/tabNavigatorTwo';
+import YoutubeScreen from '../screens/youtubeScreen';
 
 //Main navigation container
 const AppContainer = createStackNavigator(
@@ -86,6 +87,9 @@ const AppContainer = createStackNavigator(
           shadowOpacity: 0,
         },
       }),
+    },
+    YoutubeScreen: {
+      screen: YoutubeScreen,
     },
   },
   {
