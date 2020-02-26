@@ -6,6 +6,7 @@ export const colors = {
   CARROT: '#FE8E2C',
   LIMEADE: '#81AC00',
   GREEN: '#00a316',
+  GREEN_TWO: '#285',
   GREY_TWO: '#575757',
   PELOROUS: '#4C9FC4',
   CERULEAN: '#039BE5',

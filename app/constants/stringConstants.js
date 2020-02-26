@@ -57,13 +57,45 @@ export const titles = {
     'Dr. Harvey Karp, Dr. Delaney Gracy, Corky Harvey IBCLC and more',
   MOVIE_SCREEN_IMG_TITLE_TWO: 'Dr. Sema Hart and Prof. Jim Coffey',
   COURSE_DESCRIPTION: 'Course description',
+
   CURRICULUM: 'Curiculum',
   LECTURES: '23 lectures, 1.6 hours of content',
+  SEC_TIME: 'Video 2:12',
+
   SECTIONS_ONE: 'SECTION 1: NEWBORN BASICS',
   SECTIONS_TWO: 'SECTION 2: HOW TO CALM A BABY',
   SECTIONS_THREE: 'SECTION 3: BREASTFEEDING',
-  SECTIONS_FOUR: 'SLEEP SAFETY',
-  SECTIONS_FIVE: 'HOME SAFETY',
-  SECTIONS_SIX: 'CAR SAFETY',
-  SECTIONS_SEVEN: 'MEDICAL ISSUES',
+  SECTIONS_FOUR: 'SECTION 4: SLEEP SAFETY',
+  SECTIONS_FIVE: 'SECTION 5: HOME SAFETY',
+  SECTIONS_SIX: 'SECTION 6: CAR SAFETY',
+  SECTIONS_SEVEN: 'SECTION 7: MEDICAL ISSUES',
+
+  SEC_ONE_TITLE_ONE: 'How to wash your baby',
+  SEC_ONE_TITLE_TWO: 'How to change a diaper',
+  SEC_ONE_TITLE_THREE: 'Tummy time: How and when to do it',
+  SEC_ONE_TITLE_FOUR: 'Ways to hold a baby',
+
+  SEC_TWO_TITLE_ONE: 'Swaddling techniques',
+  SEC_TWO_TITLE_TWO: 'How to calm a crying baby #1',
+  SEC_TWO_TITLE_THREE: 'How to calm a crying baby #2',
+
+  SEC_THREE_TITLE_ONE: 'Successful latching on',
+  SEC_THREE_TITLE_TWO: 'Pumping basic',
+
+  SEC_FOUR_TITLE_ONE: 'Creating a safe sleep environment',
+
+  SEC_FIVE_TITLE_ONE: 'Protection from toxins ad home 1',
+  SEC_FIVE_TITLE_TWO: 'Protection from toxins ad home 2',
+
+  SEC_SIX_TITLE_ONE: 'Car seats: How to secure your newborn',
+  SEC_SIX_TITLE_TWO: 'Hidden dangers of puffy coats in car',
+
+  SEC_SEVEN_TITLE_ONE: 'What are flu symptoms?',
+  SEC_SEVEN_TITLE_TWO: 'Infant allergies',
+  SEC_SEVEN_TITLE_THREE: 'Baby sunburn treatment',
+  SEC_SEVEN_TITLE_FOUR: 'How to treat bug bites',
+  SEC_SEVEN_TITLE_FIVE: 'How to treat cuts',
+  SEC_SEVEN_TITLE_SIX: 'Baby accidents',
+  SEC_SEVEN_TITLE_SEVEN: 'What is Shaken Baby Syndrome?',
+  SEC_SEVEN_TITLE_EIGHT: 'Finding a doctor for your baby',
 };

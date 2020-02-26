@@ -23,11 +23,11 @@ const styles = StyleSheet.create({
   },
   imgTitleOne: {
     fontSize: 16,
-    color: colors.GREY_OPACITY_TWO,
+    color: colors.WHITE,
   },
   imgTitleTwo: {
-    fontSize: 25,
-    color: colors.WHITE,
+    fontSize: 14,
+    color: colors.GREY_OPACITY_TWO,
   },
   freeBtnView: {
     flex: 0.12,
@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 8,
-    backgroundColor: '#285',
+    backgroundColor: colors.GREEN_TWO,
   },
   freeBtnText: {
     fontSize: 20,
@@ -69,8 +69,10 @@ const styles = StyleSheet.create({
     color: colors.WHITE,
   },
   sectionTitle: {
-    fontSize: 18,
+    fontSize: 14,
     paddingLeft: 15,
+    paddingTop: 7,
+    paddingBottom: 10,
     color: colors.PELOROUS,
   },
 });

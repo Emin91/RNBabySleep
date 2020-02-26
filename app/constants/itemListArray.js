@@ -60,3 +60,134 @@ export const titleThree = [
     img: require('../assets/img/img4.jpg'),
   },
 ];
+
+export const itemArraysOne = [
+  {
+    title: titles.SEC_ONE_TITLE_ONE,
+    duration: 'Video 1:52',
+    num: 1,
+  },
+  {
+    title: titles.SEC_ONE_TITLE_TWO,
+    duration: 'Video 1:21',
+    num: 2,
+  },
+  {
+    title: titles.SEC_ONE_TITLE_THREE,
+    duration: 'Video 2:05',
+    num: 3,
+  },
+  {
+    title: titles.SEC_ONE_TITLE_FOUR,
+    duration: 'Video 3:22',
+    num: 4,
+  },
+];
+
+export const itemArraysTwo = [
+  {
+    title: titles.SEC_TWO_TITLE_ONE,
+    duration: 'Video 4:07',
+    num: 1,
+  },
+  {
+    title: titles.SEC_TWO_TITLE_TWO,
+    duration: 'Video 2:18',
+    num: 2,
+  },
+  {
+    title: titles.SEC_TWO_TITLE_THREE,
+    duration: 'Video 1:11',
+    num: 3,
+  },
+];
+
+export const itemArraysThree = [
+  {
+    title: titles.SEC_THREE_TITLE_ONE,
+    duration: 'Video 8:42',
+    num: 1,
+  },
+  {
+    title: titles.SEC_THREE_TITLE_TWO,
+    duration: 'Video 3:28',
+    num: 2,
+  },
+];
+
+export const itemArraysFour = [
+  {
+    title: titles.SEC_FOUR_TITLE_ONE,
+    duration: 'Video 3:31',
+    num: 1,
+  },
+];
+
+export const itemArraysFive = [
+  {
+    title: titles.SEC_FIVE_TITLE_ONE,
+    duration: 'Video 2:24',
+    num: 1,
+  },
+  {
+    title: titles.SEC_FIVE_TITLE_TWO,
+    duration: 'Video 1:33',
+    num: 2,
+  },
+];
+
+export const itemArraysSix = [
+  {
+    title: titles.SEC_SIX_TITLE_ONE,
+    duration: 'Video 1:13',
+    num: 1,
+  },
+  {
+    title: titles.SEC_SIX_TITLE_TWO,
+    duration: 'Video 2:47',
+    num: 2,
+  },
+];
+
+export const itemArraysSeven = [
+  {
+    title: titles.SEC_SEVEN_TITLE_ONE,
+    duration: 'Video 2:26',
+    num: 1,
+  },
+  {
+    title: titles.SEC_SEVEN_TITLE_TWO,
+    duration: 'Video 4:33',
+    num: 2,
+  },
+  {
+    title: titles.SEC_SEVEN_TITLE_THREE,
+    duration: 'Video 7:20',
+    num: 3,
+  },
+  {
+    title: titles.SEC_SEVEN_TITLE_FOUR,
+    duration: 'Video 3:14',
+    num: 4,
+  },
+  {
+    title: titles.SEC_SEVEN_TITLE_FIVE,
+    duration: 'Video 1:21',
+    num: 5,
+  },
+  {
+    title: titles.SEC_SEVEN_TITLE_SIX,
+    duration: 'Video 1:12',
+    num: 6,
+  },
+  {
+    title: titles.SEC_SEVEN_TITLE_SEVEN,
+    duration: 'Video 2:34',
+    num: 7,
+  },
+  {
+    title: titles.SEC_SEVEN_TITLE_EIGHT,
+    duration: 'Video 2:44',
+    num: 8,
+  },
+];
