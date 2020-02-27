@@ -1,19 +1,6 @@
 import React, {Component} from 'react';
-import {
-  StyleSheet,
-  View,
-  Text,
-  ScrollView,
-  TouchableOpacity,
-  PixelRatio,
-  Platform,
-  Button,
-  Dimensions,
-} from 'react-native';
-import YouTube, {
-  YouTubeStandaloneIOS,
-  YouTubeStandaloneAndroid,
-} from 'react-native-youtube';
+import {StyleSheet, View, PixelRatio, Dimensions} from 'react-native';
+import YouTube from 'react-native-youtube';
 
 export class YoutubeScreen extends Component {
   state = {

@@ -28,10 +28,13 @@ const arrayItems = (items, header, navigation) => {
       {itemsHeader(header)}
       <TouchableOpacity>
         {items.map(({title, duration, num, youtubeId}) => {
+          console.log('title', title);
           return (
             <TouchableOpacity
               activeOpacity={0.5}
-              onPress={() => navigation.navigate('YoutubeScreen', youtubeId)}>
+              onPress={() =>
+                navigation.navigate('YoutubeScreen', youtubeId, title)
+              }>
               <CurriculumItems title={title} time={duration} num={num} />
             </TouchableOpacity>
           );

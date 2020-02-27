@@ -90,6 +90,15 @@ const AppContainer = createStackNavigator(
     },
     YoutubeScreen: {
       screen: YoutubeScreen,
+      navigationOptions: ({navigation}) => ({
+        title: titles.HEADER_TEXT_MAIN_SCREEN,
+        headerTintColor: '#fff',
+        headerStyle: {
+          backgroundColor: colors.GREY,
+          elevation: 0,
+          shadowOpacity: 0,
+        },
+      }),
     },
   },
   {

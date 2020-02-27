@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
-import {StyleSheet, View, Text, Button} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import YouTube from 'react-native-youtube';
+import {colors} from '../../constants/colorConstans';
 
 const youtubePlayer = id => {
-  const [isPlaying] = useState(true);
+  const [isPlaying] = useState(false);
   const [isLooping] = useState(true);
   return (
     <YouTube
@@ -27,8 +28,8 @@ const YoutubeScreen = ({navigation}) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // justifyContent: 'center',
-    // backgroundColor: 'black',
+    justifyContent: 'center',
+    backgroundColor: colors.BLACK,
   },
   player: {
     width: '100%',
