@@ -1,47 +1,15 @@
-import React, {useState} from 'react';
-import {
-  View,
-  Text,
-  Button,
-  TextInput,
-  TouchableNativeFeedback,
-  Image,
-  TouchableOpacity,
-  ScrollView,
-  AsyncStorage,
-} from 'react-native';
-import Slider from '@react-native-community/slider';
+import React from 'react';
+import {View, Text, Image, TouchableOpacity, ScrollView} from 'react-native';
 import styles from './style';
 import {titles} from '../../constants/stringConstants';
-import {colors} from '../../constants/colorConstans';
 import ItemDetails from '../../components/itemDetails';
 import email from 'react-native-email';
+import {
+  arrayListOne,
+  arrayListTwo,
+} from '../../constants/movieScreenArrayLists';
 
 const img = require('../../assets/img/img1.jpg');
-
-const arrayList = [
-  {
-    title: titles.INFO_TITLE_ONE,
-    img: require('../../assets/img/img1.jpg'),
-    subTitle: titles.INFO_SUBTITLE_ONE,
-    freeText: titles.INFO_HEADER_FREE,
-  },
-  {
-    title: titles.INFO_TITLE_TWO,
-    img: require('../../assets/img/img2.jpg'),
-    subTitle: titles.INFO_SUBTITLE_TWO,
-    freeText: titles.INFO_HEADER_FREE,
-  },
-];
-
-const arrayListTwo = [
-  {
-    title: titles.INFO_TITLE_THREE,
-    img: require('../../assets/img/img3.jpg'),
-    subTitle: titles.INFO_SUBTITLE_THREE,
-    freeText: titles.INFO_HEADER_FREE,
-  },
-];
 
 const sendMail = () => {
   const to = ['emin.proger@gmail.com'];
@@ -65,11 +33,11 @@ const TabInformation = ({navigation}) => {
             </Text>
           </View>
           <View style={styles.itemView}>
-            {arrayList.slice().map(({title, img, subTitle, freeText}) => {
+            {arrayListOne.map(({title, img, subTitle, freeText, onClick}) => {
               return (
                 <TouchableOpacity
                   style={{flex: 1}}
-                  onPress={() => navigation.navigate('MovieScreen')}>
+                  onPress={() => navigation.navigate(onClick)}>
                   <ItemDetails
                     title={title}
                     img={img}
@@ -86,7 +54,7 @@ const TabInformation = ({navigation}) => {
             </Text>
           </View>
           <View style={styles.itemView}>
-            {arrayListTwo.slice().map(({title, img, subTitle, freeText}) => {
+            {arrayListTwo.map(({title, img, subTitle, freeText}) => {
               return (
                 <TouchableOpacity style={{flex: 1}}>
                   <ItemDetails

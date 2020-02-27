@@ -44,11 +44,11 @@ const sectionTwo = (header, navigation) => {
     <View>
       {itemsHeader(header)}
       <TouchableOpacity>
-        {itemArraysTwo.map(({title, duration, num}) => {
+        {itemArraysTwo.map(({title, duration, num, youtubeId}) => {
           return (
             <TouchableOpacity
               activeOpacity={0.5}
-              onPress={() => navigation.navigate('YoutubeScreen')}>
+              onPress={() => navigation.navigate('YoutubeScreen', youtubeId)}>
               <CurriculumItems title={title} time={duration} num={num} />
             </TouchableOpacity>
           );
@@ -63,11 +63,11 @@ const sectionThree = (header, navigation) => {
     <View>
       {itemsHeader(header)}
       <TouchableOpacity>
-        {itemArraysThree.map(({title, duration, num}) => {
+        {itemArraysThree.map(({title, duration, num, youtubeId}) => {
           return (
             <TouchableOpacity
               activeOpacity={0.5}
-              onPress={() => navigation.navigate('YoutubeScreen')}>
+              onPress={() => navigation.navigate('YoutubeScreen', youtubeId)}>
               <CurriculumItems title={title} time={duration} num={num} />
             </TouchableOpacity>
           );
@@ -82,11 +82,11 @@ const sectionFour = (header, navigation) => {
     <View>
       {itemsHeader(header)}
       <TouchableOpacity>
-        {itemArraysFour.map(({title, duration, num}) => {
+        {itemArraysFour.map(({title, duration, num, youtubeId}) => {
           return (
             <TouchableOpacity
               activeOpacity={0.5}
-              onPress={() => navigation.navigate('YoutubeScreen')}>
+              onPress={() => navigation.navigate('YoutubeScreen', youtubeId)}>
               <CurriculumItems title={title} time={duration} num={num} />
             </TouchableOpacity>
           );
@@ -101,11 +101,11 @@ const sectionFive = (header, navigation) => {
     <View>
       {itemsHeader(header)}
       <TouchableOpacity>
-        {itemArraysFive.map(({title, duration, num}) => {
+        {itemArraysFive.map(({title, duration, num, youtubeId}) => {
           return (
             <TouchableOpacity
               activeOpacity={0.5}
-              onPress={() => navigation.navigate('YoutubeScreen')}>
+              onPress={() => navigation.navigate('YoutubeScreen', youtubeId)}>
               <CurriculumItems title={title} time={duration} num={num} />
             </TouchableOpacity>
           );
@@ -120,11 +120,11 @@ const sectionSix = (header, navigation) => {
     <View>
       {itemsHeader(header)}
       <TouchableOpacity>
-        {itemArraysSix.map(({title, duration, num}) => {
+        {itemArraysSix.map(({title, duration, num, youtubeId}) => {
           return (
             <TouchableOpacity
               activeOpacity={0.5}
-              onPress={() => navigation.navigate('YoutubeScreen')}>
+              onPress={() => navigation.navigate('YoutubeScreen', youtubeId)}>
               <CurriculumItems title={title} time={duration} num={num} />
             </TouchableOpacity>
           );
@@ -139,11 +139,11 @@ const sectionSeven = (header, navigation) => {
     <View>
       {itemsHeader(header)}
       <TouchableOpacity>
-        {itemArraysSeven.map(({title, duration, num}) => {
+        {itemArraysSeven.map(({title, duration, num, youtubeId}) => {
           return (
             <TouchableOpacity
               activeOpacity={0.5}
-              onPress={() => navigation.navigate('YoutubeScreen')}>
+              onPress={() => navigation.navigate('YoutubeScreen', youtubeId)}>
               <CurriculumItems title={title} time={duration} num={num} />
             </TouchableOpacity>
           );
