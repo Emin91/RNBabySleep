@@ -19,6 +19,14 @@ const sendMail = () => {
   }).catch(console.error);
 };
 
+const header = title => {
+  return (
+    <View style={styles.mainTitleView}>
+      <Text style={styles.mainTitle}>{title}</Text>
+    </View>
+  );
+};
+
 const arrayItems = (arrays, navigation) => {
   return (
     <View>
@@ -48,19 +56,11 @@ const TabInformation = ({navigation}) => {
       </View>
       <View style={{flex: 0.6, justifyContent: 'flex-end'}}>
         <ScrollView>
-          <View style={styles.mainTitleView}>
-            <Text style={styles.mainTitle}>
-              {titles.INFO_HEADER_TEXT_TITLE}
-            </Text>
-          </View>
+          {header(titles.INFO_HEADER_TEXT_TITLE)}
           <View style={styles.itemView}>
             {arrayItems(arrayListOne, navigation)}
           </View>
-          <View style={styles.mainTitleView}>
-            <Text style={styles.mainTitle}>
-              {titles.INFO_HEADER_TEXT_TITLE_TWO}
-            </Text>
-          </View>
+          {header(titles.INFO_HEADER_TEXT_TITLE_TWO)}
           <View style={styles.itemView}>
             {arrayItems(arrayListTwo, navigation)}
           </View>

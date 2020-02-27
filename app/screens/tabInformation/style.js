@@ -10,6 +10,7 @@ const styles = StyleSheet.create({
     flex: 0.4,
     justifyContent: 'center',
     alignItems: 'center',
+    paddingBottom: 7,
   },
   headerImg: {
     width: '100%',
@@ -18,7 +19,7 @@ const styles = StyleSheet.create({
   mainTitleView: {
     flex: 0.1,
     justifyContent: 'center',
-    padding: 5,
+    paddingBottom: 7,
   },
   mainTitle: {
     fontSize: 18,
