@@ -19,6 +19,27 @@ const sendMail = () => {
   }).catch(console.error);
 };
 
+const arrayItems = (arrays, navigation) => {
+  return (
+    <View>
+      {arrays.map(({title, img, subTitle, freeText, onClick}) => {
+        return (
+          <TouchableOpacity
+            style={{flex: 1}}
+            onPress={() => navigation.navigate(onClick)}>
+            <ItemDetails
+              title={title}
+              img={img}
+              subTitle={subTitle}
+              freeText={freeText}
+            />
+          </TouchableOpacity>
+        );
+      })}
+    </View>
+  );
+};
+
 const TabInformation = ({navigation}) => {
   return (
     <View style={styles.mainView}>
@@ -33,20 +54,7 @@ const TabInformation = ({navigation}) => {
             </Text>
           </View>
           <View style={styles.itemView}>
-            {arrayListOne.map(({title, img, subTitle, freeText, onClick}) => {
-              return (
-                <TouchableOpacity
-                  style={{flex: 1}}
-                  onPress={() => navigation.navigate(onClick)}>
-                  <ItemDetails
-                    title={title}
-                    img={img}
-                    subTitle={subTitle}
-                    freeText={freeText}
-                  />
-                </TouchableOpacity>
-              );
-            })}
+            {arrayItems(arrayListOne, navigation)}
           </View>
           <View style={styles.mainTitleView}>
             <Text style={styles.mainTitle}>
@@ -54,18 +62,7 @@ const TabInformation = ({navigation}) => {
             </Text>
           </View>
           <View style={styles.itemView}>
-            {arrayListTwo.map(({title, img, subTitle, freeText}) => {
-              return (
-                <TouchableOpacity style={{flex: 1}}>
-                  <ItemDetails
-                    title={title}
-                    img={img}
-                    subTitle={subTitle}
-                    freeText={freeText}
-                  />
-                </TouchableOpacity>
-              );
-            })}
+            {arrayItems(arrayListTwo, navigation)}
           </View>
         </ScrollView>
         <View style={styles.dropMenuView}>

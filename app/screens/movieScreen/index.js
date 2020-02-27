@@ -22,124 +22,12 @@ const itemsHeader = title => {
   );
 };
 
-const sectionOne = (header, navigation) => {
-  return (
-    <View>
-      {itemsHeader(header)}
-      {itemArraysOne.map(({title, duration, num, youtubeId}) => {
-        return (
-          <TouchableOpacity
-            activeOpacity={0.5}
-            onPress={() => navigation.navigate('YoutubeScreen', youtubeId)}>
-            <CurriculumItems title={title} time={duration} num={num} />
-          </TouchableOpacity>
-        );
-      })}
-    </View>
-  );
-};
-
-const sectionTwo = (header, navigation) => {
+const arrayItems = (items, header, navigation) => {
   return (
     <View>
       {itemsHeader(header)}
       <TouchableOpacity>
-        {itemArraysTwo.map(({title, duration, num, youtubeId}) => {
-          return (
-            <TouchableOpacity
-              activeOpacity={0.5}
-              onPress={() => navigation.navigate('YoutubeScreen', youtubeId)}>
-              <CurriculumItems title={title} time={duration} num={num} />
-            </TouchableOpacity>
-          );
-        })}
-      </TouchableOpacity>
-    </View>
-  );
-};
-
-const sectionThree = (header, navigation) => {
-  return (
-    <View>
-      {itemsHeader(header)}
-      <TouchableOpacity>
-        {itemArraysThree.map(({title, duration, num, youtubeId}) => {
-          return (
-            <TouchableOpacity
-              activeOpacity={0.5}
-              onPress={() => navigation.navigate('YoutubeScreen', youtubeId)}>
-              <CurriculumItems title={title} time={duration} num={num} />
-            </TouchableOpacity>
-          );
-        })}
-      </TouchableOpacity>
-    </View>
-  );
-};
-
-const sectionFour = (header, navigation) => {
-  return (
-    <View>
-      {itemsHeader(header)}
-      <TouchableOpacity>
-        {itemArraysFour.map(({title, duration, num, youtubeId}) => {
-          return (
-            <TouchableOpacity
-              activeOpacity={0.5}
-              onPress={() => navigation.navigate('YoutubeScreen', youtubeId)}>
-              <CurriculumItems title={title} time={duration} num={num} />
-            </TouchableOpacity>
-          );
-        })}
-      </TouchableOpacity>
-    </View>
-  );
-};
-
-const sectionFive = (header, navigation) => {
-  return (
-    <View>
-      {itemsHeader(header)}
-      <TouchableOpacity>
-        {itemArraysFive.map(({title, duration, num, youtubeId}) => {
-          return (
-            <TouchableOpacity
-              activeOpacity={0.5}
-              onPress={() => navigation.navigate('YoutubeScreen', youtubeId)}>
-              <CurriculumItems title={title} time={duration} num={num} />
-            </TouchableOpacity>
-          );
-        })}
-      </TouchableOpacity>
-    </View>
-  );
-};
-
-const sectionSix = (header, navigation) => {
-  return (
-    <View>
-      {itemsHeader(header)}
-      <TouchableOpacity>
-        {itemArraysSix.map(({title, duration, num, youtubeId}) => {
-          return (
-            <TouchableOpacity
-              activeOpacity={0.5}
-              onPress={() => navigation.navigate('YoutubeScreen', youtubeId)}>
-              <CurriculumItems title={title} time={duration} num={num} />
-            </TouchableOpacity>
-          );
-        })}
-      </TouchableOpacity>
-    </View>
-  );
-};
-
-const sectionSeven = (header, navigation) => {
-  return (
-    <View>
-      {itemsHeader(header)}
-      <TouchableOpacity>
-        {itemArraysSeven.map(({title, duration, num, youtubeId}) => {
+        {items.map(({title, duration, num, youtubeId}) => {
           return (
             <TouchableOpacity
               activeOpacity={0.5}
@@ -197,13 +85,13 @@ const MovieScreen = ({navigation}) => {
             <Text style={styles.bigText}>{titles.SHOW_MORE_TEXT}</Text>
           </ViewMoreText>
         </View>
-        {sectionOne(titles.SECTIONS_ONE, navigation)}
-        {sectionTwo(titles.SECTIONS_TWO, navigation)}
-        {sectionThree(titles.SECTIONS_THREE, navigation)}
-        {sectionFour(titles.SECTIONS_FOUR, navigation)}
-        {sectionFive(titles.SECTIONS_FIVE, navigation)}
-        {sectionSix(titles.SECTIONS_SIX, navigation)}
-        {sectionSeven(titles.SECTIONS_SEVEN, navigation)}
+        {arrayItems(itemArraysOne, titles.SECTIONS_ONE, navigation)}
+        {arrayItems(itemArraysTwo, titles.SECTIONS_TWO, navigation)}
+        {arrayItems(itemArraysThree, titles.SECTIONS_THREE, navigation)}
+        {arrayItems(itemArraysFour, titles.SECTIONS_FOUR, navigation)}
+        {arrayItems(itemArraysFive, titles.SECTIONS_FIVE, navigation)}
+        {arrayItems(itemArraysSix, titles.SECTIONS_SIX, navigation)}
+        {arrayItems(itemArraysSeven, titles.SECTIONS_SEVEN, navigation)}
       </ScrollView>
     </View>
   );
