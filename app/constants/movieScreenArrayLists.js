@@ -23,5 +23,6 @@ export const arrayListTwo = [
     img: require('../assets/img/img3.jpg'),
     subTitle: titles.INFO_SUBTITLE_THREE,
     freeText: titles.INFO_HEADER_FREE,
+    onClick: 'MovieScreen',
   },
 ];

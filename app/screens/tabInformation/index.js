@@ -8,8 +8,7 @@ import {
   arrayListOne,
   arrayListTwo,
 } from '../../constants/movieScreenArrayLists';
-
-const img = require('../../assets/img/img1.jpg');
+import {images} from '../../constants/imageConstants';
 
 const sendMail = () => {
   const to = ['emin.proger@gmail.com'];
@@ -52,7 +51,7 @@ const TabInformation = ({navigation}) => {
   return (
     <View style={styles.mainView}>
       <View style={styles.headerImgView}>
-        <Image style={styles.headerImg} source={img}></Image>
+        <Image style={styles.headerImg} source={images.img1}></Image>
       </View>
       <View style={{flex: 0.6, justifyContent: 'flex-end'}}>
         <ScrollView>

@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 import {View, Text, TouchableOpacity, ImageBackground} from 'react-native';
-import styles from './style';
 import {titles} from '../../constants/stringConstants';
+import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
+import styles from './style';
 import OwnTextInput from '../../components/inputText/inputText';
 import AsyncStorage from '@react-native-community/async-storage';
-import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 
 const RegisrationScreen = ({navigation}) => {
   const [login, setLogin] = useState('');
@@ -22,6 +22,23 @@ const RegisrationScreen = ({navigation}) => {
       navigation.navigate('HomeScreen');
     }
   };
+
+  const textField = (id, iconName, inputValue, setFunc) => {
+    return (
+      <View>
+        <OwnTextInput
+          id={id}
+          iconName={iconName}
+          returnKey="next"
+          userValue={inputValue}
+          onChange={newValue => setFunc(newValue)}
+          title={titles.REGISTRATION_LOGIN}
+          placeHolder={titles.REGISTRATION_TYPE_LOGIN}
+        />
+      </View>
+    );
+  };
+
   return (
     <ImageBackground
       source={require('../../assets/img/bg2.jpg')}
@@ -29,33 +46,14 @@ const RegisrationScreen = ({navigation}) => {
       <KeyboardAwareScrollView style={{flex: 1, paddingTop: 20}}>
         <View style={styles.regView}>
           <View style={styles.regContainer}>
-            <OwnTextInput
-              id="userName"
-              iconName="user"
-              returnKey="next"
-              userValue={login}
-              onChange={newValue => setLogin(newValue)}
-              title={titles.REGISTRATION_LOGIN}
-              placeHolder={titles.REGISTRATION_TYPE_LOGIN}
-            />
-            <OwnTextInput
-              id="password"
-              iconName="textbox-password"
-              returnKey="next"
-              userValue={password}
-              onChange={newValue => setPassword(newValue)}
-              title={titles.REGISTRATION_PASSWORD}
-              placeHolder={titles.REGISTRATION_TYPE_PASSWORD}
-            />
-            <OwnTextInput
-              id="password"
-              iconName="textbox-password"
-              returnKey="go"
-              userValue={passwordConfim}
-              onChange={newValue => setPasswordConfirm(newValue)}
-              title={titles.REGISTRATION_PASSWORD}
-              placeHolder={titles.REGISTRATION_TYPE_PASSWORD}
-            />
+            {textField('userName', 'user', login, setLogin)}
+            {textField('password', 'textbox-password', password, setPassword)}
+            {textField(
+              'password',
+              'textbox-password',
+              passwordConfim,
+              setPasswordConfirm,
+            )}
             <TouchableOpacity
               activeOpacity={0.6}
               onPress={() => onRegistrationClick()}>
@@ -81,15 +79,8 @@ const RegisrationScreen = ({navigation}) => {
   );
 };
 
-// const onRegistrationClick = async () => {
-//   console.log('Log:', login);
-//   console.log('Pass:', password);
-//   await AsyncStorage.setItem('login', login);
-//   await AsyncStorage.setItem('password', password);
-//   navigation.navigate('HomeScreen');
-// };
 RegisrationScreen.navigationOptions = () => ({
-  headerShown: false, //Hide Header
+  headerShown: false,
 });
 
 export default RegisrationScreen;

@@ -7,12 +7,12 @@ import {
   ImageBackground,
   KeyboardAvoidingView,
 } from 'react-native';
-import styles from './styles';
 import {titles} from '../../constants/stringConstants';
-import OwnTextInput from '../../components/inputText/inputText';
 import {colors} from '../../constants/colorConstans';
+import {images} from '../../constants/imageConstants';
+import styles from './styles';
+import OwnTextInput from '../../components/inputText/inputText';
 import AsyncStorage from '@react-native-community/async-storage';
-// import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 
 const LoginScreen = ({navigation}) => {
   const [login, setLogin] = useState('');
@@ -35,40 +35,36 @@ const LoginScreen = ({navigation}) => {
     }
   };
 
+  const textField = (id, iconName, inputValue, setFunc) => {
+    return (
+      <View>
+        <OwnTextInput
+          id={id}
+          navigation={onLoginClick}
+          iconName={iconName}
+          returnKey="go"
+          userValue={inputValue}
+          onChange={newValue => setFunc(newValue)}
+          title={titles.REGISTRATION_LOGIN}
+          placeHolder={titles.REGISTRATION_TYPE_LOGIN}
+        />
+      </View>
+    );
+  };
+
   return (
     <KeyboardAvoidingView>
-      <ImageBackground
-        source={require('../../assets/img/bg1.jpg')}
-        style={styles.mainView}>
+      <ImageBackground source={images.bg1} style={styles.mainView}>
         <View style={styles.logoView}>
           <Image
             source={require('../../assets/icons/logo.png')}
             style={styles.logo}
           />
         </View>
-
         <View style={styles.regView}>
           <View style={styles.regContainer}>
-            <OwnTextInput
-              id="userName"
-              navigation={onLoginClick}
-              iconName="user"
-              returnKey="go"
-              userValue={login}
-              onChange={newLogin => setLogin(newLogin)}
-              title={titles.REGISTRATION_LOGIN}
-              placeHolder={titles.REGISTRATION_TYPE_LOGIN}
-            />
-            <OwnTextInput
-              id="password"
-              navigation={onLoginClick}
-              iconName="textbox-password"
-              returnKey="go"
-              value={password}
-              onChange={newPassword => setPassword(newPassword)}
-              title={titles.REGISTRATION_PASSWORD}
-              placeHolder={titles.REGISTRATION_TYPE_PASSWORD}
-            />
+            {textField('userName', 'user', login, setLogin)}
+            {textField('password', 'textbox-password', password, setPassword)}
             <TouchableOpacity
               activeOpacity={0.8}
               onPress={() => onLoginClick()}>
@@ -97,7 +93,7 @@ const LoginScreen = ({navigation}) => {
   );
 };
 LoginScreen.navigationOptions = () => ({
-  headerShown: false, //Hide Header
+  headerShown: false,
 });
 
 export default LoginScreen;
