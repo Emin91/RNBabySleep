@@ -18,6 +18,7 @@ import {titles} from '../constants/stringConstants';
 import {colors} from '../constants/colorConstans';
 import {TabBarTwo} from './tabNavigation/tabNavigatorTwo';
 import {ROUTE} from '../constants/routeNameConstants';
+import NewVersion from '../screens/newVersion';
 
 const AppContainer = createStackNavigator(
   {
@@ -93,6 +94,18 @@ const AppContainer = createStackNavigator(
       screen: YoutubeScreen,
       navigationOptions: ({}) => ({
         title: ROUTE.YoutubeScreen,
+        headerTintColor: colors.WHITE,
+        headerStyle: {
+          backgroundColor: colors.GREY,
+          elevation: 0,
+          shadowOpacity: 0,
+        },
+      }),
+    },
+    NewVersion: {
+      screen: NewVersion,
+      navigationOptions: ({}) => ({
+        title: ROUTE.NewVersion,
         headerTintColor: colors.WHITE,
         headerStyle: {
           backgroundColor: colors.GREY,

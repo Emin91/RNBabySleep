@@ -4,5 +4,6 @@ export const ROUTE = {
   LoginScreen: 'LoginScreen',
   Details: 'Details',
   ScreenRecorder: 'ScreenRecorder',
-  YoutubeScreen: 'YoutubeScreen',
+  YoutubeScreen: 'Youtube Screen',
+  NewVersion: 'New Version',
 };

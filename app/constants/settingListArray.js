@@ -38,9 +38,11 @@ export const settingListArrayTwo = [
   {
     itemName: 'Управлять своей подпиской',
     itemSubtitle: 'Урок от google',
+    num: 1,
   },
   {
     itemName: 'Что в полной версии?',
+    num: 2,
   },
 ];
 
@@ -48,6 +50,7 @@ export const settingListArrayThree = [
   {
     itemName: 'Изменить опции',
     itemSubtitle: null,
+    num: 1,
   },
 ];
 
@@ -55,17 +58,21 @@ export const settingListArrayFour = [
   {
     itemName: 'О Приложении',
     itemSubtitle: 'Несколько слов от создателей',
+    num: 1,
   },
   {
     itemName: 'FAQ',
     itemSubtitle: 'Все что вы хотели знать...',
+    num: 1,
   },
   {
     itemName: 'Приложение в действии',
     itemSubtitle: 'В главной роли наша новорожденная дочь',
+    num: 3,
   },
   {
     itemName: 'Помогите друзьям выспаться',
     itemSubtitle: 'Расскажите им о Баю-Бай по почте',
+    num: 4,
   },
 ];

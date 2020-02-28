@@ -98,8 +98,30 @@ export const titles = {
   SEC_SEVEN_TITLE_SIX: 'Baby accidents',
   SEC_SEVEN_TITLE_SEVEN: 'What is Shaken Baby Syndrome?',
   SEC_SEVEN_TITLE_EIGHT: 'Finding a doctor for your baby',
+  APP_NOT_INSTALLED: 'Play Market не установлен или отключен!',
 
   //Big Text
   SHOW_MORE_TEXT:
     "In this course you will learn the important A basics that are so mystifying for new parents: bathing and changing your baby, tips on breastfeeding, how to calm your baby and help them sleep, sleep safety, home safety and car safety, and knowing when to call the doctor. A hand-picked, all-in-one introduction to Newborn Basics, with the best and most experienced teachers, all of them certified medical professionals. Newborn basics Get excellent tips to assist you with your baby's bath time, changing a diaper, and how and when to do tummy time, and a variety of ways to safely and comfortably hold a baby. Learn all this with the qualified staff at Epworth Freemasons hospital (Victoria, Australia) and Sunnybrook Hospital (Toronto, Canada). How to Calm a Baby Newborns cry a lot, and this is normal! They are simply getting used to life outside the womb. As parents, our job is to learn the way to calm them during their first few months. Watch Dr. Harvey Karp — one of America's most widely known pediatricians - explaining his 5 S's technique for calming crying babies: Swaddle, Side-Stomach Position, Shush, Swing and Suck. Breastfeeding Learn how to breastfeed successfully from breastfeeding expert Corky Harvey, the co-founder of Pump Station & Nurture of Hollywood, CA. Learn how to master the latching technique crucial for comfortable breastfeeding, as well as how to prevent common breastfeeding issues. A safe sleep environment is crucial for your newborn. Dr. Andrew Eisen from Touro University and his colleagues from Southern Nevada Health District explain how to create a safe sleep environment according to The American Academy of Pediatrics. Home Safety How can you make your home safe for your children? In this informative video, Olivia Newton-John and Kelly Preston discuss issues concerning toxins in your home. Speaking from their own experiences as mothers and Board members of Children's Health Environmental Coalition, Olivia and Kelly offer simple you can take to make your home safer for your children and your family. Car Safety Traveling in the car with your baby requires extra safety precautions. In this series, Dr. Alisa Baer, pediatrician and child car safety expert, explains important car safety rules, including correct car seat setup, the safe sitting position for your baby, appropriate clothing for a baby buckled into a car seat, the correct way to buckle your baby and finally, safe swaddling in the car seat. edical Issues atch Dr. Delaney Gracy from Children's Health Fund explaining how to treat some of the common medical issues you might encounter with your baby, such as flu, sunburn, bug bites and allergies.",
+
+  //New Version RU
+  FULL_VERSION: 'ПОЛНАЯ ВЕРСИЯ',
+  TITLE: 'Подарите всей семье дрогоценные часы хорошего сна!',
+  WHATS_INSIDE: 'Что внутри:',
+  OPT_1: '- Неограниченное проигрывание.',
+  OPT_2: '- Неограниченный "ночной режим".',
+  OPT_3: '- Отслеживание сна всю ночь.',
+  BTN_1: 'ДОСТУП НА ОДИН МЕСЯЦ \n \t \t \t \t \t ЗА 189.00 Руб.',
+  BTN_2: 'ДОСТУП НА ШЕСТЬ МЕСЯЦЕЦ \n \t \t \t \t \t \t \t ЗА 429.00 Руб.',
+  BTN_3:
+    'НЕОГРАНИЧЕННЫЙ ДОСТУП РАЗОВЫЙ \n \t \t \t \t \t \t \t ПЛАТЕЖ - 1 090.00 Руб.',
+  //New Version EN
+  // FULL_VERSION: 'FULL VERSION',
+  // WHATS_INSIDE: "What's inside",
+  // OPT_1: '- Unlimited sound duration',
+  // OPT_2: '- Unlimited "Listen" mode',
+  // OPT_3: '- All-nigth Sleep Tracking',
+  // OPT_4: '- Extra Long Fade-Out (up to two hours)',
+  // OPT_5:
+  //   '- Premium audio content, including lullabies and instrumental soundtracks',
 };

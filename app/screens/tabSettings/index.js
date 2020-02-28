@@ -10,6 +10,8 @@ import {
 } from '../../constants/settingListArray';
 import styles from './style';
 import Icon from '../../components/Icons';
+import {onPressItemsOne} from './onPressOne';
+import {onPressItemsTwo} from './onPressTwo';
 
 const versionView = (developer, ver) => {
   return (
@@ -27,29 +29,13 @@ const header = title => {
   );
 };
 
-const onPressItems = num => {
-  switch (num) {
-    case 1:
-      Linking.openURL('market://details?id=by.si.soundsleeper.free');
-      break;
-    case 2:
-      break;
-    case 3:
-      Linking.openURL('http://www.parents2parentsapps.com/');
-      break;
-    case 4:
-      Linking.openURL('https://m.facebook.com/soundsleeperapp/');
-      break;
-  }
-};
-
-const itemsArray = arrays => {
+const itemsArray = (arrays, onPressed, navigation) => {
   return (
     <View>
       {arrays.map(({itemName, itemSubtitle, color, num}) => {
         return (
           <TouchableOpacity
-            onPress={() => onPressItems(num)}
+            onPress={() => onPressed(num, navigation)}
             activeOpacity={0.6}>
             <View style={styles.itemViewRows}>
               <View style={styles.titleView}>
@@ -79,13 +65,13 @@ const TabSettings = ({navigation}) => {
   return (
     <View style={styles.mainView}>
       <ScrollView>
-        {itemsArray(settingListArrayOne)}
+        {itemsArray(settingListArrayOne, onPressItemsOne, navigation)}
         {header(headers.UPGRADES)}
-        {itemsArray(settingListArrayTwo)}
+        {itemsArray(settingListArrayTwo, onPressItemsTwo, navigation)}
         {header(headers.SETTING)}
-        {itemsArray(settingListArrayThree)}
+        {itemsArray(settingListArrayThree, onPressItemsTwo, navigation)}
         {header(headers.ABOUT)}
-        {itemsArray(settingListArrayFour)}
+        {itemsArray(settingListArrayFour, onPressItemsTwo, navigation)}
         {versionView(headers.DEVELOP, headers.VERSION)}
       </ScrollView>
     </View>
