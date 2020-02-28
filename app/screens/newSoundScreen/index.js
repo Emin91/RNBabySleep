@@ -1,16 +1,10 @@
 import React, {useState} from 'react';
-import Slider from '@react-native-community/slider';
-import {
-  View,
-  Text,
-  Button,
-  TextInput,
-  TouchableNativeFeedback,
-} from 'react-native';
-import Icon from '../../components/Icons';
-import styles from './style';
+import {View, Text, TextInput, TouchableOpacity} from 'react-native';
 import {titles} from '../../constants/stringConstants';
 import {colors} from '../../constants/colorConstans';
+import Slider from '@react-native-community/slider';
+import Icon from '../../components/Icons';
+import styles from './style';
 
 const NewSoundScreen = () => {
   const [inputValue, setInputValue] = useState('');
@@ -29,16 +23,15 @@ const NewSoundScreen = () => {
       </View>
       <View style={styles.recorderView}>
         <Text style={styles.timer}>00:00</Text>
-        <TouchableNativeFeedback
-          background={TouchableNativeFeedback.Ripple(colors.PELOROUS, true)}>
+        <TouchableOpacity activeOpacity={0.6}>
           <View style={styles.recorderBtn}>
             <Icon.Feather name="mic" color={colors.WHITE} size={70} />
           </View>
-        </TouchableNativeFeedback>
+        </TouchableOpacity>
       </View>
       <View style={styles.sliderView}>
         <Slider
-          style={{width: '100%', height: 60}}
+          style={styles.slider}
           thumbTintColor={colors.LOCHMARA}
           minimumValue={0}
           maximumValue={1}

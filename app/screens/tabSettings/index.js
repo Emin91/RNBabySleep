@@ -1,8 +1,8 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {View, Text, ScrollView, TouchableOpacity, Linking} from 'react-native';
 import {colors} from '../../constants/colorConstans';
 import {
-  settingListArray,
+  settingListArrayOne,
   settingListArrayTwo,
   settingListArrayThree,
   settingListArrayFour,
@@ -11,117 +11,82 @@ import {
 import styles from './style';
 import Icon from '../../components/Icons';
 
-const Item = ({color, itemName, itemSubtitle, onClick, switchOn}) => (
-  <TouchableOpacity onPress={onClick} activeOpacity={0.6}>
-    <View style={styles.itemViewRows}>
-      <View style={styles.titleView}>
-        <Text style={[styles.title, {color}]}>{itemName}</Text>
-        <Text style={styles.titleSub}>{itemSubtitle}</Text>
-      </View>
-      <View style={styles.iconView}>
-        <Icon.Entypo
-          color={colors.WHITE}
-          name="chevron-small-right"
-          size={35}
-        />
-      </View>
+const versionView = (developer, ver) => {
+  return (
+    <View style={[styles.headerView, {alignItems: 'center'}]}>
+      <Text style={styles.version}>{developer}</Text>
+      <Text style={styles.version}>{ver}</Text>
     </View>
-  </TouchableOpacity>
-);
+  );
+};
+const header = title => {
+  return (
+    <View style={styles.headerView}>
+      <Text style={styles.headers}>{title}</Text>
+    </View>
+  );
+};
+
+const onPressItems = num => {
+  switch (num) {
+    case 1:
+      Linking.openURL('market://details?id=by.si.soundsleeper.free');
+      break;
+    case 2:
+      break;
+    case 3:
+      Linking.openURL('http://www.parents2parentsapps.com/');
+      break;
+    case 4:
+      Linking.openURL('https://m.facebook.com/soundsleeperapp/');
+      break;
+  }
+};
+
+const itemsArray = arrays => {
+  return (
+    <View>
+      {arrays.map(({itemName, itemSubtitle, color, num}) => {
+        return (
+          <TouchableOpacity
+            onPress={() => onPressItems(num)}
+            activeOpacity={0.6}>
+            <View style={styles.itemViewRows}>
+              <View style={styles.titleView}>
+                <Text style={color ? [styles.title, {color}] : styles.title}>
+                  {itemName}
+                </Text>
+                {itemSubtitle ? (
+                  <Text style={styles.titleSub}>{itemSubtitle}</Text>
+                ) : null}
+              </View>
+              <View style={styles.iconView}>
+                <Icon.Entypo
+                  color={colors.WHITE}
+                  name="chevron-small-right"
+                  size={35}
+                />
+              </View>
+            </View>
+          </TouchableOpacity>
+        );
+      })}
+    </View>
+  );
+};
 
 const TabSettings = ({navigation}) => {
-  const [isTurnedOn, setIsTurnedOn] = useState(false);
-
   return (
     <View style={styles.mainView}>
       <ScrollView>
-        <Item
-          switchOn={setIsTurnedOn}
-          onClick={() => navigation.navigate('$Tab2')}
-          itemName="Вам понравилось?"
-          itemSubtitle="Оцените в Play Store"
-          color={colors.GREEN}
-        />
-        <Item
-          onClick={() => navigation.navigate('$Tab1')}
-          itemName="Вам понравилось?"
-          itemSubtitle="Оцените в Play Store"
-          color={colors.GREEN}
-        />
-        <View style={styles.headerView}>
-          <Text style={styles.headers}>{headers.UPGRADES}</Text>
-        </View>
-        {settingListArrayTwo.slice().map(({itemName, itemSubtitle}) => {
-          return (
-            <TouchableOpacity activeOpacity={0.6}>
-              <View style={styles.itemViewRows}>
-                <View style={styles.titleView}>
-                  <Text style={styles.title}>{itemName}</Text>
-                  <Text style={styles.titleSub}>{itemSubtitle}</Text>
-                </View>
-                <View style={styles.iconView}>
-                  <Icon.Entypo
-                    color={colors.WHITE}
-                    name="chevron-small-right"
-                    size={35}
-                  />
-                </View>
-              </View>
-            </TouchableOpacity>
-          );
-        })}
-        <View style={styles.headerView}>
-          <Text style={styles.headers}>{headers.SETTING}</Text>
-        </View>
-        {settingListArrayThree.slice().map(({itemName, itemSubtitle}) => {
-          return (
-            <TouchableOpacity activeOpacity={0.6}>
-              <View style={styles.itemViewRows}>
-                <View style={styles.titleView}>
-                  <Text style={styles.title}>{itemName}</Text>
-                  <Text style={styles.titleSub}>{itemSubtitle}</Text>
-                </View>
-                <View style={styles.iconView}>
-                  <Icon.Entypo
-                    color={colors.WHITE}
-                    name="chevron-small-right"
-                    size={35}
-                  />
-                </View>
-              </View>
-            </TouchableOpacity>
-          );
-        })}
-        <View style={styles.headerView}>
-          <Text style={styles.headers}>{headers.ABOUT}</Text>
-        </View>
-        {settingListArrayFour.slice().map(({itemName, itemSubtitle}) => {
-          return (
-            <TouchableOpacity activeOpacity={0.6}>
-              <View style={styles.itemViewRows}>
-                <View style={styles.titleView}>
-                  <Text style={styles.title}>{itemName}</Text>
-                  <Text style={styles.titleSub}>{itemSubtitle}</Text>
-                </View>
-                <View style={styles.iconView}>
-                  <Icon.Entypo
-                    color={colors.WHITE}
-                    name="chevron-small-right"
-                    size={35}
-                  />
-                </View>
-              </View>
-            </TouchableOpacity>
-          );
-        })}
-        <View
-          style={[
-            styles.headerView,
-            {justifyContent: 'center', alignItems: 'center'},
-          ]}>
-          <Text style={styles.version}>{headers.DEVELOP}</Text>
-          <Text style={styles.version}>{headers.VERSION}</Text>
-        </View>
+        {itemsArray(settingListArrayOne)}
+        {header(headers.UPGRADES)}
+        {itemsArray(settingListArrayTwo)}
+        {header(headers.SETTING)}
+        {itemsArray(settingListArrayThree)}
+        {header(headers.ABOUT)}
+        {itemsArray(settingListArrayFour)}
+        {versionView(headers.DEVELOP, headers.VERSION)}
       </ScrollView>
     </View>
   );

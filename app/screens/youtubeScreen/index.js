@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import {StyleSheet, View} from 'react-native';
+import {View} from 'react-native';
 import YouTube from 'react-native-youtube';
-import {colors} from '../../constants/colorConstans';
+import styles from './style';
 
 const youtubePlayer = id => {
   const [isPlaying] = useState(false);
@@ -24,17 +24,5 @@ const YoutubeScreen = ({navigation}) => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    backgroundColor: colors.BLACK,
-  },
-  player: {
-    width: '100%',
-    height: '100%',
-  },
-});
 
 export default YoutubeScreen;

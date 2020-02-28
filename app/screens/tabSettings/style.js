@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
     height: 60,
     flexDirection: 'row',
     marginTop: 5,
-    backgroundColor: colors.GREY_OPACITY_THREE,
+    backgroundColor: colors.GREY_TWO,
   },
   titleView: {
     flex: 0.9,
@@ -23,8 +23,8 @@ const styles = StyleSheet.create({
     color: colors.WHITE,
   },
   titleSub: {
-    fontSize: 15,
-    color: colors.GREY,
+    fontSize: 12,
+    color: '#b0b0b0',
   },
   iconView: {
     flex: 0.1,

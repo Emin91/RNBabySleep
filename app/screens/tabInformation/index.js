@@ -53,7 +53,7 @@ const TabInformation = ({navigation}) => {
       <View style={styles.headerImgView}>
         <Image style={styles.headerImg} source={images.img1}></Image>
       </View>
-      <View style={{flex: 0.6, justifyContent: 'flex-end'}}>
+      <View style={styles.scrollView}>
         <ScrollView>
           {header(titles.INFO_HEADER_TEXT_TITLE)}
           <View style={styles.itemView}>

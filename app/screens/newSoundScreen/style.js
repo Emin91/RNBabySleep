@@ -9,13 +9,12 @@ const styles = StyleSheet.create({
   textInputView: {
     flex: 0.2,
     justifyContent: 'center',
-    // backgroundColor: 'green',
   },
   textInput: {
     fontSize: 20,
     textAlign: 'center',
-    color: colors.CERULEAN,
     borderBottomWidth: 2,
+    color: colors.CERULEAN,
     borderBottomColor: colors.CERULEAN,
   },
   recorderView: {
@@ -40,7 +39,10 @@ const styles = StyleSheet.create({
   sliderView: {
     flex: 0.2,
     justifyContent: 'flex-start',
-    //backgroundColor: 'green',
+  },
+  slider: {
+    width: '100%',
+    height: 60,
   },
 });
 

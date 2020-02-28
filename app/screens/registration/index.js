@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import {View, Text, TouchableOpacity, ImageBackground} from 'react-native';
 import {titles} from '../../constants/stringConstants';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
+import {ROUTE} from '../../constants/routeNameConstants';
+import {images} from '../../constants/imageConstants';
 import styles from './style';
 import OwnTextInput from '../../components/inputText/inputText';
 import AsyncStorage from '@react-native-community/async-storage';
@@ -12,14 +14,14 @@ const RegisrationScreen = ({navigation}) => {
   const [passwordConfim, setPasswordConfirm] = useState('');
 
   const onRegistrationClick = async () => {
-    if (login === '' || password === '' || passwordConfim === '') {
+    if (!login || !password || !passwordConfim) {
       alert(titles.NEED_TO_FILL);
     } else if (password !== passwordConfim) {
-      alert('pass no match');
+      alert(titles.NOT_MUTCH);
     } else {
       await AsyncStorage.setItem('login', login);
       await AsyncStorage.setItem('password', password);
-      navigation.navigate('HomeScreen');
+      navigation.navigate(ROUTE.HomeScreen);
     }
   };
 
@@ -40,10 +42,8 @@ const RegisrationScreen = ({navigation}) => {
   };
 
   return (
-    <ImageBackground
-      source={require('../../assets/img/bg2.jpg')}
-      style={styles.mainView}>
-      <KeyboardAwareScrollView style={{flex: 1, paddingTop: 20}}>
+    <ImageBackground source={images.bg2} style={styles.mainView}>
+      <KeyboardAwareScrollView style={styles.keyboardScroll}>
         <View style={styles.regView}>
           <View style={styles.regContainer}>
             {textField('userName', 'user', login, setLogin)}
@@ -65,7 +65,7 @@ const RegisrationScreen = ({navigation}) => {
             </TouchableOpacity>
             <TouchableOpacity
               activeOpacity={0.6}
-              onPress={() => navigation.navigate('LoginScreen')}>
+              onPress={() => navigation.navigate(ROUTE.LoginScreen)}>
               <View style={styles.regBtnView}>
                 <Text style={styles.registrationText}>
                   {titles.HAVE_ACCOUNT} {titles.LOGIN_BTN}

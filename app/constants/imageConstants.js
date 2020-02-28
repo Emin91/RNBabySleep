@@ -6,5 +6,6 @@ export const images = {
   img5: require('../assets/img/img5.jpg'),
   bg1: require('../assets/img/bg1.jpg'),
   bg2: require('../assets/img/bg2.jpg'),
-  info: require('../assets/img/tab.png'),
+  info: require('../assets/img/graph.png'),
+  logo: require('../assets/icons/logo.png'),
 };

@@ -7,13 +7,7 @@ const styles = StyleSheet.create({
     paddingTop: 20,
     paddingHorizontal: 15,
   },
-  title: {
-    fontSize: 20,
-    color: colors.CERULEAN,
-    marginVertical: 5,
-  },
   itemViews: {
-    // backgroundColor: 'red',
     marginBottom: 20,
   },
   textsView: {

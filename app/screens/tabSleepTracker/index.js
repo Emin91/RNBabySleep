@@ -1,7 +1,9 @@
 import React, {useState} from 'react';
 import {View, Text, Switch, Image} from 'react-native';
-import styles from './style';
 import {titles} from '../../constants/stringConstants';
+import {images} from '../../constants/imageConstants';
+import {colors} from '../../constants/colorConstans';
+import styles from './style';
 
 const TabSleepTracker = () => {
   const [check, setCheck] = useState(false);
@@ -10,16 +12,21 @@ const TabSleepTracker = () => {
     <View style={styles.mainView}>
       <View style={styles.firstView}>
         <View style={styles.viewRows}>
-          <Text style={check ? styles.headerTextTwo : styles.headerText}>
+          <Text
+            style={
+              check
+                ? [styles.headerText, {color: colors.RED}]
+                : styles.headerText
+            }>
             {titles.SLEPPER_TRACKER}
-            {<Text>{check ? titles.TURN_ON : titles.TURN_OFF}</Text>}
+            {check ? titles.TURN_ON : titles.TURN_OFF}
           </Text>
         </View>
         <View style={styles.viewRowsTwo}>
           <Switch
             value={check}
             onValueChange={newChaker => {
-              setCheck(newChaker), console.log('check', check);
+              setCheck(newChaker);
             }}
           />
         </View>
@@ -27,10 +34,7 @@ const TabSleepTracker = () => {
       <View style={styles.secondView}>
         <Text style={styles.bigText}>{titles.LONG_TEXT}</Text>
         <View style={styles.infoView}>
-          <Image
-            style={styles.img}
-            source={require('../../assets/img/graph.png')}
-          />
+          <Image style={styles.img} source={images.info} />
         </View>
       </View>
     </View>

@@ -9,34 +9,28 @@ export const headers = {
   VERSION: 'Версия: 1.12.10',
 };
 
-export const settingListArray = [
+export const settingListArrayOne = [
   {
     itemName: 'Вам понравилось?',
     itemSubtitle: 'Оцените в Play Store',
     color: colors.GREEN,
-    link: 'market://details?id=by.si.soundsleeper.free',
-    url: 'https://www.google.ru',
+    num: 1,
   },
   {
     itemName: 'Вам не понравилось?',
     itemSubtitle: 'Скажите, как нам стать лучше',
     color: colors.CARROT,
-    link: 'market://details?id=com.adobe.reader',
-    onClick: navigation => {},
+    num: 2,
   },
   {
     itemName: 'Посетите наш веб-сайт',
     itemSubtitle: 'Чтобы сказать привет...',
-    color: colors.WHITE,
-    link: 'market://details?id=com.lingodeer',
-    url: 'https://www.google.ru',
+    num: 3,
   },
   {
     itemName: 'Мы в Facebook, присоединяйтесь',
     itemSubtitle: 'Советы, истории, привет...',
-    color: colors.WHITE,
-    link: 'market://details?id=net.relaxio.sleepo',
-    url: 'https://www.google.ru',
+    num: 4,
   },
 ];
 
@@ -47,7 +41,6 @@ export const settingListArrayTwo = [
   },
   {
     itemName: 'Что в полной версии?',
-    itemSubtitle: null,
   },
 ];
 

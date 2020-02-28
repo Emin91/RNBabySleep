@@ -16,6 +16,10 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%',
   },
+  scrollView: {
+    flex: 0.6,
+    justifyContent: 'flex-end',
+  },
   mainTitleView: {
     flex: 0.1,
     justifyContent: 'center',

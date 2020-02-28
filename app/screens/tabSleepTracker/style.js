@@ -20,10 +20,6 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: colors.WHITE,
   },
-  headerTextTwo: {
-    fontSize: 20,
-    color: colors.RED,
-  },
   viewRowsTwo: {
     flex: 0.2,
     paddingRight: 20,
