@@ -64,6 +64,7 @@ const btnClick = (check, setCheck, inputValue) => {
 const NewSoundScreen = () => {
   const [inputValue, setInputValue] = useState('');
   const [check, setCheck] = useState(false);
+  const [checks, setChecks] = useState(true);
 
   useEffect(() => {
     RNFetchBlob.fs
