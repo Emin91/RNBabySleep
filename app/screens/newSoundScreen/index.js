@@ -29,17 +29,20 @@ const startRecord = async (setCheck, inputValue) => {
   var hours = new Date().getHours();
   var min = new Date().getMinutes();
   var sec = new Date().getSeconds();
+  var msec = new Date().getMilliseconds();
   setCheck(true);
   await SoundRecorder.start(
     '/storage/emulated/0/BayuBay/Records/' +
-      `${inputValue}${day}${hours}${min}${sec}.mp3`,
+      `${inputValue}(${day}:${hours}:${min}:${sec}:${msec}).mp3`,
     console.log('recording'),
   )
-    .then(function() {
-      console.log('started');
+    .then(() => {
+      console.log('Started');
     })
     .catch(err => {
-      alert(err);
+      if (err) {
+        alert('Идет запись.Долгое зажатие для остановки.');
+      }
     });
 };
 
