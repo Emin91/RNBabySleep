@@ -8,14 +8,6 @@ import styles from './style';
 import SoundRecorder from 'react-native-sound-recorder';
 import RNFetchBlob from 'react-native-fetch-blob';
 
-// const stopRecord = async setCheck => {
-//   setCheck(false);
-//   await SoundRecorder.stop().then(function(result, duration) {
-//     console.log('Stoped');
-//     alert('Сохранено по пути: ' + result.path);
-//   });
-// };
-
 const stopRecord = async setCheck => {
   setCheck(false);
   await SoundRecorder.stop().then(function(result) {
@@ -26,15 +18,16 @@ const stopRecord = async setCheck => {
 
 const startRecord = async (setCheck, inputValue) => {
   var day = new Date().getDate();
-  var hours = new Date().getHours();
   var min = new Date().getMinutes();
   var sec = new Date().getSeconds();
+  var hours = new Date().getHours();
   var msec = new Date().getMilliseconds();
+
   setCheck(true);
+
   await SoundRecorder.start(
-    '/storage/emulated/0/BayuBay/Records/' +
-      `${inputValue}(${day}:${hours}:${min}:${sec}:${msec}).mp3`,
-    console.log('recording'),
+    `/storage/emulated/0/BayuBay/Records/${inputValue}.mp3`,
+    console.log('recording', inputValue),
   )
     .then(() => {
       console.log('Started');
@@ -88,6 +81,14 @@ const NewSoundScreen = () => {
       .catch(() => {});
   }, []);
 
+  const deleteFiles = () => {
+    var path = `/storage/emulated/0/BayuBay/Records/${inputValue}.mp3`;
+    RNFetchBlob.fs
+      .unlink(path)
+      .then(() => {})
+      .catch(err => {});
+  };
+
   return (
     <View style={styles.mainView}>
       <View style={styles.textInputView}>
@@ -114,6 +115,7 @@ const NewSoundScreen = () => {
           minimumTrackTintColor={colors.PELOROUS}
           maximumTrackTintColor={colors.BLACK}
         />
+        <Text onPress={deleteFiles}>{inputValue}</Text>
       </View>
     </View>
   );

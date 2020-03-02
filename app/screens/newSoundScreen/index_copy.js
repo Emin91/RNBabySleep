@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {View, Text, TextInput, TouchableOpacity} from 'react-native';
+import {View, Text, TextInput, TouchableOpacity, Button} from 'react-native';
 import {titles} from '../../constants/stringConstants';
 import {colors} from '../../constants/colorConstans';
 import Slider from '@react-native-community/slider';
@@ -8,35 +8,61 @@ import styles from './style';
 import SoundRecorder from 'react-native-sound-recorder';
 import RNFetchBlob from 'react-native-fetch-blob';
 
-const stopRecord = async () => {
+// const stopRecord = async setCheck => {
+//   setCheck(false);
+//   await SoundRecorder.stop().then(function(result, duration) {
+//     console.log('Stoped');
+//     alert('Сохранено по пути: ' + result.path);
+//   });
+// };
+
+const stopRecord = async setCheck => {
+  setCheck(false);
   await SoundRecorder.stop().then(function(result) {
     console.log('Stoped');
     alert('Сохранено по пути: ' + result.path);
   });
 };
 
-const startRecord = async () => {
+const startRecord = async (setCheck, inputValue) => {
   var day = new Date().getDate();
   var hours = new Date().getHours();
   var min = new Date().getMinutes();
   var sec = new Date().getSeconds();
+  var msec = new Date().getMilliseconds();
+  setCheck(true);
   await SoundRecorder.start(
     '/storage/emulated/0/BayuBay/Records/' +
-      `rec${day}${hours}${min}${sec}.mp3`,
+      `${inputValue}(${day}:${hours}:${min}:${sec}:${msec}).mp3`,
     console.log('recording'),
-  ).then(function() {
-    console.log('started');
-  });
+  )
+    .then(() => {
+      console.log('Started');
+    })
+    .catch(err => {
+      if (err) {
+        alert('Идет запись.Долгое зажатие для остановки.');
+      }
+    });
 };
 
-const btnChange = () => {
+const btnClick = (check, setCheck, inputValue) => {
   return (
     <TouchableOpacity
       activeOpacity={0.6}
-      onPress={() => startRecord()}
-      onLongPress={() => stopRecord()}>
-      <View style={styles.recorderBtn}>
-        <Icon.Feather name="mic" color={colors.WHITE} size={70} />
+      onPress={() => startRecord(setCheck, inputValue)}
+      onLongPress={() => stopRecord(setCheck)}>
+      <View
+        style={
+          !check
+            ? styles.recorderBtn
+            : [styles.recorderBtn, {backgroundColor: 'red'}]
+        }>
+        <Icon.Feather
+          name={!check ? 'mic' : 'stop-circle'}
+          color={colors.WHITE}
+          size={70}
+        />
       </View>
     </TouchableOpacity>
   );
@@ -44,6 +70,7 @@ const btnChange = () => {
 
 const NewSoundScreen = () => {
   const [inputValue, setInputValue] = useState('');
+  const [check, setCheck] = useState(false);
 
   useEffect(() => {
     RNFetchBlob.fs
@@ -68,6 +95,7 @@ const NewSoundScreen = () => {
           value={inputValue}
           maxLength={30}
           autoCorrect={false}
+          autoCapitalize={false}
           style={styles.textInput}
           placeholder={titles.TEXT_INPUT}
           onChangeText={newValue => setInputValue(newValue)}
@@ -75,7 +103,7 @@ const NewSoundScreen = () => {
       </View>
       <View style={styles.recorderView}>
         <Text style={styles.timer}>00:00</Text>
-        {btnChange()}
+        {btnClick(check, setCheck, inputValue)}
       </View>
       <View style={styles.sliderView}>
         <Slider
