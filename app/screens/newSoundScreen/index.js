@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {View, Text, TextInput, TouchableOpacity} from 'react-native';
+import {View, Text, TextInput, TouchableOpacity, Button} from 'react-native';
 import {titles} from '../../constants/stringConstants';
 import {colors} from '../../constants/colorConstans';
 import Slider from '@react-native-community/slider';
@@ -7,6 +7,14 @@ import Icon from '../../components/Icons';
 import styles from './style';
 import SoundRecorder from 'react-native-sound-recorder';
 import RNFetchBlob from 'react-native-fetch-blob';
+
+// const stopRecord = async setCheck => {
+//   setCheck(false);
+//   await SoundRecorder.stop().then(function(result, duration) {
+//     console.log('Stoped');
+//     alert('Сохранено по пути: ' + result.path);
+//   });
+// };
 
 const stopRecord = async setCheck => {
   setCheck(false);
@@ -16,7 +24,7 @@ const stopRecord = async setCheck => {
   });
 };
 
-const startRecord = async setCheck => {
+const startRecord = async (setCheck, inputValue) => {
   var day = new Date().getDate();
   var hours = new Date().getHours();
   var min = new Date().getMinutes();
@@ -24,18 +32,22 @@ const startRecord = async setCheck => {
   setCheck(true);
   await SoundRecorder.start(
     '/storage/emulated/0/BayuBay/Records/' +
-      `rec${day}${hours}${min}${sec}.mp3`,
+      `${inputValue}${day}${hours}${min}${sec}.mp3`,
     console.log('recording'),
-  ).then(function() {
-    console.log('started');
-  });
+  )
+    .then(function() {
+      console.log('started');
+    })
+    .catch(err => {
+      alert(err);
+    });
 };
 
-const btnClick = (check, setCheck) => {
+const btnClick = (check, setCheck, inputValue) => {
   return (
     <TouchableOpacity
       activeOpacity={0.6}
-      onPress={() => startRecord(setCheck)}
+      onPress={() => startRecord(setCheck, inputValue)}
       onLongPress={() => stopRecord(setCheck)}>
       <View
         style={
@@ -80,6 +92,7 @@ const NewSoundScreen = () => {
           value={inputValue}
           maxLength={30}
           autoCorrect={false}
+          autoCapitalize={false}
           style={styles.textInput}
           placeholder={titles.TEXT_INPUT}
           onChangeText={newValue => setInputValue(newValue)}
@@ -87,7 +100,7 @@ const NewSoundScreen = () => {
       </View>
       <View style={styles.recorderView}>
         <Text style={styles.timer}>00:00</Text>
-        {check ? btnClick(check, setCheck) : btnClick(check, setCheck)}
+        {btnClick(check, setCheck, inputValue)}
       </View>
       <View style={styles.sliderView}>
         <Slider
