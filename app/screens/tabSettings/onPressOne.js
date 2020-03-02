@@ -14,7 +14,7 @@ export const sendMail = () => {
 export const onPressItemsOne = num => {
   switch (num) {
     case 1:
-      ApkManager.isAppInstalled('com.android.vending').then(data => {
+      ApkManager.isAppInstalled('com.androidde.vending').then(data => {
         if (data) {
           Linking.openURL('market://details?id=by.si.soundsleeper.free');
         } else {
