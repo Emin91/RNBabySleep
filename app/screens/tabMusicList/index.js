@@ -8,7 +8,7 @@ import styles from './styles';
 
 const items = (arrays, props) => {
   return (
-    <View>
+    <>
       {arrays.map(({value, img}) => {
         return (
           <TouchableOpacity
@@ -20,7 +20,7 @@ const items = (arrays, props) => {
           </TouchableOpacity>
         );
       })}
-    </View>
+    </>
   );
 };
 

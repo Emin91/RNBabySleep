@@ -8,20 +8,18 @@ import styles from './style';
 import SoundRecorder from 'react-native-sound-recorder';
 import RNFetchBlob from 'react-native-fetch-blob';
 
-const stopRecord = async setCheck => {
-  setCheck(false);
+const stopRecord = async () => {
   await SoundRecorder.stop().then(function(result) {
     console.log('Stoped');
     alert('Сохранено по пути: ' + result.path);
   });
 };
 
-const startRecord = async setCheck => {
+const startRecord = async () => {
   var day = new Date().getDate();
   var hours = new Date().getHours();
   var min = new Date().getMinutes();
   var sec = new Date().getSeconds();
-  setCheck(true);
   await SoundRecorder.start(
     '/storage/emulated/0/BayuBay/Records/' +
       `rec${day}${hours}${min}${sec}.mp3`,
@@ -31,23 +29,14 @@ const startRecord = async setCheck => {
   });
 };
 
-const btnClick = (check, setCheck) => {
+const btnChange = () => {
   return (
     <TouchableOpacity
       activeOpacity={0.6}
-      onPress={() => startRecord(setCheck)}
-      onLongPress={() => stopRecord(setCheck)}>
-      <View
-        style={
-          !check
-            ? styles.recorderBtn
-            : [styles.recorderBtn, {backgroundColor: 'red'}]
-        }>
-        <Icon.Feather
-          name={!check ? 'mic' : 'stop-circle'}
-          color={colors.WHITE}
-          size={70}
-        />
+      onPress={() => startRecord()}
+      onLongPress={() => stopRecord()}>
+      <View style={styles.recorderBtn}>
+        <Icon.Feather name="mic" color={colors.WHITE} size={70} />
       </View>
     </TouchableOpacity>
   );
@@ -55,7 +44,6 @@ const btnClick = (check, setCheck) => {
 
 const NewSoundScreen = () => {
   const [inputValue, setInputValue] = useState('');
-  const [check, setCheck] = useState(false);
 
   useEffect(() => {
     RNFetchBlob.fs
@@ -87,7 +75,7 @@ const NewSoundScreen = () => {
       </View>
       <View style={styles.recorderView}>
         <Text style={styles.timer}>00:00</Text>
-        {check ? btnClick(check, setCheck) : btnClick(check, setCheck)}
+        {btnChange()}
       </View>
       <View style={styles.sliderView}>
         <Slider

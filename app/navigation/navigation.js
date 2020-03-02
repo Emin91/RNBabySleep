@@ -11,7 +11,6 @@ import {createStackNavigator} from 'react-navigation-stack';
 //Screens
 import NewSoundScreen from '../screens/newSoundScreen';
 import DetailsScreen from '../screens/detailsScreen';
-import registrationScreen from '../screens/registration';
 import YoutubeScreen from '../screens/youtubeScreen';
 import {TabBar} from './tabNavigation/tabNavigator';
 import {titles} from '../constants/stringConstants';
@@ -71,12 +70,6 @@ const AppContainer = createStackNavigator(
           elevation: 0,
           shadowOpacity: 0,
         },
-      }),
-    },
-    RegScreen: {
-      screen: registrationScreen,
-      navigationOptions: ({}) => ({
-        headerShown: false,
       }),
     },
     MovieScreen: {

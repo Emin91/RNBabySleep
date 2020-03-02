@@ -21,6 +21,7 @@ const versionView = (developer, ver) => {
     </View>
   );
 };
+
 const header = title => {
   return (
     <View style={styles.headerView}>
@@ -31,7 +32,7 @@ const header = title => {
 
 const itemsArray = (arrays, onPressed, navigation) => {
   return (
-    <View>
+    <>
       {arrays.map(({itemName, itemSubtitle, color, num}) => {
         return (
           <TouchableOpacity
@@ -57,7 +58,7 @@ const itemsArray = (arrays, onPressed, navigation) => {
           </TouchableOpacity>
         );
       })}
-    </View>
+    </>
   );
 };
 

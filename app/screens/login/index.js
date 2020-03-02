@@ -61,9 +61,7 @@ const LoginScreen = ({navigation}) => {
           <View style={styles.regContainer}>
             {textField('userName', 'user', login, setLogin)}
             {textField('password', 'textbox-password', password, setPassword)}
-            <TouchableOpacity
-              activeOpacity={0.8}
-              onPress={() => onLoginClick()}>
+            <TouchableOpacity activeOpacity={0.8} onPress={onLoginClick}>
               <View
                 style={
                   login || password
