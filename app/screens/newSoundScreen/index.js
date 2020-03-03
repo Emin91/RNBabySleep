@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {View, Text, TextInput} from 'react-native';
+import {View, Text, TextInput, Button} from 'react-native';
 import {titles} from '../../constants/string';
 import {colors} from '../../constants/color';
 import Slider from '@react-native-community/slider';
@@ -60,9 +60,7 @@ const NewSoundScreen = () => {
       .then(() => {
         console.log('Deleted', path);
       })
-      .catch(err => {
-        console.log('Uje udalyon', err);
-      });
+      .catch(err => {});
   };
 
   return (
@@ -103,7 +101,6 @@ const NewSoundScreen = () => {
           minimumTrackTintColor={colors.PELOROUS}
           maximumTrackTintColor={colors.BLACK}
         />
-        <Text onPress={deleteFiles}>{inputValue}</Text>
       </View>
     </View>
   );

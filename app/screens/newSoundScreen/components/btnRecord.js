@@ -1,18 +1,13 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, TouchableOpacity} from 'react-native';
 import {colors} from '../../../constants/color';
 import Icon from '../../../components/iconsList';
 import styles from '../style';
-
-// const disabe = () => {
-//   if(!inputValue) {
-
-//   } else {
-
-//   }
-// }
+import Spinner from 'react-native-spinkit';
 
 const ButtonRecord = ({check, setCheck, inputValue, start, stop}) => {
+  const [isVisible] = useState(true);
+
   if (!inputValue) {
     return (
       <TouchableOpacity
@@ -42,11 +37,21 @@ const ButtonRecord = ({check, setCheck, inputValue, start, stop}) => {
               ? styles.recorderBtn
               : [styles.recorderBtn, {backgroundColor: colors.RED}]
           }>
-          <Icon.Feather
-            name={!check ? 'mic' : 'stop-circle'}
-            color={colors.WHITE}
-            size={70}
-          />
+          {!check ? (
+            <Icon.Feather
+              name={!check ? 'mic' : 'stop-circle'}
+              color={colors.WHITE}
+              size={70}
+            />
+          ) : (
+            <Spinner
+              style={{}}
+              isVisible={isVisible}
+              size={70}
+              type={'Wave'}
+              color={'white'}
+            />
+          )}
         </View>
       </TouchableOpacity>
     );
