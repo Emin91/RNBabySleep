@@ -1,39 +1,25 @@
 import React from 'react';
-import {View, Text, TouchableOpacity, ScrollView} from 'react-native';
+import {View, ScrollView} from 'react-native';
 import {titleOne, titleTwo, titleThree} from '../../constants/itemListArray';
-import {titles} from '../../constants/stringConstants';
-import {ROUTE} from '../../constants/routeNameConstants';
-import TextElements from '../../components/textElements/textElement';
+import {titles} from '../../constants/string';
+import TextElements from '../../components/textElements';
 import styles from './styles';
+import Items from './components/items';
 
-const items = (arrays, props) => {
-  return (
-    <>
-      {arrays.map(({value, img}) => {
-        return (
-          <TouchableOpacity
-            style={styles.textsView}
-            onPress={() =>
-              props.navigation.navigate(ROUTE.Details, {value, img})
-            }>
-            <Text style={styles.texts}>{value}</Text>
-          </TouchableOpacity>
-        );
-      })}
-    </>
-  );
-};
-
-const MusicListTab = props => {
+const MusicListTab = ({navigation}) => {
   return (
     <ScrollView style={styles.scrollView}>
       <TextElements title={titles.MusicListTab_TITLE_ONE} />
       <TextElements title={titles.MusicListTab_TITLE_TWO} />
-      {items(titleOne, props)}
+      <Items arrays={titleOne} navigation={navigation} />
       <TextElements title={titles.MusicListTab_TITLE_THREE} />
-      {items(titleTwo, props)}
+      <Items arrays={titleTwo} navigation={navigation} />
       <TextElements title={titles.MusicListTab_TITLE_FOUR} />
-      {<View style={styles.itemViews}>{items(titleThree, props)}</View>}
+      {
+        <View style={styles.itemViews}>
+          <Items arrays={titleThree} navigation={navigation} />
+        </View>
+      }
     </ScrollView>
   );
 };

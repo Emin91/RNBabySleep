@@ -7,49 +7,16 @@ import {
   ImageBackground,
   KeyboardAvoidingView,
 } from 'react-native';
-import {titles} from '../../constants/stringConstants';
-import {colors} from '../../constants/colorConstans';
-import {images} from '../../constants/imageConstants';
-import {ROUTE} from '../../constants/routeNameConstants';
+import {titles} from '../../constants/string';
+import {images} from '../../constants/image';
+import {ROUTE} from '../../constants/settings';
 import styles from './styles';
-import OwnTextInput from '../../components/inputText/inputText';
-import AsyncStorage from '@react-native-community/async-storage';
+import onLoginClick from './components/onLoginClick';
+import CustomTextInput from '../../components/inputText';
 
 const LoginScreen = ({navigation}) => {
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
-
-  const onLoginClick = async () => {
-    if (!login || !password) {
-      alert(titles.NEED_TO_FILL);
-    } else {
-      if (
-        login === (await AsyncStorage.getItem('login')) &&
-        password === (await AsyncStorage.getItem('password'))
-      ) {
-        navigation.navigate(ROUTE.HomeScreen);
-      } else {
-        alert(titles.NOT_MUTCH);
-      }
-    }
-  };
-
-  const textField = (id, iconName, inputValue, setFunc) => {
-    return (
-      <View>
-        <OwnTextInput
-          id={id}
-          navigation={onLoginClick}
-          iconName={iconName}
-          returnKey="go"
-          userValue={inputValue}
-          onChange={newValue => setFunc(newValue)}
-          title={titles.REGISTRATION_LOGIN}
-          placeHolder={titles.REGISTRATION_TYPE_LOGIN}
-        />
-      </View>
-    );
-  };
 
   return (
     <KeyboardAvoidingView>
@@ -59,18 +26,33 @@ const LoginScreen = ({navigation}) => {
         </View>
         <View style={styles.regView}>
           <View style={styles.regContainer}>
-            {textField('userName', 'user', login, setLogin)}
-            {textField('password', 'textbox-password', password, setPassword)}
-            <TouchableOpacity activeOpacity={0.8} onPress={onLoginClick}>
-              <View
-                style={
-                  login || password
-                    ? styles.loginBtnView
-                    : [styles.loginBtnView, {backgroundColor: colors.GREY}]
-                }>
-                <Text style={styles.loginText}>{titles.LOGIN_BTN}</Text>
-              </View>
-            </TouchableOpacity>
+            <CustomTextInput
+              iconName="user"
+              security={false}
+              inputValue={login}
+              setFunc={setLogin}
+              title={titles.REGISTRATION_LOGIN}
+              placeHolder={titles.REGISTRATION_TYPE_LOGIN}
+              navigation={navigation}
+            />
+            <CustomTextInput
+              iconName="textbox-password"
+              security={true}
+              inputValue={password}
+              setFunc={setPassword}
+              title={titles.REGISTRATION_PASSWORD}
+              placeHolder={titles.REGISTRATION_TYPE_PASSWORD}
+              navigation={navigation}
+            />
+            {login && password ? (
+              <TouchableOpacity
+                activeOpacity={0.8}
+                onPress={() => onLoginClick(login, password, navigation)}>
+                <View style={styles.loginBtnView}>
+                  <Text style={styles.loginText}>{titles.LOGIN_BTN}</Text>
+                </View>
+              </TouchableOpacity>
+            ) : null}
             <TouchableOpacity
               activeOpacity={0.6}
               onPress={() => navigation.navigate(ROUTE.RegistrationScreen)}>

@@ -1,4 +1,4 @@
-import {colors} from './colorConstans';
+import {colors} from './color';
 
 export const headers = {
   UPGRADES: 'Обновление',

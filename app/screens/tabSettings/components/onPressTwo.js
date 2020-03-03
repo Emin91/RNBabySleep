@@ -1,7 +1,4 @@
 import {Linking} from 'react-native';
-import * as ApkManager from 'react-native-apk-manager';
-import {titles} from '../../constants/stringConstants';
-import {ROUTE} from '../../constants/routeNameConstants';
 
 export const onPressItemsTwo = (num, navigation) => {
   switch (num) {

@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import {View, Text, TextInput, TouchableOpacity, Button} from 'react-native';
-import {titles} from '../../constants/stringConstants';
-import {colors} from '../../constants/colorConstans';
+import {titles} from '../../constants/string';
+import {colors} from '../../constants/color';
 import Slider from '@react-native-community/slider';
-import Icon from '../../components/Icons';
+import Icon from '../../components/iconsList';
 import styles from './style';
 import SoundRecorder from 'react-native-sound-recorder';
 import RNFetchBlob from 'react-native-fetch-blob';

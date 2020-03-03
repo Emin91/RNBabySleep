@@ -1,7 +1,7 @@
 //Screens (Tabs)
 import React from 'react';
-import Icon from '../../components/Icons';
-import {colors} from '../../constants/colorConstans'; //Color constants
+import Icon from '../../components/iconsList';
+import {colors} from '../../constants/color'; //Color constants
 import {createMaterialTopTabNavigator} from 'react-navigation-tabs';
 
 import tabSleepTracker from '../../screens/tabSleepTracker';

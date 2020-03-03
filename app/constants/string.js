@@ -52,7 +52,8 @@ export const titles = {
   MAIL_BODY:
     'Lorem Ipsum is simply dummy text of the printing and typesetting industry.Author: Emin Zeynalov',
   NEED_TO_FILL: 'Нужно заполнить поля!',
-  NOT_MUTCH: 'Логин или пароль не верны!',
+  NOT_CORRECT: 'Логин или пароль не верны!',
+  NOT_MUTCH: 'Пароли не совподают!',
   MOVIE_SCREEN_IMG_TITLE:
     'Dr. Harvey Karp, Dr. Delaney Gracy, Corky Harvey IBCLC and more',
   MOVIE_SCREEN_IMG_TITLE_TWO: 'Dr. Sema Hart and Prof. Jim Coffey',

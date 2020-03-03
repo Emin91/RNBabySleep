@@ -1,4 +1,4 @@
-import {titles} from '../constants/stringConstants';
+import {titles} from './string';
 
 export const arrayListOne = [
   {

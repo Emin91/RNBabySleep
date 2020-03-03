@@ -1,55 +1,20 @@
 import React from 'react';
 import {View, Text, Image, TouchableOpacity, ScrollView} from 'react-native';
-import {titles} from '../../constants/stringConstants';
-import {
-  itemArraysOne,
-  itemArraysTwo,
-  itemArraysThree,
-  itemArraysFour,
-  itemArraysFive,
-  itemArraysSix,
-  itemArraysSeven,
-} from '../../constants/itemListArray';
+import {titles} from '../../constants/string';
+import {list} from './components/list';
+import {ROUTE} from '../../constants/settings';
+import {images} from '../../constants/image';
 import styles from './style';
 import CurriculumItems from '../../components/curriculumItems';
 import ViewMoreText from 'react-native-view-more-text';
-
-const itemsHeader = title => {
-  return (
-    <View>
-      <Text style={styles.sectionTitle}>{title}</Text>
-    </View>
-  );
-};
-
-const arrayItems = (items, header, navigation) => {
-  return (
-    <View>
-      {itemsHeader(header)}
-      <TouchableOpacity>
-        {items.map(({title, duration, num, youtubeId}) => {
-          return (
-            <TouchableOpacity
-              activeOpacity={0.5}
-              onPress={() => navigation.navigate('YoutubeScreen', youtubeId)}>
-              <CurriculumItems title={title} time={duration} num={num} />
-            </TouchableOpacity>
-          );
-        })}
-      </TouchableOpacity>
-    </View>
-  );
-};
+import ItemsHeader from './components/itemsHeader';
 
 const MovieScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
       <ScrollView>
         <View style={styles.imgView}>
-          <Image
-            style={styles.img}
-            source={require('../../assets/img/img1.jpg')}
-          />
+          <Image style={styles.img} source={images.img1} />
         </View>
         <View style={styles.imgTitleView}>
           <Text style={styles.imgTitleOne}>
@@ -59,39 +24,42 @@ const MovieScreen = ({navigation}) => {
         </View>
         <View style={styles.freeBtnView}>
           <TouchableOpacity style={styles.touchableBtn}>
-            <View style={styles.freeBtnBg}>
-              <Text style={styles.freeBtnText}>{titles.INFO_HEADER_FREE}</Text>
-            </View>
+            <Text style={styles.freeBtnText}>{titles.INFO_HEADER_FREE}</Text>
           </TouchableOpacity>
           <View style={styles.devider}></View>
         </View>
-        <View
-          style={{
-            width: '100%',
-            height: 60,
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}>
+        <View style={styles.curiculumView}>
           <Text style={styles.curiculum}>{titles.CURRICULUM}</Text>
         </View>
         <View style={{flex: 1}}>
-          <ViewMoreText
-            numberOfLines={2}
-            textStyle={{
-              paddingLeft: 20,
-              paddingRight: 20,
-              textAlign: 'center',
-            }}>
+          <ViewMoreText numberOfLines={2} textStyle={styles.moreText}>
             <Text style={styles.bigText}>{titles.SHOW_MORE_TEXT}</Text>
           </ViewMoreText>
         </View>
-        {arrayItems(itemArraysOne, titles.SECTIONS_ONE, navigation)}
-        {arrayItems(itemArraysTwo, titles.SECTIONS_TWO, navigation)}
-        {arrayItems(itemArraysThree, titles.SECTIONS_THREE, navigation)}
-        {arrayItems(itemArraysFour, titles.SECTIONS_FOUR, navigation)}
-        {arrayItems(itemArraysFive, titles.SECTIONS_FIVE, navigation)}
-        {arrayItems(itemArraysSix, titles.SECTIONS_SIX, navigation)}
-        {arrayItems(itemArraysSeven, titles.SECTIONS_SEVEN, navigation)}
+        {list.map(({arrays, title}) => {
+          return (
+            <>
+              <ItemsHeader header={title} />
+              <TouchableOpacity>
+                {arrays.map(({title, duration, num, youtubeId}) => {
+                  return (
+                    <TouchableOpacity
+                      activeOpacity={0.5}
+                      onPress={() =>
+                        navigation.navigate(ROUTE.YoutubeScreen, youtubeId)
+                      }>
+                      <CurriculumItems
+                        title={title}
+                        time={duration}
+                        num={num}
+                      />
+                    </TouchableOpacity>
+                  );
+                })}
+              </TouchableOpacity>
+            </>
+          );
+        })}
       </ScrollView>
     </View>
   );

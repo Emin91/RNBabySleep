@@ -1,62 +1,52 @@
 import React, {useState} from 'react';
 import {View, Text, TouchableOpacity, ImageBackground} from 'react-native';
-import {titles} from '../../constants/stringConstants';
+import {titles} from '../../constants/string';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
-import {ROUTE} from '../../constants/routeNameConstants';
-import {images} from '../../constants/imageConstants';
+import {ROUTE} from '../../constants/settings';
+import {images} from '../../constants/image';
 import styles from './style';
-import OwnTextInput from '../../components/inputText/inputText';
-import AsyncStorage from '@react-native-community/async-storage';
+import onRegistrationClick from './components/onRegistrationClick';
+import CustomTextInput from '../../components/inputText';
 
 const RegisrationScreen = ({navigation}) => {
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
   const [passwordConfim, setPasswordConfirm] = useState('');
 
-  const onRegistrationClick = async () => {
-    if (!login || !password || !passwordConfim) {
-      alert(titles.NEED_TO_FILL);
-    } else if (password !== passwordConfim) {
-      alert(titles.NOT_MUTCH);
-    } else {
-      await AsyncStorage.setItem('login', login);
-      await AsyncStorage.setItem('password', password);
-      navigation.navigate(ROUTE.HomeScreen);
-    }
-  };
-
-  const textField = (id, iconName, inputValue, setFunc) => {
-    return (
-      <View>
-        <OwnTextInput
-          id={id}
-          iconName={iconName}
-          returnKey="next"
-          userValue={inputValue}
-          onChange={newValue => setFunc(newValue)}
-          title={titles.REGISTRATION_LOGIN}
-          placeHolder={titles.REGISTRATION_TYPE_LOGIN}
-        />
-      </View>
-    );
-  };
-
   return (
     <ImageBackground source={images.bg2} style={styles.mainView}>
       <KeyboardAwareScrollView style={styles.keyboardScroll}>
         <View style={styles.regView}>
           <View style={styles.regContainer}>
-            {textField('userName', 'user', login, setLogin)}
-            {textField('password', 'textbox-password', password, setPassword)}
-            {textField(
-              'password',
-              'textbox-password',
-              passwordConfim,
-              setPasswordConfirm,
-            )}
+            <CustomTextInput
+              iconName="user"
+              security={false}
+              inputValue={login}
+              setFunc={setLogin}
+              title={titles.REGISTRATION_LOGIN}
+              placeHolder={titles.REGISTRATION_TYPE_LOGIN}
+            />
+            <CustomTextInput
+              iconName="textbox-password"
+              security={true}
+              inputValue={password}
+              setFunc={setPassword}
+              title={titles.REGISTRATION_PASSWORD}
+              placeHolder={titles.REGISTRATION_TYPE_PASSWORD}
+            />
+            <CustomTextInput
+              iconName="textbox-password"
+              security={true}
+              inputValue={passwordConfim}
+              setFunc={setPasswordConfirm}
+              title={titles.REGISTRATION_PASSWORD}
+              placeHolder={titles.REGISTRATION_TYPE_PASSWORD}
+            />
             <TouchableOpacity
               activeOpacity={0.6}
-              onPress={() => onRegistrationClick()}>
+              onPress={() =>
+                onRegistrationClick(login, password, passwordConfim, navigation)
+              }>
               <View style={styles.loginBtnView}>
                 <Text style={styles.loginText}>
                   {titles.REGISTRATION_TITLE}

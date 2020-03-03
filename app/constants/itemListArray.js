@@ -1,4 +1,4 @@
-import {titles} from './stringConstants';
+import {titles} from './string';
 
 export const titleOne = [
   {

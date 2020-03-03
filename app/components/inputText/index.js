@@ -1,17 +1,15 @@
 import React from 'react';
 import {View, Text, Button, TextInput} from 'react-native';
 import styles from './style';
-import Icon from '../Icons';
+import Icon from '../iconsList';
 
-const OwnTextInput = ({
+const CustomTextInput = ({
+  iconName,
+  security,
+  inputValue,
+  setFunc,
   title,
   placeHolder,
-  iconName,
-  id,
-  onChange,
-  returnKey,
-  userValue,
-  navigation,
 }) => {
   return (
     <View style={styles.userNameView}>
@@ -28,12 +26,12 @@ const OwnTextInput = ({
         </View>
         <View style={styles.inputView}>
           <TextInput
-            onSubmitEditing={navigation}
-            returnKeyType={returnKey}
-            secureTextEntry={id === 'password'}
+            secureTextEntry={security}
             placeholder={placeHolder}
-            value={userValue}
-            onChangeText={onChange}
+            value={inputValue}
+            onChangeText={setFunc}
+            autoCorrect={false}
+            autoCapitalize={false}
           />
         </View>
       </View>
@@ -41,4 +39,4 @@ const OwnTextInput = ({
   );
 };
 
-export default OwnTextInput;
+export default CustomTextInput;

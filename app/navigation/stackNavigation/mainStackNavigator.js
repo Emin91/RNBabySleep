@@ -2,22 +2,22 @@ import React from 'react';
 import {TouchableOpacity} from 'react-native';
 
 //Icons
-import Icon from '../components/Icons';
+import Icon from '../../components/iconsList';
 
 //Navigation
 import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
 
 //Screens
-import NewSoundScreen from '../screens/newSoundScreen';
-import DetailsScreen from '../screens/detailsScreen';
-import YoutubeScreen from '../screens/youtubeScreen';
-import {TabBar} from './tabNavigation/tabNavigator';
-import {titles} from '../constants/stringConstants';
-import {colors} from '../constants/colorConstans';
-import {TabBarTwo} from './tabNavigation/tabNavigatorTwo';
-import {ROUTE} from '../constants/routeNameConstants';
-import NewVersion from '../screens/newVersion';
+import NewSoundScreen from '../../screens/newSoundScreen';
+import DetailsScreen from '../../screens/detailsScreen';
+import YoutubeScreen from '../../screens/youtubeScreen';
+import NewVersion from '../../screens/newVersion';
+import {TabBar} from '../tabNavigation/tabNavigator';
+import {titles} from '../../constants/string';
+import {colors} from '../../constants/color';
+import {TabBarTwo} from '../tabNavigation/tabNavigatorTwo';
+import {ROUTE} from '../../constants/settings';
 
 const AppContainer = createStackNavigator(
   {

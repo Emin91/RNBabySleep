@@ -1,51 +1,15 @@
 import React from 'react';
 import {View, Text, Image, TouchableOpacity, ScrollView} from 'react-native';
 import styles from './style';
-import {titles} from '../../constants/stringConstants';
-import ItemDetails from '../../components/itemDetails';
-import email from 'react-native-email';
+import {titles} from '../../constants/string';
 import {
   arrayListOne,
   arrayListTwo,
 } from '../../constants/movieScreenArrayLists';
-import {images} from '../../constants/imageConstants';
-
-const sendMail = () => {
-  const to = ['emin.proger@gmail.com'];
-  email(to, {
-    subject: titles.MAIL_SUBJECT,
-    body: titles.MAIL_BODY,
-  }).catch(console.error);
-};
-
-const header = title => {
-  return (
-    <View style={styles.mainTitleView}>
-      <Text style={styles.mainTitle}>{title}</Text>
-    </View>
-  );
-};
-
-const arrayItems = (arrays, navigation) => {
-  return (
-    <View>
-      {arrays.map(({title, img, subTitle, freeText, onClick}) => {
-        return (
-          <TouchableOpacity
-            style={{flex: 1}}
-            onPress={() => navigation.navigate(onClick)}>
-            <ItemDetails
-              title={title}
-              img={img}
-              subTitle={subTitle}
-              freeText={freeText}
-            />
-          </TouchableOpacity>
-        );
-      })}
-    </View>
-  );
-};
+import {images} from '../../constants/image';
+import TitleHeader from './components/header';
+import SendMail from './components/sendMail';
+import ArrayList from './components/arrayItems';
 
 const TabInformation = ({navigation}) => {
   return (
@@ -55,18 +19,18 @@ const TabInformation = ({navigation}) => {
       </View>
       <View style={styles.scrollView}>
         <ScrollView>
-          {header(titles.INFO_HEADER_TEXT_TITLE)}
+          <TitleHeader title={titles.INFO_HEADER_TEXT_TITLE} />
           <View style={styles.itemView}>
-            {arrayItems(arrayListOne, navigation)}
+            <ArrayList arrays={arrayListOne} navigation={navigation} />
           </View>
-          {header(titles.INFO_HEADER_TEXT_TITLE_TWO)}
+          <TitleHeader title={titles.INFO_HEADER_TEXT_TITLE_TWO} />
           <View style={styles.itemView}>
-            {arrayItems(arrayListTwo, navigation)}
+            <ArrayList arrays={arrayListTwo} navigation={navigation} />
           </View>
         </ScrollView>
         <View style={styles.dropMenuView}>
           <TouchableOpacity
-            onPress={() => sendMail()}
+            onPress={SendMail}
             activeOpacity={0.6}
             style={styles.touchableBtn}>
             <Text style={styles.dropMenuText}>{titles.DOWN_PAN_MENU}</Text>

@@ -1,23 +1,15 @@
 import React, {useState} from 'react';
-import {
-  View,
-  Text,
-  Button,
-  TextInput,
-  TouchableNativeFeedback,
-  Image,
-  TouchableOpacity,
-} from 'react-native';
+import {View, Text, Image, TouchableOpacity} from 'react-native';
+import {titles} from '../../constants/string';
+import {colors} from '../../constants/color';
 import Slider from '@react-native-community/slider';
 import styles from './style';
-import {titles} from '../../constants/stringConstants';
-import {colors} from '../../constants/colorConstans';
 
 const btns = ['Play', 'Pause', 'Resume'];
 
 const DetailsScreen = ({navigation}) => {
   const [volume, setVolume] = useState(0);
-  const [check, setCheck] = useState(true);
+  const [check] = useState(true);
   return (
     <View style={styles.mainView}>
       <View style={styles.imgView}>
@@ -33,7 +25,6 @@ const DetailsScreen = ({navigation}) => {
         </Text>
         <Slider
           style={{width: '100%', height: 50}}
-          step={0}
           thumbTintColor={colors.LOCHMARA}
           minimumValue={0}
           maximumValue={100}
@@ -47,16 +38,14 @@ const DetailsScreen = ({navigation}) => {
           {titles.DURATION_TEXT}
           <Text>{check}</Text>
         </Text>
-        {check ? (
-          <Slider
-            style={{width: '100%', height: 50}}
-            thumbTintColor={colors.LOCHMARA}
-            minimumValue={0}
-            maximumValue={1}
-            minimumTrackTintColor={colors.PELOROUS}
-            maximumTrackTintColor={colors.BLACK}
-          />
-        ) : null}
+        <Slider
+          style={{width: '100%', height: 50}}
+          thumbTintColor={colors.LOCHMARA}
+          minimumValue={0}
+          maximumValue={1}
+          minimumTrackTintColor={colors.PELOROUS}
+          maximumTrackTintColor={colors.BLACK}
+        />
       </View>
       <View style={styles.soundButtonsView}>
         {btns.map(value => {

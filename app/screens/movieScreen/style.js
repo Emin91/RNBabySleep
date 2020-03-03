@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {colors} from '../../constants/colorConstans';
+import {colors} from '../../constants/color';
 
 const styles = StyleSheet.create({
   container: {
@@ -19,7 +19,6 @@ const styles = StyleSheet.create({
     flex: 0.16,
     justifyContent: 'space-between',
     paddingLeft: 8,
-    // backgroundColor: 'blue',
   },
   imgTitleOne: {
     fontSize: 16,
@@ -34,21 +33,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     paddingTop: 10,
-    // backgroundColor: 'orange',
   },
   touchableBtn: {
     width: '50%',
     height: '100%',
     borderRadius: 8,
-    backgroundColor: '#456',
-  },
-  freeBtnBg: {
-    width: '100%',
-    height: '100%',
+    backgroundColor: '#185',
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: 8,
-    backgroundColor: colors.GREEN_TWO,
   },
   freeBtnText: {
     fontSize: 20,
@@ -59,6 +51,12 @@ const styles = StyleSheet.create({
     height: 3,
     marginTop: 8,
     backgroundColor: colors.GREY_OPACITY,
+  },
+  curiculumView: {
+    width: '100%',
+    height: 60,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   curiculum: {
     fontSize: 18,
@@ -78,6 +76,11 @@ const styles = StyleSheet.create({
   bigText: {
     fontSize: 14,
     color: colors.WHITE,
+  },
+  moreText: {
+    paddingLeft: 20,
+    paddingRight: 20,
+    textAlign: 'center',
   },
 });
 

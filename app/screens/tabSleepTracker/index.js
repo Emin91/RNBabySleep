@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import {View, Text, Switch, Image} from 'react-native';
-import {titles} from '../../constants/stringConstants';
-import {images} from '../../constants/imageConstants';
-import {colors} from '../../constants/colorConstans';
+import {titles} from '../../constants/string';
+import {images} from '../../constants/image';
+import {colors} from '../../constants/color';
 import styles from './style';
 
 const TabSleepTracker = () => {
