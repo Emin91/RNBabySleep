@@ -116,6 +116,7 @@ export const titles = {
   BTN_2: 'ДОСТУП НА ШЕСТЬ МЕСЯЦЕЦ \n \t \t \t \t \t \t \t ЗА 429.00 Руб.',
   BTN_3:
     'НЕОГРАНИЧЕННЫЙ ДОСТУП РАЗОВЫЙ \n \t \t \t \t \t \t \t ПЛАТЕЖ - 1 090.00 Руб.',
+  NEED_RECORD_NAME: '* Для начала записи введите название',
   //New Version EN
   // FULL_VERSION: 'FULL VERSION',
   // WHATS_INSIDE: "What's inside",

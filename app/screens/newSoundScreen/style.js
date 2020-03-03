@@ -17,6 +17,10 @@ const styles = StyleSheet.create({
     color: colors.CERULEAN,
     borderBottomColor: colors.CERULEAN,
   },
+  warnText: {
+    alignSelf: 'center',
+    color: colors.RED,
+  },
   recorderView: {
     flex: 0.6,
     justifyContent: 'center',
