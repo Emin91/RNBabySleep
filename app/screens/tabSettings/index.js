@@ -6,6 +6,10 @@ import VersionView from './components/versionView';
 import ItemsHeader from './components/itemsHeader';
 import ItemsArray from './components/itemArray';
 import {menuItems} from './components/menuItems';
+import Icon from '../../components/iconsList';
+import {FloatingAction} from 'react-native-floating-action';
+import {images} from '../../constants/image';
+import {colors} from '../../constants/color';
 
 const TabSettings = ({navigation}) => {
   return (
@@ -25,6 +29,17 @@ const TabSettings = ({navigation}) => {
         })}
         <VersionView developer={headers.DEVELOP} version={headers.VERSION} />
       </ScrollView>
+      <FloatingAction
+        color={colors.LOCHMARA}
+        buttonSize={56}
+        actionsPaddingTopBottom={3}
+        showBackground={false}
+        onPressMain={goTo => {
+          navigation.navigate('About');
+        }}
+        margin={25}
+        floatingIcon={<Icon.EvilIcons name="user" size={30} color={'white'} />}
+      />
     </View>
   );
 };
