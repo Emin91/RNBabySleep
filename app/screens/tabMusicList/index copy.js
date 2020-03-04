@@ -1,24 +1,19 @@
 import React from 'react';
 import {View, ScrollView} from 'react-native';
-import {titleThree} from '../../constants/itemListArray';
+import {titleOne, titleTwo, titleThree} from '../../constants/itemListArray';
 import {titles} from '../../constants/string';
 import TextElements from '../../components/textElements';
 import styles from './styles';
 import Items from './components/items';
-import {musicList} from '../../../__mocks__/musicList';
 
 const MusicListTab = ({navigation}) => {
   return (
     <ScrollView style={styles.scrollView}>
       <TextElements title={titles.MusicListTab_TITLE_ONE} />
-      {musicList.map(({header, array}) => {
-        return (
-          <>
-            <TextElements title={header} />
-            <Items arrays={array} navigation={navigation} />
-          </>
-        );
-      })}
+      <TextElements title={titles.MusicListTab_TITLE_TWO} />
+      <Items arrays={titleOne} navigation={navigation} />
+      <TextElements title={titles.MusicListTab_TITLE_THREE} />
+      <Items arrays={titleTwo} navigation={navigation} />
       <TextElements title={titles.MusicListTab_TITLE_FOUR} />
       {
         <View style={styles.itemViews}>

@@ -117,6 +117,13 @@ export const titles = {
   BTN_3:
     'НЕОГРАНИЧЕННЫЙ ДОСТУП РАЗОВЫЙ \n \t \t \t \t \t \t \t ПЛАТЕЖ - 1 090.00 Руб.',
   NEED_RECORD_NAME: '* Для начала записи введите название',
+
+  //Settings
+  SETTING_HEADER_TITLE_ONE: 'Чувствительность ночного режима: ',
+  SETTING_HEADER_TITLE_TWO: 'Время затухания звука: ',
+  LOW: 'Низкая',
+  HIGH: 'Высокая',
+
   //New Version EN
   // FULL_VERSION: 'FULL VERSION',
   // WHATS_INSIDE: "What's inside",

@@ -18,6 +18,8 @@ import {titles} from '../../constants/string';
 import {colors} from '../../constants/color';
 import {TabBarTwo} from '../tabNavigation/tabNavigatorTwo';
 import {ROUTE} from '../../constants/settings';
+import AboutScreen from '../../screens/about';
+import Settings from '../../screens/settings';
 
 const AppContainer = createStackNavigator(
   {
@@ -99,6 +101,21 @@ const AppContainer = createStackNavigator(
       screen: NewVersion,
       navigationOptions: ({}) => ({
         title: ROUTE.NewVersion,
+        headerTintColor: colors.WHITE,
+        headerStyle: {
+          backgroundColor: colors.GREY,
+          elevation: 0,
+          shadowOpacity: 0,
+        },
+      }),
+    },
+    About: {
+      screen: AboutScreen,
+    },
+    Settings: {
+      screen: Settings,
+      navigationOptions: ({}) => ({
+        title: ROUTE.Settings,
         headerTintColor: colors.WHITE,
         headerStyle: {
           backgroundColor: colors.GREY,

@@ -7,6 +7,7 @@ import {
 } from '../../../constants/settingListArray';
 import {onPressItemsOne} from '../components/onPressOne';
 import {onPressItemsTwo} from '../components/onPressTwo';
+import {onPressItemsThree} from './onPressThree';
 
 export const menuItems = [
   {
@@ -22,7 +23,7 @@ export const menuItems = [
   {
     header: headers.SETTING,
     arrays: settingListArrayThree,
-    onPressed: onPressItemsTwo,
+    onPressed: onPressItemsThree,
   },
   {
     header: headers.ABOUT,

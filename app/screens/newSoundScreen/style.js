@@ -41,12 +41,14 @@ const styles = StyleSheet.create({
     backgroundColor: colors.LOCHMARA,
   },
   sliderView: {
-    flex: 0.2,
-    justifyContent: 'flex-start',
+    height: 150,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingTop: 50,
   },
   slider: {
     width: '100%',
-    height: 60,
+    height: 30,
   },
 });
 

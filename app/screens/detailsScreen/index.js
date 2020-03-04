@@ -2,10 +2,9 @@ import React, {useState} from 'react';
 import {View, Text, Image, TouchableOpacity} from 'react-native';
 import {titles} from '../../constants/string';
 import {colors} from '../../constants/color';
+import {btns} from '../../../__mocks__/btns';
 import Slider from '@react-native-community/slider';
 import styles from './style';
-
-const btns = ['Play', 'Pause', 'Resume'];
 
 const DetailsScreen = ({navigation}) => {
   const [volume, setVolume] = useState(0);

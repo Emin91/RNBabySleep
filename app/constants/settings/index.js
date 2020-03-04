@@ -6,4 +6,6 @@ export const ROUTE = {
   ScreenRecorder: 'ScreenRecorder',
   YoutubeScreen: 'YoutubeScreen',
   NewVersion: 'NewVersion',
+  Settings: 'Настройки',
+  About: 'О приложении',
 };

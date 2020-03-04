@@ -7,8 +7,8 @@ const SplashScreen = ({navigation}) => {
   useEffect(() => {
     const timer = setTimeout(async () => {
       if (
-        (await AsyncStorage.getItem('login')) === 'Emin2' &&
-        (await AsyncStorage.getItem('password')) === '12345'
+        (await AsyncStorage.getItem('login')) === 'a' &&
+        (await AsyncStorage.getItem('password')) === 'a'
       ) {
         navigation.navigate('HomeScreen');
       } else {

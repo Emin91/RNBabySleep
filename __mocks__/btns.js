@@ -1,1 +1,1 @@
-const btns = ['Play', 'Pause', 'Resume'];
+export const btns = ['Play', 'Pause', 'Resume'];
