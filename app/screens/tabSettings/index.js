@@ -8,7 +8,6 @@ import ItemsArray from './components/itemArray';
 import {menuItems} from './components/menuItems';
 import Icon from '../../components/iconsList';
 import {FloatingAction} from 'react-native-floating-action';
-import {images} from '../../constants/image';
 import {colors} from '../../constants/color';
 
 const TabSettings = ({navigation}) => {
@@ -38,7 +37,9 @@ const TabSettings = ({navigation}) => {
           navigation.navigate('About');
         }}
         margin={25}
-        floatingIcon={<Icon.EvilIcons name="user" size={30} color={'white'} />}
+        floatingIcon={
+          <Icon.FontAwesome name="vcard-o" size={15} color={'white'} />
+        }
       />
     </View>
   );

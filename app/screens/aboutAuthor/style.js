@@ -4,17 +4,19 @@ import {colors} from '../../constants/color';
 const styles = StyleSheet.create({
   mainView: {
     flex: 1,
-    backgroundColor: colors.GREY,
+  },
+  imgBackground: {
+    width: '100%',
+    height: '100%',
   },
   detailsViewOne: {
-    flex: 0.4,
-    // backgroundColor: 'orange',
+    flex: 0.5,
   },
   headerView: {
     flex: 0.1,
-    // backgroundColor: '#412563',
     justifyContent: 'center',
     alignItems: 'center',
+    paddingTop: 30,
   },
   headerTitle: {
     fontSize: 20,
@@ -23,22 +25,22 @@ const styles = StyleSheet.create({
   },
   imgView: {
     flex: 0.6,
-    // backgroundColor: '#742354',
     justifyContent: 'center',
     alignItems: 'center',
   },
   img: {
-    width: '30%',
-    height: '80%',
+    width: '40%',
+    height: 120,
     borderRadius: 6,
-    borderWidth: 2,
+    borderWidth: 4,
     borderColor: 'white',
   },
   authorView: {
     flex: 0.1,
-    // backgroundColor: 'cyan',
     justifyContent: 'center',
     alignItems: 'center',
+    paddingTop: 3,
+    backgroundColor: 'rgba(0, 0, 0, 0.3)',
   },
   authorName: {
     fontSize: 20,
@@ -49,17 +51,14 @@ const styles = StyleSheet.create({
   socialIconsView: {
     flex: 0.2,
     flexDirection: 'row',
-    // backgroundColor: '#124128',
   },
   socialIcons: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    // backgroundColor: '#553311',
   },
   detailsViewTwo: {
-    flex: 0.6,
-    backgroundColor: colors.GREY_OPACITY_THREE,
+    flex: 0.5,
   },
   infoView: {
     width: '100%',
@@ -67,10 +66,10 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   title: {
-    fontSize: 12,
+    fontSize: 14,
     fontFamily: 'SamsungSans-Regular',
     paddingTop: 20,
-    color: colors.GREY_OPACITY_TWO,
+    color: colors.GREY_OPACITY,
   },
   touchableTitle: {
     fontSize: 19,

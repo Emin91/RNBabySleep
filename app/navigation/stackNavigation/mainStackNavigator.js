@@ -118,7 +118,7 @@ const AppContainer = createStackNavigator(
       navigationOptions: ({}) => ({
         title: null,
         headerTintColor: colors.WHITE,
-        // headerTransparent: true,
+        headerTransparent: true,
         headerStyle: {
           backgroundColor: colors.GREY,
           elevation: 0,

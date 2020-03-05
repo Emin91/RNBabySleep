@@ -8,7 +8,7 @@ export const socialBtns = [
     num: 2,
   },
   {
-    iconName: 'vk-with-circle',
+    iconName: 'behance',
     num: 3,
   },
 ];

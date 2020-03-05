@@ -1,5 +1,6 @@
 export const colors = {
   RED: '#A02020',
+  DARKULA: '#2c3e50',
   GREY: '#424242',
   WHITE: '#ffffff',
   BLACK: '#000000',
