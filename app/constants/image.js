@@ -8,4 +8,5 @@ export const images = {
   bg2: require('../assets/img/bg2.jpg'),
   info: require('../assets/img/graph.png'),
   logo: require('../assets/icons/logo.png'),
+  avatar: {uri: 'https://avatars3.githubusercontent.com/u/56433509?s=460&v=4'},
 };

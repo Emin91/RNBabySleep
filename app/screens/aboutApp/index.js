@@ -2,12 +2,12 @@ import React from 'react';
 import {View, Text} from 'react-native';
 import styles from './style';
 
-const AboutScreen = () => {
+const AboutAppScreen = () => {
   return (
     <View style={styles.mainView}>
-      <Text>About Psxsxsage</Text>
+      <Text>About App</Text>
     </View>
   );
 };
 
-export default AboutScreen;
+export default AboutAppScreen;

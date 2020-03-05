@@ -15,6 +15,7 @@
     "@react-native-community/slider": "^2.0.8",
     "react": "16.9.0",
     "react-native": "0.61.5",
+    "react-native-android-open-settings-async": "^1.4.0",
     "react-native-animated-loader": "0.0.8",
     "react-native-apk-manager": "^1.1.0",
     "react-native-elements": "^1.2.7",

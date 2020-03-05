@@ -9,17 +9,18 @@ import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
 
 //Screens
-import NewSoundScreen from '../../screens/newSoundScreen';
-import DetailsScreen from '../../screens/detailsScreen';
-import YoutubeScreen from '../../screens/youtubeScreen';
-import NewVersion from '../../screens/newVersion';
 import {TabBar} from '../tabNavigation/tabNavigator';
 import {titles} from '../../constants/string';
 import {colors} from '../../constants/color';
 import {TabBarTwo} from '../tabNavigation/tabNavigatorTwo';
 import {ROUTE} from '../../constants/settings';
-import AboutScreen from '../../screens/about';
 import Settings from '../../screens/settings';
+import NewVersion from '../../screens/newVersion';
+import YoutubeScreen from '../../screens/youtubeScreen';
+import DetailsScreen from '../../screens/detailsScreen';
+import AboutAppScreen from '../../screens/aboutApp';
+import NewSoundScreen from '../../screens/newSoundScreen';
+import AboutAuthorScreen from '../../screens/aboutAuthor';
 
 const AppContainer = createStackNavigator(
   {
@@ -109,8 +110,21 @@ const AppContainer = createStackNavigator(
         },
       }),
     },
+    AboutApp: {
+      screen: AboutAppScreen,
+    },
     About: {
-      screen: AboutScreen,
+      screen: AboutAuthorScreen,
+      navigationOptions: ({}) => ({
+        title: null,
+        headerTintColor: colors.WHITE,
+        // headerTransparent: true,
+        headerStyle: {
+          backgroundColor: colors.GREY,
+          elevation: 0,
+          shadowOpacity: 0,
+        },
+      }),
     },
     Settings: {
       screen: Settings,

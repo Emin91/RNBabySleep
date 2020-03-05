@@ -31,7 +31,7 @@ const TabSettings = ({navigation}) => {
       </ScrollView>
       <FloatingAction
         color={colors.LOCHMARA}
-        buttonSize={56}
+        buttonSize={40}
         actionsPaddingTopBottom={3}
         showBackground={false}
         onPressMain={goTo => {
