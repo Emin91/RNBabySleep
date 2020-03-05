@@ -1,15 +1,7 @@
 import {Linking} from 'react-native';
 import {titles} from '../../../constants/string';
+import {sendMail} from './sendMail';
 import * as ApkManager from 'react-native-apk-manager';
-import email from 'react-native-email';
-
-export const sendMail = () => {
-  const to = 'emin.proger@gmail.com';
-  email(to, {
-    subject: titles.MAIL_SUBJECT,
-    body: titles.MAIL_BODY,
-  }).catch(console.error);
-};
 
 export const onPressItemsOne = num => {
   switch (num) {

@@ -112,6 +112,15 @@ const AppContainer = createStackNavigator(
     },
     AboutApp: {
       screen: AboutAppScreen,
+      navigationOptions: ({}) => ({
+        title: ROUTE.Settings,
+        headerTintColor: colors.WHITE,
+        headerStyle: {
+          backgroundColor: colors.GREY,
+          elevation: 0,
+          shadowOpacity: 0,
+        },
+      }),
     },
     About: {
       screen: AboutAuthorScreen,

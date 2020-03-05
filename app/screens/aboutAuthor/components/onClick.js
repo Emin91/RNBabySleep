@@ -7,7 +7,7 @@ const onItemPress = num => {
       console.log('Item: 1');
       break;
     case 2:
-      console.log('Item: 2');
+      Linking.openURL('geo:40.4123333,49.8150896');
       break;
     case 3:
       sendMail();

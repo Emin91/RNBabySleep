@@ -5,9 +5,10 @@ import {
   settingListArrayFour,
   headers,
 } from '../../../constants/settingListArray';
-import {onPressItemsOne} from '../components/onPressOne';
-import {onPressItemsTwo} from '../components/onPressTwo';
+import {onPressItemsOne} from './onPressOne';
+import {onPressItemsTwo} from './onPressTwo';
 import {onPressItemsThree} from './onPressThree';
+import {onPressItemsFour} from './onPressFour';
 
 export const menuItems = [
   {
@@ -28,6 +29,6 @@ export const menuItems = [
   {
     header: headers.ABOUT,
     arrays: settingListArrayFour,
-    onPressed: onPressItemsTwo,
+    onPressed: onPressItemsFour,
   },
 ];
