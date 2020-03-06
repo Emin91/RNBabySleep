@@ -7,10 +7,10 @@ import Icon from '../../../components/iconsList';
 const ItemsArray = ({arrays, onPressed, navigation}) => {
   return (
     <>
-      {arrays.map(({itemName, itemSubtitle, color, num}) => {
+      {arrays.map(({itemName, itemSubtitle, color, num, youtubeId}) => {
         return (
           <TouchableOpacity
-            onPress={() => onPressed(num, navigation)}
+            onPress={() => onPressed(num, navigation, youtubeId)}
             activeOpacity={0.6}>
             <View style={styles.itemViewRows}>
               <View style={styles.titleView}>

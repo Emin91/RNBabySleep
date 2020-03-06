@@ -6,22 +6,24 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: colors.GREY,
   },
-  imgView: {
+  headerView: {
     width: '100%',
-    height: 100,
-    paddingHorizontal: 6,
+    paddingVertical: 10,
+    paddingHorizontal: 10,
   },
-  img: {
-    width: '100%',
-    height: '100%',
+  headerTitle: {
+    fontSize: 15,
+    fontFamily: 'MBold',
+    color: colors.PELOROUS,
   },
   textView: {
-    flex: 0.8,
-    paddingHorizontal: 20,
-    paddingBottom: 20,
+    width: '100%',
+    paddingVertical: 10,
+    paddingHorizontal: 10,
   },
   text: {
     fontSize: 15,
+    fontFamily: 'SamsungSans-Regular',
     color: colors.WHITE,
   },
 });

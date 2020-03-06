@@ -28,6 +28,8 @@ export const titles = {
   TURN_OFF: 'Выкл',
   LONG_TEXT:
     "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+  LONG_TEXT_TWO:
+    'Баю-Бай — это универсальное приложение, которое станет Вашим помощником с первых дней жизни Вашего малыша. Используйте Баю-Бай,чтобы убаюкивать малышку за считанные минуты, поддерживатьего сладкий и глубокий сон, а также способствовать развитию устойчивого режима сна с помощью трех полезных режимов: Используйте Игровой режим на протяжении первых месяцев жизни Вашего малыша, пока онприспосабливается к существованию в нашем мире. Используя Баю-Бай, Вы скоро сами заметите, какие зауки лучше всего убаюкивают Вашего ребенка - независимо от того, будут ли это звуки материнского лона, рыночная суета или же гудение пылесоса. Будьте готовы к приятному сюрпризу! Используйте Ночной режим, когда малыш спит почти всю ночь, около попугодовалого возраста. Баю-Бай "слушает" Вашего ребенка и автоматически запускает выбранные Вами звуки, как только ребенок начинает плакать. Используйте Режим отслеживания сна, начиная приблизительно c годовалового возраста Вашего ребенка. Баю-Бай автоматически отслеживает особенности режима сна малыша и генерирует графики, с помощью которых Вы можете анализировать эти характерные особенности и делать важные выводы.',
   REGISTRATION_TITLE: 'Регистрация',
   REGISTRATION_LOGIN: 'Логин',
   REGISTRATION_TYPE_LOGIN: 'Введите логин',
@@ -128,6 +130,32 @@ export const titles = {
   PROFILE: 'Профиль',
   AUTHOR: 'Emin Zeynalov',
 
+  //Faq
+  FAQ_HEADER_ONE:
+    'SHOULD I ENABLE AIRPLANE MODE FOR SAFETY WHILE USING THE APP?',
+  FAQ_HEADER_TWO:
+    'IF I PLAY A SOUND ON FULL VOLUME ON MY PHONE, IS IT STILL WITHIN THE ALLOWED DECIBEL LEVEL FOR A BABY?',
+  FAQ_HEADER_THREE: 'HOW SHOULD I USE LISTENING FEATURE?',
+  FAQ_HEADER_FOUR: 'WHY IS MY DURATION LIMITED TO TEN MINUTES?',
+  FAQ_HEADER_FIVE: 'HOW SHOULD I USE SLEEP TRACKING?',
+  FAQ_HEADER_SIX: 'HOW DO I SET MY CUSTOM FADEOUT TIME?',
+  FAQ_HEADER_SEVEN:
+    'WHY DO INCOMING CALLS AND MESSAGES INTERRUPT THE SOUNDS THAT ARE PLAYING?',
+
+  FAQ_TEXT_ONE:
+    'We recommend enabling Airplane Mode while using Sound Sleeper. If you prefer not to do so, make sure to place your device a good distance from your baby. We normally place our phone at least three feet (1m) from the crib, if the phone is not in Airplane Mode.',
+  FAQ_TEXT_TWO:
+    'The volume level by itself has little meaning. Influence on hearing, if any, depends on three factors: volume level, distance and duration. Volume level itself in dB depends on the distance between your baby and your phone. Sound Sleeper app is based on the philosophy of Dr. Harvey Karp, who explains that loud noise calm babies because that is what they are familiar with from their time in the womb, where they experienced surprisingly loud noises. Having said that, of course one should use common sense and consider how the three factors mentioned above are interacting. We usually place the device about three feet (1m) away from the crib, and play the sound loudly only until our daughter falls asleep, and only as loudly as she needs in order to get calm. After that we decrease the volume to a level that helps her stay asleep, especially if our other kids are making noise.',
+  FAQ_TEXT_THREE:
+    "The way Sound Sleeper's listening works is that it listens for your baby and starts playing if your baby wakes up and makes a noise (i.e. starts crying). It will play for as long as you set with the duration slider. After that, Sound Sleeper will reset itself and start listening again. We have found this feature to be useful when babies start to sleep for longer stretches of time, usually around six months.",
+  FAQ_TEXT_FOUR:
+    'The duration is limited to ten minutes when you have enabled Sleep Tracking mode. To disable Sleep Tracking go to Sleep Tracking view.',
+  FAQ_TEXT_FIVE:
+    "When using Sleep Tracking, the duration is automatically set to ten minutes in order to create an accurate sleep graph. To start Sleep Tracking, first enable Sleep Tracking at Sleep Tracking view, then choose your favorite sound and tap the Listen button. The app will start listening for your baby and will show your baby's sleep patterns on the graphs.",
+  FAQ_TEXT_SIX:
+    'You can set your custom fadeout time in Settings > Options. If you set the fadeout to be 20 seconds, the sound will start fading out 20 seconds. before the end of the track. So, if you set the duration to be 30 min, the app will play for 29 minutes 40 seconds and then will fade out for 20 sec. You can choose fadeout duration between 20 seconds and two hours.',
+  FAQ_TEXT_SEVEN:
+    'The volume level by itself has little meaning. Influence on hearing, if any, depends on three factors: volume level, distance and duration. Volume level itself in dB depends on the distance between your baby and your phone. Sound Sleeper app is based on the philosophy of Dr. Harvey Karp, who explains that loud noise calm babies because that is what they are familiar with from their time in the womb, where they experienced surprisingly loud noises. Having said that, of course one should use common sense and consider how the three factors mentioned above are interacting. We usually place the device about three feet (1m) away from the crib, and play the sound loudly only until our daughter falls asleep, and only as loudly as she needs in order to get calm. After that we decrease the volume to a level that helps her stay asleep, especially if our other kids are making noise.',
   //New Version EN
   // FULL_VERSION: 'FULL VERSION',
   // WHATS_INSIDE: "What's inside",

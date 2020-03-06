@@ -33,7 +33,7 @@ const TabSettings = ({navigation}) => {
         buttonSize={40}
         actionsPaddingTopBottom={3}
         showBackground={false}
-        onPressMain={goTo => {
+        onPressMain={() => {
           navigation.navigate('About');
         }}
         margin={25}

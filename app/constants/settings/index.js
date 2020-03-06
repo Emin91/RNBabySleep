@@ -8,4 +8,5 @@ export const ROUTE = {
   NewVersion: 'NewVersion',
   Settings: 'Настройки',
   About: 'О приложении',
+  Faq: 'Faq',
 };

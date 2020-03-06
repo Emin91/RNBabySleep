@@ -63,11 +63,12 @@ export const settingListArrayFour = [
   {
     itemName: 'FAQ',
     itemSubtitle: 'Все что вы хотели знать...',
-    num: 1,
+    num: 2,
   },
   {
     itemName: 'Приложение в действии',
     itemSubtitle: 'В главной роли наша новорожденная дочь',
+    youtubeId: 'BRgvFIg9hPM',
     num: 3,
   },
   {

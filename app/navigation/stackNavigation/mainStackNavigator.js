@@ -21,6 +21,7 @@ import DetailsScreen from '../../screens/detailsScreen';
 import AboutAppScreen from '../../screens/aboutApp';
 import NewSoundScreen from '../../screens/newSoundScreen';
 import AboutAuthorScreen from '../../screens/aboutAuthor';
+import Faq from '../../screens/faq';
 
 const AppContainer = createStackNavigator(
   {
@@ -113,7 +114,7 @@ const AppContainer = createStackNavigator(
     AboutApp: {
       screen: AboutAppScreen,
       navigationOptions: ({}) => ({
-        title: ROUTE.Settings,
+        title: ROUTE.About,
         headerTintColor: colors.WHITE,
         headerStyle: {
           backgroundColor: colors.GREY,
@@ -128,6 +129,18 @@ const AppContainer = createStackNavigator(
         title: null,
         headerTintColor: colors.WHITE,
         headerTransparent: true,
+        headerStyle: {
+          backgroundColor: colors.GREY,
+          elevation: 0,
+          shadowOpacity: 0,
+        },
+      }),
+    },
+    Faq: {
+      screen: Faq,
+      navigationOptions: ({}) => ({
+        title: ROUTE.Faq,
+        headerTintColor: colors.WHITE,
         headerStyle: {
           backgroundColor: colors.GREY,
           elevation: 0,

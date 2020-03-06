@@ -7,6 +7,7 @@ export const images = {
   bg1: require('../assets/img/bg1.jpg'),
   bg2: require('../assets/img/bg2.jpg'),
   info: require('../assets/img/graph.png'),
+  info2: require('../assets/img/graph2.png'),
   logo: require('../assets/icons/logo.png'),
   avatar: {uri: 'https://avatars3.githubusercontent.com/u/56433509?s=460&v=4'},
 };
