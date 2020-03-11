@@ -1,13 +1,4 @@
 import {Linking} from 'react-native';
-import email from 'react-native-email';
-
-const sendMail = () => {
-  const to = 'emin@wizardsdev.com';
-  email(to, {
-    subject: '',
-    body: '',
-  }).catch(console.error);
-};
 
 const onItemPress = num => {
   switch (num) {
