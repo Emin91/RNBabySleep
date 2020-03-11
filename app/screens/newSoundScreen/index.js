@@ -54,6 +54,7 @@ const NewSoundScreen = () => {
             style={styles.textInput}
             placeholder={titles.TEXT_INPUT}
             onChangeText={newValue => setInputValue(newValue)}
+            onEndEditing={() => setInputValue(inputValue.trim())}
           />
           {!inputValue ? (
             <Text style={styles.warnText}>{titles.NEED_RECORD_NAME}</Text>
@@ -65,6 +66,8 @@ const NewSoundScreen = () => {
             check={check}
             setCheck={setCheck}
             inputValue={inputValue}
+            sliderValue={sliderValue}
+            setSliderValue={setSliderValue}
             start={startRecord}
             stop={stopRecord}
           />
@@ -76,7 +79,8 @@ const NewSoundScreen = () => {
             minimumValue={0}
             maximumValue={8}
             value={sliderValue}
-            disabled={!inputValue ? true : false}
+            // onResponderMove={er => console.log('er', er)}
+            // disabled={!inputValue ? true : false}
             onValueChange={val => setSliderValue(val)}
             minimumTrackTintColor={colors.PELOROUS}
             maximumTrackTintColor={colors.BLACK}
@@ -95,3 +99,14 @@ const NewSoundScreen = () => {
 };
 
 export default NewSoundScreen;
+
+// var changeSlider = function() {
+//   var i = 0;
+//   while (i <= 8) {
+//     (function(i) {
+//       setTimeout(() => {
+//         setSliderValue(sliderValue + i);
+//       }, 1000 * i);
+//     })(i++);
+//   }
+// };
