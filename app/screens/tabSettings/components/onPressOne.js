@@ -1,5 +1,5 @@
 import {Linking} from 'react-native';
-import {titles} from '../../../constants/string';
+import titles from '../../../constants/string';
 import {sendMail} from './sendMail';
 import * as ApkManager from 'react-native-apk-manager';
 

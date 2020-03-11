@@ -1,9 +1,7 @@
 import React, {useState} from 'react';
 import {View, Text} from 'react-native';
 import styles from './style';
-import {colors} from '../../constants/color';
-import Slider from '@react-native-community/slider';
-import {titles} from '../../constants/string';
+import titles from '../../constants/string';
 import OwnSlider from './components/slider';
 
 const Settings = () => {
@@ -28,8 +26,12 @@ const Settings = () => {
       </View>
       <View style={styles.headerTwo}>
         <Text style={styles.title}>
-          {titles.SETTING_HEADER_TITLE_TWO} {Math.floor(attenuation)}{' '}
-          {!attenuation ? <Text>sec</Text> : <Text>min</Text>}
+          {titles.SETTING_HEADER_TITLE_TWO} {Math.floor(attenuation)}
+          {!attenuation ? (
+            <Text> {titles.SEC}</Text>
+          ) : (
+            <Text> {titles.MIN}</Text>
+          )}
         </Text>
       </View>
       <View style={styles.sliderRowTwo}>

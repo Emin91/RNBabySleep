@@ -7,7 +7,7 @@ import {
   ImageBackground,
   KeyboardAvoidingView,
 } from 'react-native';
-import {titles} from '../../constants/string';
+import titles from '../../constants/string';
 import {images} from '../../constants/image';
 import {ROUTE} from '../../constants/settings';
 import styles from './styles';

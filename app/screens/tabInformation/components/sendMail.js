@@ -1,4 +1,4 @@
-import {titles} from '../../../constants/string';
+import titles from '../../../constants/string';
 import email from 'react-native-email';
 
 const SendMail = () => {

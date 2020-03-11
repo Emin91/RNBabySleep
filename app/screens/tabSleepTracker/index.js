@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {View, Text, Switch, Image} from 'react-native';
-import {titles} from '../../constants/string';
+import titles from '../../constants/string';
 import {images} from '../../constants/image';
 import {colors} from '../../constants/color';
 import styles from './style';

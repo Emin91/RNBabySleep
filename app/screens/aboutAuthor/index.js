@@ -7,7 +7,7 @@ import {
   ImageBackground,
 } from 'react-native';
 import {images} from '../../constants/image';
-import {titles} from '../../constants/string';
+import titles from '../../constants/string';
 import {blocks} from './components/blocks';
 import {colors} from '../../constants/color';
 import {socialBtns} from '../../../__mocks__/socialBtns';

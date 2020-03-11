@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text, Image, TouchableOpacity, ScrollView} from 'react-native';
-import {titles} from '../../constants/string';
+import titles from '../../constants/string';
 import {list} from './components/list';
 import {ROUTE} from '../../constants/settings';
 import {images} from '../../constants/image';

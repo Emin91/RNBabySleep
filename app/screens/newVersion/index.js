@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text} from 'react-native';
 import styles from './style';
-import {titles} from '../../constants/string';
+import titles from '../../constants/string';
 import {colors} from '../../constants/color';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 

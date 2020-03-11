@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {View, Text, TouchableOpacity, ImageBackground} from 'react-native';
-import {titles} from '../../constants/string';
+import titles from '../../constants/string';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import {ROUTE} from '../../constants/settings';
 import {images} from '../../constants/image';

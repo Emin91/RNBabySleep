@@ -1,54 +1,54 @@
 import {colors} from './color';
+import titles from './string';
 
 export const headers = {
-  UPGRADES: 'Обновление',
-  SETTING: 'Настройки',
-  OPTIONS: 'Изменить опции',
-  ABOUT: 'О Приложении',
-  DEVELOP: 'Разработчик Emin Zeynalov',
-  VERSION: 'Версия: 1.12.10',
+  UPGRADES: titles.UPGRADE,
+  SETTING: titles.SETTINGS,
+  ABOUT: titles.ABOUT,
+  DEVELOP: titles.DEVELOPER,
+  VERSION: titles.VERSION,
 };
 
 export const settingListArrayOne = [
   {
-    itemName: 'Вам понравилось?',
-    itemSubtitle: 'Оцените в Play Store',
+    itemName: titles.ARRAY_ONE_ITEM_NAME_ONE,
+    itemSubtitle: titles.ARRAY_ONE_ITEM_SUB_TITLE_ONE,
     color: colors.GREEN,
     num: 1,
   },
   {
-    itemName: 'Вам не понравилось?',
-    itemSubtitle: 'Скажите, как нам стать лучше',
+    itemName: titles.ARRAY_ONE_ITEM_NAME_TWO,
+    itemSubtitle: titles.ARRAY_ONE_ITEM_SUB_TITLE_TWO,
     color: colors.CARROT,
     num: 2,
   },
   {
-    itemName: 'Посетите наш веб-сайт',
-    itemSubtitle: 'Чтобы сказать привет...',
+    itemName: titles.ARRAY_ONE_ITEM_NAME_THREE,
+    itemSubtitle: titles.ARRAY_ONE_ITEM_SUB_TITLE_THREE,
     num: 3,
   },
   {
-    itemName: 'Мы в Facebook, присоединяйтесь',
-    itemSubtitle: 'Советы, истории, привет...',
+    itemName: titles.ARRAY_ONE_ITEM_NAME_FOUR,
+    itemSubtitle: titles.ARRAY_ONE_ITEM_SUB_TITLE_FOUR,
     num: 4,
   },
 ];
 
 export const settingListArrayTwo = [
   {
-    itemName: 'Управлять своей подпиской',
-    itemSubtitle: 'Урок от google',
+    itemName: titles.ARRAY_TWO_ITEM_NAME_ONE,
+    itemSubtitle: titles.ARRAY_TWO_ITEM_SUB_TITLE_ONE,
     num: 1,
   },
   {
-    itemName: 'Что в полной версии?',
+    itemName: titles.ARRAY_TWO_ITEM_NAME_TWO,
     num: 2,
   },
 ];
 
 export const settingListArrayThree = [
   {
-    itemName: 'Изменить опции',
+    itemName: titles.ARRAY_THREE_ITEM_NAME_ONE,
     itemSubtitle: null,
     num: 1,
   },
@@ -56,24 +56,24 @@ export const settingListArrayThree = [
 
 export const settingListArrayFour = [
   {
-    itemName: 'О Приложении',
-    itemSubtitle: 'Несколько слов от создателей',
+    itemName: titles.ARRAY_FOUR_ITEM_NAME_ONE,
+    itemSubtitle: titles.ARRAY_FOUR_ITEM_SUB_TITLE_ONE,
     num: 1,
   },
   {
-    itemName: 'FAQ',
-    itemSubtitle: 'Все что вы хотели знать...',
+    itemName: titles.ARRAY_FOUR_ITEM_NAME_TWO,
+    itemSubtitle: titles.ARRAY_FOUR_ITEM_SUB_TITLE_TWO,
     num: 2,
   },
   {
-    itemName: 'Приложение в действии',
-    itemSubtitle: 'В главной роли наша новорожденная дочь',
+    itemName: titles.ARRAY_FOUR_ITEM_NAME_THREE,
+    itemSubtitle: titles.ARRAY_FOUR_ITEM_SUB_TITLE_THREE,
     youtubeId: 'BRgvFIg9hPM',
     num: 3,
   },
   {
-    itemName: 'Помогите друзьям выспаться',
-    itemSubtitle: 'Расскажите им о Баю-Бай по почте',
+    itemName: titles.ARRAY_FOUR_ITEM_NAME_FOUR,
+    itemSubtitle: titles.ARRAY_FOUR_ITEM_SUB_TITLE_FOUR,
     num: 4,
   },
 ];

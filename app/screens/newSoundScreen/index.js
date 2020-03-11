@@ -7,7 +7,7 @@ import {
   ScrollView,
   KeyboardAvoidingView,
 } from 'react-native';
-import {titles} from '../../constants/string';
+import titles from '../../constants/string';
 import {colors} from '../../constants/color';
 import Slider from '@react-native-community/slider';
 import styles from './style';

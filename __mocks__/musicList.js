@@ -1,4 +1,4 @@
-import {titles} from '../app/constants/string';
+import titles from '../app/constants/string';
 import {titleOne, titleTwo} from '../app/constants/itemListArray';
 
 export const musicList = [

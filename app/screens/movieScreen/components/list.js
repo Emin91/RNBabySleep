@@ -1,4 +1,4 @@
-import {titles} from '../../../constants/string';
+import titles from '../../../constants/string';
 import {
   itemArraysOne,
   itemArraysTwo,

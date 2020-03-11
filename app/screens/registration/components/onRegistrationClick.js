@@ -1,5 +1,5 @@
 import React from 'react';
-import {titles} from '../../../constants/string';
+import titles from '../../../constants/string';
 import {ROUTE} from '../../../constants/settings';
 import AsyncStorage from '@react-native-community/async-storage';
 

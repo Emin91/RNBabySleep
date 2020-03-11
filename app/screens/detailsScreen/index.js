@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {View, Text, Image, TouchableOpacity} from 'react-native';
-import {titles} from '../../constants/string';
+import titles from '../../constants/string';
 import {colors} from '../../constants/color';
 import {btns} from '../../../__mocks__/btns';
 import Slider from '@react-native-community/slider';

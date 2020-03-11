@@ -10,7 +10,7 @@ import {createStackNavigator} from 'react-navigation-stack';
 
 //Screens
 import {TabBar} from '../tabNavigation/tabNavigator';
-import {titles} from '../../constants/string';
+import titles from '../../constants/string';
 import {colors} from '../../constants/color';
 import {TabBarTwo} from '../tabNavigation/tabNavigatorTwo';
 import {ROUTE} from '../../constants/settings';

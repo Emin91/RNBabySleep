@@ -1,4 +1,4 @@
-import {titles} from './string';
+import titles from './string';
 
 export const arrayListOne = [
   {

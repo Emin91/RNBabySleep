@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text, Image, ScrollView} from 'react-native';
 import styles from './style';
-import {titles} from '../../constants/string';
+import titles from '../../constants/string';
 import {images} from '../../constants/image';
 
 const AboutAppScreen = () => {

@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text, Image, TouchableOpacity, ScrollView} from 'react-native';
-import {titles} from '../../constants/string';
+import titles from '../../constants/string';
 import {images} from '../../constants/image';
 import {items} from '../../../__mocks__/items';
 import TitleHeader from './components/header';

@@ -1,4 +1,4 @@
-import {titles} from '../app/constants/string';
+import titles from '../app/constants/string';
 import {
   arrayListOne,
   arrayListTwo,
