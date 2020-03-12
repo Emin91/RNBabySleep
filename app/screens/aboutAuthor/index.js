@@ -7,12 +7,12 @@ import {
   ImageBackground,
 } from 'react-native';
 import {images} from '../../constants/image';
-import titles from '../../constants/string';
 import {blocks} from './components/blocks';
 import {colors} from '../../constants/color';
 import {socialBtns} from '../../../__mocks__/socialBtns';
 import {FloatingAction} from 'react-native-floating-action';
 import Icon from '../../components/iconsList';
+import titles from '../../constants/string';
 import styles from './style';
 import onItemPress from './components/onClick';
 import socialBtnsPressed from './components/socialBtnsPressed';

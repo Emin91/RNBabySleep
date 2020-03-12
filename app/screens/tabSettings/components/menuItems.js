@@ -5,30 +5,30 @@ import {
   settingListArrayFour,
   headers,
 } from '../../../constants/settingListArray';
-import {onPressItemsOne} from './onPressOne';
-import {onPressItemsTwo} from './onPressTwo';
-import {onPressItemsThree} from './onPressThree';
-import {onPressItemsFour} from './onPressFour';
+import {switchGoToSite} from './switchGoToSite';
+import {switchUpdate} from './switchUpdate';
+import {switchOpenSettings} from './switchOpenSettings';
+import {switchAbout} from './switchAbout';
 
 export const menuItems = [
   {
     header: null,
     arrays: settingListArrayOne,
-    onPressed: onPressItemsOne,
+    onPressed: switchGoToSite,
   },
   {
     header: headers.UPGRADES,
     arrays: settingListArrayTwo,
-    onPressed: onPressItemsTwo,
+    onPressed: switchUpdate,
   },
   {
     header: headers.SETTING,
     arrays: settingListArrayThree,
-    onPressed: onPressItemsThree,
+    onPressed: switchOpenSettings,
   },
   {
     header: headers.ABOUT,
     arrays: settingListArrayFour,
-    onPressed: onPressItemsFour,
+    onPressed: switchAbout,
   },
 ];

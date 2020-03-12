@@ -1,6 +1,5 @@
 import React from 'react';
 import {Text, TouchableOpacity} from 'react-native';
-import {ROUTE} from '../../../constants/settings';
 import styles from '../styles';
 
 const Items = ({arrays, navigation}) => {
@@ -10,7 +9,7 @@ const Items = ({arrays, navigation}) => {
         return (
           <TouchableOpacity
             style={styles.textsView}
-            onPress={() => navigation.navigate(ROUTE.Details, {value, img})}>
+            onPress={() => navigation.navigate('Details', {value, img})}>
             <Text style={styles.texts}>{value}</Text>
           </TouchableOpacity>
         );

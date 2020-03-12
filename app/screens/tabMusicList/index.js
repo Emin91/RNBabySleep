@@ -2,10 +2,10 @@ import React from 'react';
 import {View, ScrollView} from 'react-native';
 import {titleThree} from '../../constants/itemListArray';
 import {musicList} from '../../../__mocks__/musicList';
-import titles from '../../constants/string';
-import TextElements from '../../components/textElements';
-import styles from './styles';
 import Items from './components/items';
+import titles from '../../constants/string';
+import styles from './styles';
+import TextElements from '../../components/textElements';
 
 const MusicListTab = ({navigation}) => {
   return (

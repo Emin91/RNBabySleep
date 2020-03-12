@@ -2,11 +2,11 @@ import {colors} from './color';
 import titles from './string';
 
 export const headers = {
+  ABOUT: titles.ABOUT,
+  VERSION: titles.VERSION,
   UPGRADES: titles.UPGRADE,
   SETTING: titles.SETTINGS,
-  ABOUT: titles.ABOUT,
   DEVELOP: titles.DEVELOPER,
-  VERSION: titles.VERSION,
 };
 
 export const settingListArrayOne = [

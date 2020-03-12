@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import {View, Text, Image, TouchableOpacity} from 'react-native';
-import titles from '../../constants/string';
 import {colors} from '../../constants/color';
 import {btns} from '../../../__mocks__/btns';
+import titles from '../../constants/string';
 import Slider from '@react-native-community/slider';
 import styles from './style';
 
@@ -23,7 +23,7 @@ const DetailsScreen = ({navigation}) => {
           <Text>{Math.floor(volume)}</Text>
         </Text>
         <Slider
-          style={{width: '100%', height: 50}}
+          style={styles.slider}
           thumbTintColor={colors.LOCHMARA}
           minimumValue={0}
           maximumValue={100}
@@ -38,7 +38,7 @@ const DetailsScreen = ({navigation}) => {
           <Text>{check}</Text>
         </Text>
         <Slider
-          style={{width: '100%', height: 50}}
+          style={styles.slider}
           thumbTintColor={colors.LOCHMARA}
           minimumValue={0}
           maximumValue={1}

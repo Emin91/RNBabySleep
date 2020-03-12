@@ -1,13 +1,13 @@
 import React from 'react';
 import {View, Text, Image, TouchableOpacity, ScrollView} from 'react-native';
-import titles from '../../constants/string';
 import {list} from './components/list';
 import {ROUTE} from '../../constants/settings';
 import {images} from '../../constants/image';
+import titles from '../../constants/string';
 import styles from './style';
-import CurriculumItems from '../../components/curriculumItems';
-import ViewMoreText from 'react-native-view-more-text';
 import ItemsHeader from './components/itemsHeader';
+import ViewMoreText from 'react-native-view-more-text';
+import CurriculumItems from '../../components/curriculumItems';
 
 const MovieScreen = ({navigation}) => {
   return (

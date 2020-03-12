@@ -1,5 +1,32 @@
 import LocalizedStrings from 'react-native-localization';
 
+export const ROUTE_NAME = new LocalizedStrings({
+  ru: {
+    HomeScreen: 'Главная страница',
+    RegistrationScreen: 'Регистрация',
+    LoginScreen: 'Войти',
+    Details: 'Детали',
+    ScreenRecorder: 'Запись нового звука',
+    YoutubeScreen: 'Видео на Youtube',
+    NewVersion: 'О новой версии',
+    Settings: 'Настройки',
+    About: 'О приложении',
+    Faq: 'Faq',
+  },
+  en: {
+    HomeScreen: 'Main screen',
+    RegistrationScreen: 'Регистрация',
+    LoginScreen: 'Войти',
+    Details: 'Детали',
+    ScreenRecorder: 'Запись нового звука',
+    YoutubeScreen: 'Видео на Youtube',
+    NewVersion: 'О новой версии',
+    Settings: 'Настройки',
+    About: 'О приложении',
+    Faq: 'Faq',
+  },
+});
+
 const titles = new LocalizedStrings({
   ru: {
     HEADER_MAIN_TITLE: 'Баю-Бай',

@@ -12,11 +12,11 @@ import {colors} from '../../constants/color';
 import Slider from '@react-native-community/slider';
 import styles from './style';
 import Icon from '../../components/iconsList';
-import RNFetchBlob from 'react-native-fetch-blob';
-import ButtonRecord from './components/btnRecord';
-import startRecord from './components/startRecord';
 import stopRecord from './components/stopRecord';
+import RNFetchBlob from 'react-native-fetch-blob';
+import startRecord from './components/startRecord';
 import deleteFiles from './components/deleteFilers';
+import ButtonRecord from './components/btnRecord';
 
 const NewSoundScreen = () => {
   const [inputValue, setInputValue] = useState('');

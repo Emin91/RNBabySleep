@@ -9,10 +9,10 @@ import {
 } from 'react-native';
 import titles from '../../constants/string';
 import {images} from '../../constants/image';
-import {ROUTE} from '../../constants/settings';
 import styles from './styles';
 import onLoginClick from './components/onLoginClick';
 import CustomTextInput from '../../components/inputText';
+import {ROUTE} from '../../constants/settings';
 
 const LoginScreen = ({navigation}) => {
   const [login, setLogin] = useState('');

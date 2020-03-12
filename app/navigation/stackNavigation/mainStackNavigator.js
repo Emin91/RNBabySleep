@@ -1,19 +1,17 @@
 import React from 'react';
 import {TouchableOpacity} from 'react-native';
 
-//Icons
 import Icon from '../../components/iconsList';
 
-//Navigation
 import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
 
-//Screens
+import {ROUTE} from '../../constants/settings';
 import {TabBar} from '../tabNavigation/tabNavigator';
-import titles from '../../constants/string';
 import {colors} from '../../constants/color';
 import {TabBarTwo} from '../tabNavigation/tabNavigatorTwo';
-import {ROUTE} from '../../constants/settings';
+import {ROUTE_NAME} from '../../constants/string';
+import Faq from '../../screens/faq';
 import Settings from '../../screens/settings';
 import NewVersion from '../../screens/newVersion';
 import YoutubeScreen from '../../screens/youtubeScreen';
@@ -21,14 +19,13 @@ import DetailsScreen from '../../screens/detailsScreen';
 import AboutAppScreen from '../../screens/aboutApp';
 import NewSoundScreen from '../../screens/newSoundScreen';
 import AboutAuthorScreen from '../../screens/aboutAuthor';
-import Faq from '../../screens/faq';
 
 const AppContainer = createStackNavigator(
   {
     HomeScreen: {
       screen: TabBar,
       navigationOptions: ({navigation}) => ({
-        title: titles.HEADER_TEXT_MAIN_SCREEN,
+        title: ROUTE_NAME.HomeScreen,
         headerRight: () => (
           <TouchableOpacity
             style={[{paddingHorizontal: 15}]}
@@ -59,7 +56,7 @@ const AppContainer = createStackNavigator(
     ScreenRecorder: {
       screen: NewSoundScreen,
       navigationOptions: ({navigation}) => ({
-        title: titles.HEADER_CREATE_NEW_SOUND,
+        title: ROUTE_NAME.ScreenRecorder,
         headerRight: () =>
           true ? (
             <TouchableOpacity
@@ -90,7 +87,7 @@ const AppContainer = createStackNavigator(
     YoutubeScreen: {
       screen: YoutubeScreen,
       navigationOptions: ({}) => ({
-        title: ROUTE.YoutubeScreen,
+        title: ROUTE_NAME.YoutubeScreen,
         headerTintColor: colors.WHITE,
         headerStyle: {
           backgroundColor: colors.GREY,
@@ -102,7 +99,7 @@ const AppContainer = createStackNavigator(
     NewVersion: {
       screen: NewVersion,
       navigationOptions: ({}) => ({
-        title: ROUTE.NewVersion,
+        title: ROUTE_NAME.NewVersion,
         headerTintColor: colors.WHITE,
         headerStyle: {
           backgroundColor: colors.GREY,
@@ -114,7 +111,7 @@ const AppContainer = createStackNavigator(
     AboutApp: {
       screen: AboutAppScreen,
       navigationOptions: ({}) => ({
-        title: ROUTE.About,
+        title: ROUTE_NAME.About,
         headerTintColor: colors.WHITE,
         headerStyle: {
           backgroundColor: colors.GREY,
@@ -139,7 +136,7 @@ const AppContainer = createStackNavigator(
     Faq: {
       screen: Faq,
       navigationOptions: ({}) => ({
-        title: ROUTE.Faq,
+        title: ROUTE_NAME.Faq,
         headerTintColor: colors.WHITE,
         headerStyle: {
           backgroundColor: colors.GREY,
@@ -151,7 +148,7 @@ const AppContainer = createStackNavigator(
     Settings: {
       screen: Settings,
       navigationOptions: ({}) => ({
-        title: ROUTE.Settings,
+        title: ROUTE_NAME.Settings,
         headerTintColor: colors.WHITE,
         headerStyle: {
           backgroundColor: colors.GREY,
@@ -163,9 +160,8 @@ const AppContainer = createStackNavigator(
   },
   {
     //headerMode: 'none',
-    initialRouteName: 'HomeScreen',
+    initialRouteName: ROUTE.HomeScreen,
   },
 );
 
-//Export AppContainer
 export default createAppContainer(AppContainer);

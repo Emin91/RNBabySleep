@@ -3,7 +3,7 @@ import titles from '../../../constants/string';
 import {sendMail} from './sendMail';
 import * as ApkManager from 'react-native-apk-manager';
 
-export const onPressItemsOne = num => {
+export const switchGoToSite = num => {
   switch (num) {
     case 1:
       ApkManager.isAppInstalled('com.android.vending').then(data => {

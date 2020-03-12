@@ -1,6 +1,6 @@
 import {Linking} from 'react-native';
 
-export const onPressItemsTwo = (num, navigation) => {
+export const switchUpdate = (num, navigation) => {
   switch (num) {
     case 1:
       Linking.openURL(

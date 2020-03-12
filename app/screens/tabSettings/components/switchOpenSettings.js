@@ -1,4 +1,4 @@
-export const onPressItemsThree = (num, navigation) => {
+export const switchOpenSettings = (num, navigation) => {
   switch (num) {
     case 1:
       navigation.navigate('Settings');

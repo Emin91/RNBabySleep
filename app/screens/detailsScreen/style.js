@@ -26,13 +26,15 @@ const styles = StyleSheet.create({
   titleText: {
     fontSize: 30,
     color: colors.WHITE,
-    //position: 'absolute',
   },
   slidersView: {
     flex: 0.4,
     paddingHorizontal: 20,
     paddingVertical: 10,
-    // backgroundColor: 'green',
+  },
+  slider: {
+    width: '100%',
+    height: 50,
   },
   soundButtonsView: {
     flex: 0.2,

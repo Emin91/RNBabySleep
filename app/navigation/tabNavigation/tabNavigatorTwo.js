@@ -1,7 +1,6 @@
-//Screens (Tabs)
 import React from 'react';
 import Icon from '../../components/iconsList';
-import {colors} from '../../constants/color'; //Color constants
+import {colors} from '../../constants/color';
 import {createMaterialTopTabNavigator} from 'react-navigation-tabs';
 
 import tabSleepTracker from '../../screens/tabSleepTracker';
@@ -9,13 +8,11 @@ import tabSettings from '../../screens/tabSettings';
 import tabMusicList from '../../screens/tabMusicList';
 import MovieScreen from '../../screens/movieScreen';
 
-//Top tab navigation
 export const TabBarTwo = createMaterialTopTabNavigator(
   {
     $Tab1: {
       screen: tabMusicList,
       navigationOptions: {
-        //tabBarOnPress: () => alert('Tab1'),
         tabBarLabel: () => {
           return null;
         },

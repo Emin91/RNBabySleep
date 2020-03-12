@@ -1,4 +1,4 @@
-export const onPressItemsFour = (num, navigation, youtubeId) => {
+export const switchAbout = (num, navigation, youtubeId) => {
   switch (num) {
     case 1:
       navigation.navigate('AboutApp');
